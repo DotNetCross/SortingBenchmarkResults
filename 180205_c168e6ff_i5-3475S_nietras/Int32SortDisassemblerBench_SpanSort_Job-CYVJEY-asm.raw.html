@@ -1,0 +1,1937 @@
+<!DOCTYPE html><html lang='en'><head><meta charset='utf-8' />
+<title>Output of DisassemblyDiagnoser for Int32SortDisassemblerBench.SpanSort: Job-CYVJEY(Platform=X64, Runtime=Core, LaunchCount=1, RunStrategy=Monitoring, TargetCount=3, UnrollFactor=1, WarmupCount=1)</title>
+
+<style type="text/css">
+    pre { margin: 0px; }
+    table { border-collapse:collapse; }
+    td.perMethod { border-top: 1px black solid; }
+    tr.evenMap td { background-color: #F5F5F5; }  
+</style>
+</head>
+<body>
+<table>
+<tbody>
+<tr><th colspan="2" id="140723110161952" style="text-align: left;">00007ffc`a6fe2e20 DotNetCross.Sorting.Benchmarks.Int32SortDisassemblerBench.SpanSort()</th><th></th></tr>
+<tr class="evenMap">
+<td><pre><code>            for (int i = 0; i <= MaxLength - Length; i += Length)
+                 ^^^^^^^^^</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe2e45 33ff            xor     edi,edi</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe2e47 8b4e10          mov     ecx,dword ptr [rsi+10h]</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe2e4a f7d9            neg     ecx</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe2e4c 81c1c0c62d00    add     ecx,2DC6C0h</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe2e52 85c9            test    ecx,ecx</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe2e54 0f8ce8000000    jl      00007ffc`a6fe2f42</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>                new Span<int>(_work, i, Length).Sort();
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe2e5a 488b4e08        mov     rcx,qword ptr [rsi+8]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe2e5e 8b4610          mov     eax,dword ptr [rsi+10h]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe2e61 4885c9          test    rcx,rcx</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe2e64 0f84e4000000    je      00007ffc`a6fe2f4e</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe2e6a 8b5108          mov     edx,dword ptr [rcx+8]</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe2e6d 3bd7            cmp     edx,edi</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe2e6f 0f82e3000000    jb      00007ffc`a6fe2f58</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe2e75 2bd7            sub     edx,edi</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe2e77 3bd0            cmp     edx,eax</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe2e79 0f82d9000000    jb      00007ffc`a6fe2f58</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe2e7f 4883c110        add     rcx,10h</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe2e83 4863d7          movsxd  rdx,edi</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe2e86 488d0c91        lea     rcx,[rcx+rdx*4]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>            for (int i = 0; i <= MaxLength - Length; i += Length)
+                                                     ^^^^^^^^^^^</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe2e8a 488bd9          mov     rbx,rcx</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe2e8d 8be8            mov     ebp,eax</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe2e8f 83fd02          cmp     ebp,2</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe2e92 0f8c95000000    jl      00007ffc`a6fe2f2d</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe2e98 c684248800000000 mov     byte ptr [rsp+88h],0</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe2ea0 c68424d000000000 mov     byte ptr [rsp+0D0h],0</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe2ea8 c684249000000000 mov     byte ptr [rsp+90h],0</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe2eb0 c68424c800000000 mov     byte ptr [rsp+0C8h],0</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe2eb8 c684249800000000 mov     byte ptr [rsp+98h],0</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe2ec0 c68424a000000000 mov     byte ptr [rsp+0A0h],0</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe2ec8 c68424a800000000 mov     byte ptr [rsp+0A8h],0</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe2ed0 c68424b000000000 mov     byte ptr [rsp+0B0h],0</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe2ed8 c68424b800000000 mov     byte ptr [rsp+0B8h],0</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe2ee0 c68424c000000000 mov     byte ptr [rsp+0C0h],0</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe2ee8 c684249800000000 mov     byte ptr [rsp+98h],0</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe2ef0 480fbe8c2498000000 movsx rcx,byte ptr [rsp+98h]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe2ef9 884c2460        mov     byte ptr [rsp+60h],cl</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe2efd 480fbe4c2460    movsx   rcx,byte ptr [rsp+60h]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe2f03 884c2458        mov     byte ptr [rsp+58h],cl</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe2f07 8bcd            mov     ecx,ebp</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe2f09 e872f0ffff      call    00007ffc`a6fe1f80</pre></code></td>
+<td><a href="#140723110162304">FloorLog2PlusOne</a></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe2f0e 448bc8          mov     r9d,eax</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe2f11 41d1e1          shl     r9d,1</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe2f14 4c0fbe442458    movsx   r8,byte ptr [rsp+58h]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe2f1a 4489442420      mov     dword ptr [rsp+20h],r8d</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe2f1f 448d45ff        lea     r8d,[rbp-1]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe2f23 488bcb          mov     rcx,rbx</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe2f26 33d2            xor     edx,edx</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe2f28 e823fbffff      call    00007ffc`a6fe2a50</pre></code></td>
+<td><a href="#140723110162352">Sorting]]</a></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe2f2d 8b4e10          mov     ecx,dword ptr [rsi+10h]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe2f30 03f9            add     edi,ecx</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe2f32 f7d9            neg     ecx</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe2f34 81c1c0c62d00    add     ecx,2DC6C0h</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe2f3a 3bcf            cmp     ecx,edi</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe2f3c 0f8d18ffffff    jge     00007ffc`a6fe2e5a</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>        }
+        ^</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe2f42 4881c4d8000000  add     rsp,0D8h</pre></code></td>
+<td></td>
+</tr>
+<tr><td colspan="{2}">&nbsp;</td></tr>
+<tr><th colspan="2" id="140723110162304" style="text-align: left;">00007ffc`a6fe2f80 System.SpanSortHelpersCommon.FloorLog2PlusOne(Int32)</th><th></th></tr>
+<tr class="evenMap">
+<td><pre><code>            int result = 2;
+            ^^^^^^^^^^^^^^^</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe2f80 b802000000      mov     eax,2</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>            n >>= 2;
+            ^^^^^^^^</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe2f85 c1f902          sar     ecx,2</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>            while (n > 0)
+            ^^^^^^^^^^^^^</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe2f88 85c9            test    ecx,ecx</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe2f8a 7e08            jle     00007ffc`a6fe2f94</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>                ++result;
+                ^^^^^^^^^</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe2f8c ffc0            inc     eax</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>                n >>= 1;
+                ^^^^^^^^</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe2f8e d1f9            sar     ecx,1</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe2f90 85c9            test    ecx,ecx</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe2f92 7ff8            jg      00007ffc`a6fe2f8c</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>            return result;
+            ^^^^^^^^^^^^^^</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe2f94 c3              ret</pre></code></td>
+<td></td>
+</tr>
+<tr><td colspan="{2}">&nbsp;</td></tr>
+<tr><th colspan="2" id="140723110162352" style="text-align: left;">00007ffc`a6fe2fb0 System.SpanSortHelpersKeys.IntroSort[[System.Int32, System.Private.CoreLib],[System.SpanSortHelpersCommon+Int32DirectComparer, DotNetCross.Sorting]](Int32 ByRef, Int32, Int32, Int32, Int32DirectComparer)</th><th></th></tr>
+<tr class="evenMap">
+<td><pre><code>            while (hi > lo)
+            ^^^^^^^^^^^^^^^</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe2fc5 3bfb            cmp     edi,ebx</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe2fc7 0f8e8a010000    jle     00007ffc`a6fe3157</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>                int partitionSize = hi - lo + 1;
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe2fcd 8bcf            mov     ecx,edi</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe2fcf 2bcb            sub     ecx,ebx</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe2fd1 ffc1            inc     ecx</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>                if (partitionSize <= IntrosortSizeThreshold)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe2fd3 83f910          cmp     ecx,10h</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe2fd6 0f8f19010000    jg      00007ffc`a6fe30f5</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>                    if (partitionSize == 1)
+                    ^^^^^^^^^^^^^^^^^^^^^^^</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe2fdc 83f901          cmp     ecx,1</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe2fdf 0f8472010000    je      00007ffc`a6fe3157</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>                    if (partitionSize == 2)
+                    ^^^^^^^^^^^^^^^^^^^^^^^</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe2fe5 83f902          cmp     ecx,2</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe2fe8 7539            jne     00007ffc`a6fe3023</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>                        Sort2(ref keys, lo, hi, comparer);
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe2fea 480fbe8c2490000000 movsx rcx,byte ptr [rsp+90h]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe2ff3 884c2438        mov     byte ptr [rsp+38h],cl</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe2ff7 4863cb          movsxd  rcx,ebx</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe2ffa 488d0c8e        lea     rcx,[rsi+rcx*4]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe2ffe 4863d7          movsxd  rdx,edi</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe3001 488d1496        lea     rdx,[rsi+rdx*4]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe3005 448b01          mov     r8d,dword ptr [rcx]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe3008 458bc8          mov     r9d,r8d</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe300b 8b02            mov     eax,dword ptr [rdx]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe300d 448bd0          mov     r10d,eax</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe3010 453bca          cmp     r9d,r10d</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe3013 0f8e3e010000    jle     00007ffc`a6fe3157</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe3019 8901            mov     dword ptr [rcx],eax</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe301b 448902          mov     dword ptr [rdx],r8d</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe301e e934010000      jmp     00007ffc`a6fe3157</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>                    if (partitionSize == 3)
+                    ^^^^^^^^^^^^^^^^^^^^^^^</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe3023 83f903          cmp     ecx,3</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe3026 7572            jne     00007ffc`a6fe309a</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe3028 4863cb          movsxd  rcx,ebx</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe302b 488d0c8e        lea     rcx,[rsi+rcx*4]</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe302f 8d57ff          lea     edx,[rdi-1]</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe3032 4863d2          movsxd  rdx,edx</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe3035 488d1496        lea     rdx,[rsi+rdx*4]</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe3039 4c63c7          movsxd  r8,edi</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe303c 4e8d0486        lea     r8,[rsi+r8*4]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>                        Sort3(ref loRef, ref miRef, ref hiRef, comparer);
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe3040 4c0fbe8c2490000000 movsx r9,byte ptr [rsp+90h]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe3049 44884c2430      mov     byte ptr [rsp+30h],r9b</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe304e 448b09          mov     r9d,dword ptr [rcx]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe3051 418bc1          mov     eax,r9d</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe3054 448b12          mov     r10d,dword ptr [rdx]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe3057 458bda          mov     r11d,r10d</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe305a 413bc3          cmp     eax,r11d</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe305d 7e06            jle     00007ffc`a6fe3065</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe305f 448911          mov     dword ptr [rcx],r10d</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe3062 44890a          mov     dword ptr [rdx],r9d</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe3065 448b09          mov     r9d,dword ptr [rcx]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe3068 418bc1          mov     eax,r9d</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe306b 458b10          mov     r10d,dword ptr [r8]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe306e 458bda          mov     r11d,r10d</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe3071 413bc3          cmp     eax,r11d</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe3074 7e06            jle     00007ffc`a6fe307c</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe3076 448911          mov     dword ptr [rcx],r10d</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe3079 458908          mov     dword ptr [r8],r9d</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe307c 8b0a            mov     ecx,dword ptr [rdx]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe307e 448bc9          mov     r9d,ecx</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe3081 418b00          mov     eax,dword ptr [r8]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe3084 448bd0          mov     r10d,eax</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe3087 453bca          cmp     r9d,r10d</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe308a 0f8ec7000000    jle     00007ffc`a6fe3157</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe3090 8902            mov     dword ptr [rdx],eax</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe3092 418908          mov     dword ptr [r8],ecx</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe3095 e9bd000000      jmp     00007ffc`a6fe3157</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>                    InsertionSort(ref keys, lo, hi, comparer);
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe309a 8bcb            mov     ecx,ebx</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe309c 3bdf            cmp     ebx,edi</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe309e 0f8db3000000    jge     00007ffc`a6fe3157</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe30a4 8d5101          lea     edx,[rcx+1]</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe30a7 4c63c2          movsxd  r8,edx</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe30aa 468b0486        mov     r8d,dword ptr [rsi+r8*4]</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe30ae 3bcb            cmp     ecx,ebx</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe30b0 7c3b            jl      00007ffc`a6fe30ed</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe30b2 4c63c9          movsxd  r9,ecx</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe30b5 468b0c8e        mov     r9d,dword ptr [rsi+r9*4]</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe30b9 453bc1          cmp     r8d,r9d</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe30bc 7d2f            jge     00007ffc`a6fe30ed</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe30be 448d4901        lea     r9d,[rcx+1]</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe30c2 4d63c9          movsxd  r9,r9d</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe30c5 4e8d0c8e        lea     r9,[rsi+r9*4]</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe30c9 4863c1          movsxd  rax,ecx</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe30cc 8b0486          mov     eax,dword ptr [rsi+rax*4]</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe30cf 418901          mov     dword ptr [r9],eax</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe30d2 ffc9            dec     ecx</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe30d4 3bcb            cmp     ecx,ebx</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe30d6 7c0c            jl      00007ffc`a6fe30e4</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe30d8 4c63c9          movsxd  r9,ecx</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe30db 468b0c8e        mov     r9d,dword ptr [rsi+r9*4]</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe30df 453bc1          cmp     r8d,r9d</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe30e2 7cda            jl      00007ffc`a6fe30be</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe30e4 ffc1            inc     ecx</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe30e6 4863c9          movsxd  rcx,ecx</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe30e9 4489048e        mov     dword ptr [rsi+rcx*4],r8d</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe30ed 8bca            mov     ecx,edx</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe30ef 3bcf            cmp     ecx,edi</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe30f1 7cb1            jl      00007ffc`a6fe30a4</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe30f3 eb62            jmp     00007ffc`a6fe3157</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>                if (depthLimit == 0)
+                ^^^^^^^^^^^^^^^^^^^^</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe30f5 85ed            test    ebp,ebp</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe30f7 7518            jne     00007ffc`a6fe3111</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>                    HeapSort(ref keys, lo, hi, comparer);
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe30f9 488bce          mov     rcx,rsi</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe30fc 8bd3            mov     edx,ebx</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe30fe 448bc7          mov     r8d,edi</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe3101 4c0fbe8c2490000000 movsx r9,byte ptr [rsp+90h]</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe310a e811faffff      call    00007ffc`a6fe2b20</pre></code></td>
+<td><a href="#140723110163136">Sorting]]</a></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe310f eb46            jmp     00007ffc`a6fe3157</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>                depthLimit--;
+                ^^^^^^^^^^^^^</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe3111 ffcd            dec     ebp</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>                int p = PickPivotAndPartition(ref keys, lo, hi, comparer);
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe3113 488bce          mov     rcx,rsi</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe3116 8bd3            mov     edx,ebx</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe3118 448bc7          mov     r8d,edi</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe311b 4c0fbe8c2490000000 movsx r9,byte ptr [rsp+90h]</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe3124 e8d7f9ffff      call    00007ffc`a6fe2b00</pre></code></td>
+<td><a href="#140723110162832">Sorting]]</a></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe3129 448bf0          mov     r14d,eax</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>                IntroSort(ref keys, p + 1, hi, depthLimit, comparer);
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe312c 480fbe942490000000 movsx rdx,byte ptr [rsp+90h]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe3135 89542420        mov     dword ptr [rsp+20h],edx</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe3139 418d5601        lea     edx,[r14+1]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe313d 488bce          mov     rcx,rsi</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe3140 448bc7          mov     r8d,edi</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe3143 448bcd          mov     r9d,ebp</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe3146 e805f9ffff      call    00007ffc`a6fe2a50</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>                hi = p - 1;
+                ^^^^^^^^^^^</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe314b 418d7eff        lea     edi,[r14-1]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe314f 3bfb            cmp     edi,ebx</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe3151 0f8f76feffff    jg      00007ffc`a6fe2fcd</pre></code></td>
+<td></td>
+</tr>
+<tr><td colspan="{2}">&nbsp;</td></tr>
+<tr><th colspan="2" id="140723110163136" style="text-align: left;">00007ffc`a6fe32c0 System.SpanSortHelpersKeys.HeapSort[[System.Int32, System.Private.CoreLib],[System.SpanSortHelpersCommon+Int32DirectComparer, DotNetCross.Sorting]](Int32 ByRef, Int32, Int32, Int32DirectComparer)</th><th></th></tr>
+<tr class="evenMap">
+<td><pre><code>            int n = hi - lo + 1;
+            ^^^^^^^^^^^^^^^^^^^^</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe32d2 442bc6          sub     r8d,esi</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe32d5 418d5801        lea     ebx,[r8+1]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>            for (int i = n / 2; i >= 1; --i)
+                 ^^^^^^^^^^^^^</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe32d9 8bcb            mov     ecx,ebx</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe32db 8bd1            mov     edx,ecx</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe32dd c1ea1f          shr     edx,1Fh</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe32e0 03d1            add     edx,ecx</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe32e2 8bea            mov     ebp,edx</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe32e4 d1fd            sar     ebp,1</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>            for (int i = n / 2; i >= 1; --i)
+                                ^^^^^^</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe32e6 85ed            test    ebp,ebp</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe32e8 7e20            jle     00007ffc`a6fe330a</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>                DownHeap(ref keys, i, n, lo, comparer);
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe32ea 480fbe4c2468    movsx   rcx,byte ptr [rsp+68h]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe32f0 894c2420        mov     dword ptr [rsp+20h],ecx</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe32f4 488bcf          mov     rcx,rdi</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe32f7 8bd5            mov     edx,ebp</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe32f9 448bc3          mov     r8d,ebx</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe32fc 448bce          mov     r9d,esi</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe32ff e88cf9ffff      call    00007ffc`a6fe2c90</pre></code></td>
+<td><a href="#140723110163328">Sorting]]</a></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>            for (int i = n / 2; i >= 1; --i)
+                                        ^^^</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe3304 ffcd            dec     ebp</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe3306 85ed            test    ebp,ebp</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe3308 7fe0            jg      00007ffc`a6fe32ea</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>            for (int i = n; i > 1; --i)
+                 ^^^^^^^^^</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe330a 83fb01          cmp     ebx,1</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe330d 7e45            jle     00007ffc`a6fe3354</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe330f 4c63c6          movsxd  r8,esi</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe3312 4a8d2c87        lea     rbp,[rdi+r8*4]</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>                Swap(ref keys, lo, lo + i - 1);
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe3316 4c8bc5          mov     r8,rbp</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe3319 8d4c1eff        lea     ecx,[rsi+rbx-1]</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe331d 4863c9          movsxd  rcx,ecx</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe3320 488d0c8f        lea     rcx,[rdi+rcx*4]</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe3324 458b08          mov     r9d,dword ptr [r8]</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe3327 8b11            mov     edx,dword ptr [rcx]</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe3329 418910          mov     dword ptr [r8],edx</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe332c 448909          mov     dword ptr [rcx],r9d</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>                DownHeap(ref keys, 1, i - 1, lo, comparer);
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe332f 4c0fbe442468    movsx   r8,byte ptr [rsp+68h]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe3335 4489442420      mov     dword ptr [rsp+20h],r8d</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe333a ffcb            dec     ebx</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe333c 448bc3          mov     r8d,ebx</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe333f 488bcf          mov     rcx,rdi</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe3342 448bce          mov     r9d,esi</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe3345 ba01000000      mov     edx,1</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe334a e841f9ffff      call    00007ffc`a6fe2c90</pre></code></td>
+<td><a href="#140723110163328">Sorting]]</a></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>            for (int i = n; i > 1; --i)
+                            ^^^^^</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe334f 83fb01          cmp     ebx,1</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe3352 7fc2            jg      00007ffc`a6fe3316</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>        }
+        ^</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe3354 4883c428        add     rsp,28h</pre></code></td>
+<td></td>
+</tr>
+<tr><td colspan="{2}">&nbsp;</td></tr>
+<tr><th colspan="2" id="140723110162832" style="text-align: left;">00007ffc`a6fe3190 System.SpanSortHelpersKeys.PickPivotAndPartition[[System.Int32, System.Private.CoreLib],[System.SpanSortHelpersCommon+Int32DirectComparer, DotNetCross.Sorting]](Int32 ByRef, Int32, Int32, Int32DirectComparer)</th><th></th></tr>
+<tr class="evenMap">
+<td><pre><code>            int middle = (int)(((uint)hi + (uint)lo) >> 1);
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe319a 418d0410        lea     eax,[r8+rdx]</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe319e d1e8            shr     eax,1</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe31a0 4c63ca          movsxd  r9,edx</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe31a3 4e8d0c89        lea     r9,[rcx+r9*4]</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe31a7 4863c0          movsxd  rax,eax</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe31aa 488d0481        lea     rax,[rcx+rax*4]</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe31ae 4d63d0          movsxd  r10,r8d</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe31b1 4e8d1491        lea     r10,[rcx+r10*4]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>            Sort3(ref keysAtLo, ref keysAtMiddle, ref keysAtHi, comparer);
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe31b5 4c0fbe5c2448    movsx   r11,byte ptr [rsp+48h]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe31bb 44881c24        mov     byte ptr [rsp],r11b</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe31bf 458b19          mov     r11d,dword ptr [r9]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe31c2 8b30            mov     esi,dword ptr [rax]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe31c4 443bde          cmp     r11d,esi</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe31c7 7e0b            jle     00007ffc`a6fe31d4</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe31c9 458b19          mov     r11d,dword ptr [r9]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe31cc 8b30            mov     esi,dword ptr [rax]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe31ce 418931          mov     dword ptr [r9],esi</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe31d1 448918          mov     dword ptr [rax],r11d</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe31d4 458b19          mov     r11d,dword ptr [r9]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe31d7 418b32          mov     esi,dword ptr [r10]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe31da 443bde          cmp     r11d,esi</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe31dd 7e0c            jle     00007ffc`a6fe31eb</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe31df 458b19          mov     r11d,dword ptr [r9]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe31e2 418b32          mov     esi,dword ptr [r10]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe31e5 418931          mov     dword ptr [r9],esi</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe31e8 45891a          mov     dword ptr [r10],r11d</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe31eb 448b08          mov     r9d,dword ptr [rax]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe31ee 458b1a          mov     r11d,dword ptr [r10]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe31f1 453bcb          cmp     r9d,r11d</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe31f4 7e0c            jle     00007ffc`a6fe3202</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe31f6 448b08          mov     r9d,dword ptr [rax]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe31f9 458b1a          mov     r11d,dword ptr [r10]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe31fc 448918          mov     dword ptr [rax],r11d</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe31ff 45890a          mov     dword ptr [r10],r9d</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>            TKey pivot = keysAtMiddle;
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe3202 448b08          mov     r9d,dword ptr [rax]</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe3205 458bd1          mov     r10d,r9d</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>            int left = lo;
+            ^^^^^^^^^^^^^^</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe3208 448bda          mov     r11d,edx</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>            int right = hi - 1;
+            ^^^^^^^^^^^^^^^^^^^</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe320b 41ffc8          dec     r8d</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe320e 418bf0          mov     esi,r8d</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe3211 4863fe          movsxd  rdi,esi</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe3214 488d3cb9        lea     rdi,[rcx+rdi*4]</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe3218 488bdf          mov     rbx,rdi</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe321b 8b2b            mov     ebp,dword ptr [rbx]</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe321d 8928            mov     dword ptr [rax],ebp</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe321f 44890b          mov     dword ptr [rbx],r9d</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>            while (left < right)
+            ^^^^^^^^^^^^^^^^^^^^</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe3222 3bd6            cmp     edx,esi</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe3224 7d46            jge     00007ffc`a6fe326c</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>                while (left < (hi - 1) && comparer.LessThan(Unsafe.Add(ref keys, ++left), pivot)) ;
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe3226 453bd8          cmp     r11d,r8d</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe3229 7d0e            jge     00007ffc`a6fe3239</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe322b 41ffc3          inc     r11d</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe322e 4963c3          movsxd  rax,r11d</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe3231 8b0481          mov     eax,dword ptr [rcx+rax*4]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe3234 413bc2          cmp     eax,r10d</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe3237 7ced            jl      00007ffc`a6fe3226</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>                while (right > lo && comparer.LessThan(pivot, Unsafe.Add(ref keys, --right))) ;
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe3239 3bf2            cmp     esi,edx</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe323b 7e0d            jle     00007ffc`a6fe324a</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe323d ffce            dec     esi</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe323f 4863c6          movsxd  rax,esi</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe3242 8b0481          mov     eax,dword ptr [rcx+rax*4]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe3245 443bd0          cmp     r10d,eax</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe3248 7cef            jl      00007ffc`a6fe3239</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>                if (left >= right)
+                ^^^^^^^^^^^^^^^^^^</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe324a 443bde          cmp     r11d,esi</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe324d 7d1d            jge     00007ffc`a6fe326c</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>                Swap(ref keys, left, right);
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe324f 4963c3          movsxd  rax,r11d</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe3252 488d0481        lea     rax,[rcx+rax*4]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe3256 4c63ce          movsxd  r9,esi</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe3259 4e8d0c89        lea     r9,[rcx+r9*4]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe325d 8b18            mov     ebx,dword ptr [rax]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe325f 418b29          mov     ebp,dword ptr [r9]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe3262 8928            mov     dword ptr [rax],ebp</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe3264 418919          mov     dword ptr [r9],ebx</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe3267 443bde          cmp     r11d,esi</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe326a 7cba            jl      00007ffc`a6fe3226</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>            right = hi - 1;
+            ^^^^^^^^^^^^^^^</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe326c 418bf0          mov     esi,r8d</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>            if (left != right)
+            ^^^^^^^^^^^^^^^^^^</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe326f 443bde          cmp     r11d,esi</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe3272 740f            je      00007ffc`a6fe3283</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>                Swap(ref keys, left, right);
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe3274 4963c3          movsxd  rax,r11d</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe3277 488d0481        lea     rax,[rcx+rax*4]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe327b 8b10            mov     edx,dword ptr [rax]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe327d 8b0f            mov     ecx,dword ptr [rdi]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe327f 8908            mov     dword ptr [rax],ecx</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe3281 8917            mov     dword ptr [rdi],edx</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>            return left;
+            ^^^^^^^^^^^^</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe3283 418bc3          mov     eax,r11d</pre></code></td>
+<td></td>
+</tr>
+<tr><td colspan="{2}">&nbsp;</td></tr>
+<tr><th colspan="2" id="140724707917536" style="text-align: left;">00007ffd`0639fee0 System.Object.ToString()</th><th></th></tr>
+<tr class="">
+<td><pre><code>00007ffd`0639fee5 e86e1bd1ff      call    System_Private_CoreLib+0x2a1a58 (00007ffd`060b1a58)</pre></code></td>
+<td>System.Object.GetType()</td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffd`0639feea 488bc8          mov     rcx,rax</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffd`0639feed 488b00          mov     rax,qword ptr [rax]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffd`0639fef0 488b4040        mov     rax,qword ptr [rax+40h]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffd`0639fef4 488b00          mov     rax,qword ptr [rax]</pre></code></td>
+<td></td>
+</tr>
+<tr><td colspan="{2}">&nbsp;</td></tr>
+<tr><th colspan="2" id="140724707906592" style="text-align: left;">00007ffd`0639d420 System.InvalidOperationException..ctor()</th><th></th></tr>
+<tr class="">
+<td><pre><code>00007ffd`0639d45b c7868400000009151380 mov dword ptr [rsi+84h],80131509h</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffd`0639d465 4883c428        add     rsp,28h</pre></code></td>
+<td></td>
+</tr>
+<tr><td colspan="{2}">&nbsp;</td></tr>
+<tr><th colspan="2" id="140723110163328" style="text-align: left;">00007ffc`a6fe3380 System.SpanSortHelpersKeys.DownHeap[[System.Int32, System.Private.CoreLib],[System.SpanSortHelpersCommon+Int32DirectComparer, DotNetCross.Sorting]](Int32 ByRef, Int32, Int32, Int32, Int32DirectComparer)</th><th></th></tr>
+<tr class="evenMap">
+<td><pre><code>            var nHalf = n / 2;
+            ^^^^^^^^^^^^^^^^^^</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe3394 458bd0          mov     r10d,r8d</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe3397 458bda          mov     r11d,r10d</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe339a 41c1eb1f        shr     r11d,1Fh</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe339e 4503da          add     r11d,r10d</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe33a1 458bd3          mov     r10d,r11d</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe33a4 41d1fa          sar     r10d,1</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>            while (i <= nHalf)
+            ^^^^^^^^^^^^^^^^^^</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe33a7 413bd2          cmp     edx,r10d</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe33aa 7f3c            jg      00007ffc`a6fe33e8</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>                int child = i << 1;
+                ^^^^^^^^^^^^^^^^^^^</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe33ac 448bda          mov     r11d,edx</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe33af 41d1e3          shl     r11d,1</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>                if (child < n &&
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>                    comparer.LessThan(Unsafe.Add(ref keysAtLoMinus1, child), Unsafe.Add(ref keysAtLo, child)))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe33b2 453bd8          cmp     r11d,r8d</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe33b5 7d13            jge     00007ffc`a6fe33ca</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe33b7 4963f3          movsxd  rsi,r11d</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe33ba 8b34b1          mov     esi,dword ptr [rcx+rsi*4]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe33bd 4963fb          movsxd  rdi,r11d</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe33c0 8b3cb8          mov     edi,dword ptr [rax+rdi*4]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe33c3 3bf7            cmp     esi,edi</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe33c5 7d03            jge     00007ffc`a6fe33ca</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>                    ++child;
+                    ^^^^^^^^</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe33c7 41ffc3          inc     r11d</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe33ca 4963f3          movsxd  rsi,r11d</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe33cd 8b34b1          mov     esi,dword ptr [rcx+rsi*4]</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe33d0 8bfe            mov     edi,esi</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe33d2 443bcf          cmp     r9d,edi</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe33d5 7d11            jge     00007ffc`a6fe33e8</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe33d7 4863d2          movsxd  rdx,edx</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe33da 488d1491        lea     rdx,[rcx+rdx*4]</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe33de 8932            mov     dword ptr [rdx],esi</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>                i = child;
+                ^^^^^^^^^^</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe33e0 418bd3          mov     edx,r11d</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe33e3 413bd2          cmp     edx,r10d</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe33e6 7ec4            jle     00007ffc`a6fe33ac</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe33e8 4863c2          movsxd  rax,edx</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`a6fe33eb 44890c81        mov     dword ptr [rcx+rax*4],r9d</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>        }
+        ^</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`a6fe33ef 5e              pop     rsi</pre></code></td>
+<td></td>
+</tr>
+<tr><td colspan="{2}">&nbsp;</td></tr>
+<tr><th colspan="2" id="140724707700576" style="text-align: left;">00007ffd`0636af60 System.SR.get_Arg_InvalidOperationException()</th><th></th></tr>
+<tr class="">
+<td><pre><code>00007ffd`0636af65 488b0d4460b0ff  mov     rcx,qword ptr [System_Private_CoreLib+0x60fb0 (00007ffd`05e70fb0)]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffd`0636af6c 488b09          mov     rcx,qword ptr [rcx]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffd`0636af6f 33d2            xor     edx,edx</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffd`0636af71 488d0538ecffff  lea     rax,[System_Private_CoreLib+0x559bb0 (00007ffd`06369bb0)]</pre></code></td>
+<td></td>
+</tr>
+<tr><td colspan="{2}">&nbsp;</td></tr>
+<tr><th colspan="2" id="140724708567392" style="text-align: left;">00007ffd`0643e960 System.SystemException..ctor(System.String)</th><th></th></tr>
+<tr class="">
+<td><pre><code>00007ffd`0643e96c 488bce          mov     rcx,rsi</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffd`0643e96f e84c51f5ff      call    System_Private_CoreLib+0x583ac0 (00007ffd`06393ac0)</pre></code></td>
+<td><a href="#140724707867328">Init</a></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffd`0643e974 488d4e20        lea     rcx,[rsi+20h]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffd`0643e978 488bd7          mov     rdx,rdi</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffd`0643e97b e88876c4ff      call    System_Private_CoreLib+0x276008 (00007ffd`06086008)</pre></code></td>
+<td>not managed method</td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffd`0643e980 c7868400000001151380 mov dword ptr [rsi+84h],80131501h</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffd`0643e98a 4883c428        add     rsp,28h</pre></code></td>
+<td></td>
+</tr>
+<tr><td colspan="{2}">&nbsp;</td></tr>
+<tr><th colspan="2" id="140724707871232" style="text-align: left;">00007ffd`06394a00 System.Exception.set_HResult(Int32)</th><th></th></tr>
+<tr class="">
+<td><pre><code>00007ffd`06394a05 899184000000    mov     dword ptr [rcx+84h],edx</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffd`06394a0b c3              ret</pre></code></td>
+<td></td>
+</tr>
+<tr><td colspan="{2}">&nbsp;</td></tr>
+<tr><th colspan="2" id="140724707695536" style="text-align: left;">00007ffd`06369bb0 System.SR.GetResourceString(System.String, System.String)</th><th></th></tr>
+<tr class="">
+<td><pre><code>00007ffd`06369bc6 33c9            xor     ecx,ecx</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffd`06369bc8 48894df8        mov     qword ptr [rbp-8],rcx</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffd`06369bcc 488b4d10        mov     rcx,qword ptr [rbp+10h]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffd`06369bd0 e87b64d4ff      call    System_Private_CoreLib+0x2a0050 (00007ffd`060b0050)</pre></code></td>
+<td>System.SR.InternalGetResourceString(System.String)</td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffd`06369bd5 488945f8        mov     qword ptr [rbp-8],rax</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffd`06369bd9 488b4d18        mov     rcx,qword ptr [rbp+18h]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffd`06369bdd 4885c9          test    rcx,rcx</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffd`06369be0 7423            je      System_Private_CoreLib+0x559c05 (00007ffd`06369c05)</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffd`06369be2 488b4d10        mov     rcx,qword ptr [rbp+10h]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffd`06369be6 488b55f8        mov     rdx,qword ptr [rbp-8]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffd`06369bea 41b804000000    mov     r8d,4</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffd`06369bf0 3909            cmp     dword ptr [rcx],ecx</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffd`06369bf2 e8d989ffff      call    System_Private_CoreLib+0x5525d0 (00007ffd`063625d0)</pre></code></td>
+<td>System.String.Equals(System.String, System.StringComparison)</td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffd`06369bf7 85c0            test    eax,eax</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffd`06369bf9 740a            je      System_Private_CoreLib+0x559c05 (00007ffd`06369c05)</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffd`06369bfb 488b4518        mov     rax,qword ptr [rbp+18h]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffd`06369bff 488d6500        lea     rsp,[rbp]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffd`06369c03 5d              pop     rbp</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffd`06369c04 c3              ret</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffd`06369c05 488b45f8        mov     rax,qword ptr [rbp-8]</pre></code></td>
+<td></td>
+</tr>
+<tr><td colspan="{2}">&nbsp;</td></tr>
+<tr><th colspan="2" id="140724707867408" style="text-align: left;">00007ffd`06393b10 System.Exception..ctor(System.String)</th><th></th></tr>
+<tr class="">
+<td><pre><code>00007ffd`06393b1c 488bce          mov     rcx,rsi</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffd`06393b1f e89cffffff      call    System_Private_CoreLib+0x583ac0 (00007ffd`06393ac0)</pre></code></td>
+<td><a href="#140724707867328">Init</a></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffd`06393b24 488d4e20        lea     rcx,[rsi+20h]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffd`06393b28 488bd7          mov     rdx,rdi</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffd`06393b2b e8d824cfff      call    System_Private_CoreLib+0x276008 (00007ffd`06086008)</pre></code></td>
+<td>not managed method</td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffd`06393b30 90              nop</pre></code></td>
+<td></td>
+</tr>
+<tr><td colspan="{2}">&nbsp;</td></tr>
+<tr><th colspan="2" id="140724707867328" style="text-align: left;">00007ffd`06393ac0 System.Exception.Init()</th><th></th></tr>
+<tr class="">
+<td><pre><code>00007ffd`06393ac5 33c0            xor     eax,eax</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffd`06393ac7 48894120        mov     qword ptr [rcx+20h],rax</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffd`06393acb 48894140        mov     qword ptr [rcx+40h],rax</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffd`06393acf 48894160        mov     qword ptr [rcx+60h],rax</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffd`06393ad3 c7818400000000151380 mov dword ptr [rcx+84h],80131500h</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffd`06393add c78188000000524343e0 mov dword ptr [rcx+88h],0E0434352h</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffd`06393ae7 33c0            xor     eax,eax</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffd`06393ae9 48894170        mov     qword ptr [rcx+70h],rax</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffd`06393aed 33c0            xor     eax,eax</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffd`06393aef 48894148        mov     qword ptr [rcx+48h],rax</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffd`06393af3 33c0            xor     eax,eax</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffd`06393af5 48894178        mov     qword ptr [rcx+78h],rax</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffd`06393af9 c3              ret</pre></code></td>
+<td></td>
+</tr>
+<tr><td colspan="{2}">&nbsp;</td></tr>
+<tr><td colspan="2"><b>Method got inlined</b></td></tr>
+<tr><td colspan="2">DotNetCross.Sorting.Benchmarks.Int32SortDisassemblerBench.get_Length()</td></tr>
+<tr><td colspan="2">System.Runtime.CompilerServices.Unsafe.Add(!!0 ByRef, Int32)</td></tr>
+<tr><td colspan="2">System.Type.GetTypeFromHandle(System.RuntimeTypeHandle)</td></tr>
+<tr><td colspan="2">System.Object.GetType()</td></tr>
+<tr><td colspan="{2}"></td></tr>
+</tbody></table></body></html>

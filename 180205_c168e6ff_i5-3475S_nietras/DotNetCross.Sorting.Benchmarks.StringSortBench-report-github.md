@@ -1,0 +1,122 @@
+``` ini
+
+BenchmarkDotNet=v0.10.12, OS=Windows 10 Redstone 3 [1709, Fall Creators Update] (10.0.16299.192)
+Intel Core i5-3475S CPU 2.90GHz (Ivy Bridge), 1 CPU, 4 logical cores and 4 physical cores
+Frequency=2840377 Hz, Resolution=352.0659 ns, Timer=TSC
+.NET Core SDK=2.1.4
+  [Host] : .NET Core 2.0.5 (Framework 4.6.26020.03), 64bit RyuJIT
+
+Platform=X64  Runtime=Core  Toolchain=InProcessToolchain  
+LaunchCount=1  RunStrategy=Monitoring  TargetCount=11  
+UnrollFactor=1  WarmupCount=3  
+
+```
+|    Method |               Filler | Length |       Mean |     Error |    StdDev | Scaled | ScaledSD |
+|---------- |--------------------- |------- |-----------:|----------:|----------:|-------:|---------:|
+| **ArraySort** |             **Constant** |     **10** |   **1.599 ms** | **0.0422 ms** | **0.0305 ms** |   **1.00** |     **0.00** |
+|  SpanSort |             Constant |     10 |   1.436 ms | 0.0457 ms | 0.0331 ms |   0.90 |     0.03 |
+|           |                      |        |            |           |           |        |          |
+| **ArraySort** |             **Constant** |    **100** |   **4.201 ms** | **0.0974 ms** | **0.0704 ms** |   **1.00** |     **0.00** |
+|  SpanSort |             Constant |    100 |   6.181 ms | 0.2919 ms | 0.2111 ms |   1.47 |     0.05 |
+|           |                      |        |            |           |           |        |          |
+| **ArraySort** |             **Constant** |   **1000** |   **7.185 ms** | **0.2389 ms** | **0.1727 ms** |   **1.00** |     **0.00** |
+|  SpanSort |             Constant |   1000 |  11.384 ms | 0.3461 ms | 0.2502 ms |   1.59 |     0.05 |
+|           |                      |        |            |           |           |        |          |
+| **ArraySort** |             **Constant** |  **10000** |  **11.208 ms** | **0.3053 ms** | **0.2207 ms** |   **1.00** |     **0.00** |
+|  SpanSort |             Constant |  10000 |  18.555 ms | 0.2354 ms | 0.1702 ms |   1.66 |     0.03 |
+|           |                      |        |            |           |           |        |          |
+| **ArraySort** |             **Constant** |      **2** |   **3.152 ms** | **0.1662 ms** | **0.1202 ms** |   **1.00** |     **0.00** |
+|  SpanSort |             Constant |      2 |   4.956 ms | 0.1164 ms | 0.0841 ms |   1.57 |     0.06 |
+|           |                      |        |            |           |           |        |          |
+| **ArraySort** |             **Constant** |      **3** |   **2.598 ms** | **0.0594 ms** | **0.0429 ms** |   **1.00** |     **0.00** |
+|  SpanSort |             Constant |      3 |   3.881 ms | 0.0899 ms | 0.0650 ms |   1.49 |     0.03 |
+|           |                      |        |            |           |           |        |          |
+| **ArraySort** |         **Decrementing** |     **10** |  **49.794 ms** | **0.5576 ms** | **0.4032 ms** |   **1.00** |     **0.00** |
+|  SpanSort |         Decrementing |     10 |  49.457 ms | 0.5586 ms | 0.4039 ms |   0.99 |     0.01 |
+|           |                      |        |            |           |           |        |          |
+| **ArraySort** |         **Decrementing** |    **100** |  **61.774 ms** | **0.7972 ms** | **0.5764 ms** |   **1.00** |     **0.00** |
+|  SpanSort |         Decrementing |    100 |  64.607 ms | 0.4084 ms | 0.2953 ms |   1.05 |     0.01 |
+|           |                      |        |            |           |           |        |          |
+| **ArraySort** |         **Decrementing** |   **1000** | **115.481 ms** | **0.6142 ms** | **0.4441 ms** |   **1.00** |     **0.00** |
+|  SpanSort |         Decrementing |   1000 | 125.157 ms | 2.5613 ms | 1.8520 ms |   1.08 |     0.02 |
+|           |                      |        |            |           |           |        |          |
+| **ArraySort** |         **Decrementing** |  **10000** | **182.448 ms** | **1.2573 ms** | **0.9091 ms** |   **1.00** |     **0.00** |
+|  SpanSort |         Decrementing |  10000 | 194.916 ms | 1.5179 ms | 1.0976 ms |   1.07 |     0.01 |
+|           |                      |        |            |           |           |        |          |
+| **ArraySort** |         **Decrementing** |      **2** |   **8.782 ms** | **0.1844 ms** | **0.1333 ms** |   **1.00** |     **0.00** |
+|  SpanSort |         Decrementing |      2 |  10.365 ms | 0.2220 ms | 0.1605 ms |   1.18 |     0.02 |
+|           |                      |        |            |           |           |        |          |
+| **ArraySort** |         **Decrementing** |      **3** |  **13.522 ms** | **0.3125 ms** | **0.2259 ms** |   **1.00** |     **0.00** |
+|  SpanSort |         Decrementing |      3 |  14.651 ms | 0.3055 ms | 0.2209 ms |   1.08 |     0.02 |
+|           |                      |        |            |           |           |        |          |
+| **ArraySort** |         **Incrementing** |     **10** |  **10.464 ms** | **0.2591 ms** | **0.1873 ms** |   **1.00** |     **0.00** |
+|  SpanSort |         Incrementing |     10 |  10.293 ms | 0.2050 ms | 0.1482 ms |   0.98 |     0.02 |
+|           |                      |        |            |           |           |        |          |
+| **ArraySort** |         **Incrementing** |    **100** |  **41.595 ms** | **0.6322 ms** | **0.4571 ms** |   **1.00** |     **0.00** |
+|  SpanSort |         Incrementing |    100 |  43.564 ms | 0.7189 ms | 0.5198 ms |   1.05 |     0.02 |
+|           |                      |        |            |           |           |        |          |
+| **ArraySort** |         **Incrementing** |   **1000** |  **70.491 ms** | **1.0912 ms** | **0.7890 ms** |   **1.00** |     **0.00** |
+|  SpanSort |         Incrementing |   1000 |  75.265 ms | 1.1736 ms | 0.8486 ms |   1.07 |     0.02 |
+|           |                      |        |            |           |           |        |          |
+| **ArraySort** |         **Incrementing** |  **10000** | **108.823 ms** | **0.5006 ms** | **0.3619 ms** |   **1.00** |     **0.00** |
+|  SpanSort |         Incrementing |  10000 | 116.899 ms | 1.1196 ms | 0.8096 ms |   1.07 |     0.01 |
+|           |                      |        |            |           |           |        |          |
+| **ArraySort** |         **Incrementing** |      **2** |   **8.487 ms** | **0.2799 ms** | **0.2024 ms** |   **1.00** |     **0.00** |
+|  SpanSort |         Incrementing |      2 |  10.092 ms | 0.2243 ms | 0.1621 ms |   1.19 |     0.03 |
+|           |                      |        |            |           |           |        |          |
+| **ArraySort** |         **Incrementing** |      **3** |  **12.825 ms** | **0.3521 ms** | **0.2546 ms** |   **1.00** |     **0.00** |
+|  SpanSort |         Incrementing |      3 |  13.861 ms | 0.4425 ms | 0.3199 ms |   1.08 |     0.03 |
+|           |                      |        |            |           |           |        |          |
+| **ArraySort** |  **MedianOfThreeKiller** |     **10** |  **25.032 ms** | **0.5059 ms** | **0.3658 ms** |   **1.00** |     **0.00** |
+|  SpanSort |  MedianOfThreeKiller |     10 |  24.537 ms | 0.2545 ms | 0.1840 ms |   0.98 |     0.02 |
+|           |                      |        |            |           |           |        |          |
+| **ArraySort** |  **MedianOfThreeKiller** |    **100** |  **79.959 ms** | **0.3252 ms** | **0.2351 ms** |   **1.00** |     **0.00** |
+|  SpanSort |  MedianOfThreeKiller |    100 |  83.825 ms | 0.8318 ms | 0.6014 ms |   1.05 |     0.01 |
+|           |                      |        |            |           |           |        |          |
+| **ArraySort** |  **MedianOfThreeKiller** |   **1000** | **141.637 ms** | **0.7740 ms** | **0.5596 ms** |   **1.00** |     **0.00** |
+|  SpanSort |  MedianOfThreeKiller |   1000 | 151.866 ms | 1.0055 ms | 0.7271 ms |   1.07 |     0.01 |
+|           |                      |        |            |           |           |        |          |
+| **ArraySort** |  **MedianOfThreeKiller** |  **10000** | **233.982 ms** | **0.9494 ms** | **0.6865 ms** |   **1.00** |     **0.00** |
+|  SpanSort |  MedianOfThreeKiller |  10000 | 254.861 ms | 1.3601 ms | 0.9834 ms |   1.09 |     0.01 |
+|           |                      |        |            |           |           |        |          |
+| **ArraySort** |  **MedianOfThreeKiller** |      **2** |   **8.395 ms** | **0.1893 ms** | **0.1369 ms** |   **1.00** |     **0.00** |
+|  SpanSort |  MedianOfThreeKiller |      2 |  10.119 ms | 0.2610 ms | 0.1887 ms |   1.21 |     0.03 |
+|           |                      |        |            |           |           |        |          |
+| **ArraySort** |  **MedianOfThreeKiller** |      **3** |  **12.782 ms** | **0.3895 ms** | **0.2817 ms** |   **1.00** |     **0.00** |
+|  SpanSort |  MedianOfThreeKiller |      3 |  13.832 ms | 0.3420 ms | 0.2473 ms |   1.08 |     0.03 |
+|           |                      |        |            |           |           |        |          |
+| **ArraySort** | **PartialRandomShuffle** |     **10** |  **18.394 ms** | **0.5344 ms** | **0.3864 ms** |   **1.00** |     **0.00** |
+|  SpanSort | PartialRandomShuffle |     10 |  17.918 ms | 0.4916 ms | 0.3555 ms |   0.97 |     0.03 |
+|           |                      |        |            |           |           |        |          |
+| **ArraySort** | **PartialRandomShuffle** |    **100** |  **71.537 ms** | **0.8211 ms** | **0.5937 ms** |   **1.00** |     **0.00** |
+|  SpanSort | PartialRandomShuffle |    100 |  73.844 ms | 0.7359 ms | 0.5321 ms |   1.03 |     0.01 |
+|           |                      |        |            |           |           |        |          |
+| **ArraySort** | **PartialRandomShuffle** |   **1000** | **109.234 ms** | **0.9267 ms** | **0.6701 ms** |   **1.00** |     **0.00** |
+|  SpanSort | PartialRandomShuffle |   1000 | 114.660 ms | 0.7012 ms | 0.5070 ms |   1.05 |     0.01 |
+|           |                      |        |            |           |           |        |          |
+| **ArraySort** | **PartialRandomShuffle** |  **10000** | **147.300 ms** | **1.2157 ms** | **0.8791 ms** |   **1.00** |     **0.00** |
+|  SpanSort | PartialRandomShuffle |  10000 | 156.525 ms | 1.3543 ms | 0.9793 ms |   1.06 |     0.01 |
+|           |                      |        |            |           |           |        |          |
+| **ArraySort** | **PartialRandomShuffle** |      **2** |   **9.240 ms** | **0.5114 ms** | **0.3698 ms** |   **1.00** |     **0.00** |
+|  SpanSort | PartialRandomShuffle |      2 |  10.555 ms | 0.4896 ms | 0.3540 ms |   1.14 |     0.06 |
+|           |                      |        |            |           |           |        |          |
+| **ArraySort** | **PartialRandomShuffle** |      **3** |  **13.693 ms** | **0.6373 ms** | **0.4608 ms** |   **1.00** |     **0.00** |
+|  SpanSort | PartialRandomShuffle |      3 |  15.083 ms | 0.7073 ms | 0.5114 ms |   1.10 |     0.05 |
+|           |                      |        |            |           |           |        |          |
+| **ArraySort** |               **Random** |     **10** |  **30.146 ms** | **0.2516 ms** | **0.1819 ms** |   **1.00** |     **0.00** |
+|  SpanSort |               Random |     10 |  29.810 ms | 0.5115 ms | 0.3699 ms |   0.99 |     0.01 |
+|           |                      |        |            |           |           |        |          |
+| **ArraySort** |               **Random** |    **100** |  **69.020 ms** | **0.6275 ms** | **0.4537 ms** |   **1.00** |     **0.00** |
+|  SpanSort |               Random |    100 |  71.218 ms | 1.1154 ms | 0.8065 ms |   1.03 |     0.01 |
+|           |                      |        |            |           |           |        |          |
+| **ArraySort** |               **Random** |   **1000** | **106.682 ms** | **0.6651 ms** | **0.4809 ms** |   **1.00** |     **0.00** |
+|  SpanSort |               Random |   1000 | 112.625 ms | 0.8020 ms | 0.5799 ms |   1.06 |     0.01 |
+|           |                      |        |            |           |           |        |          |
+| **ArraySort** |               **Random** |  **10000** | **147.202 ms** | **0.5737 ms** | **0.4148 ms** |   **1.00** |     **0.00** |
+|  SpanSort |               Random |  10000 | 156.098 ms | 0.9686 ms | 0.7004 ms |   1.06 |     0.01 |
+|           |                      |        |            |           |           |        |          |
+| **ArraySort** |               **Random** |      **2** |   **8.243 ms** | **0.2323 ms** | **0.1680 ms** |   **1.00** |     **0.00** |
+|  SpanSort |               Random |      2 |   9.950 ms | 0.3273 ms | 0.2367 ms |   1.21 |     0.04 |
+|           |                      |        |            |           |           |        |          |
+| **ArraySort** |               **Random** |      **3** |  **12.621 ms** | **0.3533 ms** | **0.2554 ms** |   **1.00** |     **0.00** |
+|  SpanSort |               Random |      3 |  13.571 ms | 0.1643 ms | 0.1188 ms |   1.08 |     0.02 |
