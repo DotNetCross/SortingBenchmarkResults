@@ -1,0 +1,115 @@
+<!DOCTYPE html><html lang='en'><head><meta charset='utf-8' /><head>
+<title>Pretty Output of DisassemblyDiagnoser for ComparableStructInt32SortDisassemblerBench.Span_StructComparableComparer: Job-GJHFDV(LaunchCount=1, RunStrategy=Monitoring, TargetCount=3, WarmupCount=1)</title>
+
+<style type="text/css">
+    pre { margin: 0px; }
+    table { border-collapse:collapse; }
+    td.perMethod { border-top: 1px black solid; }
+    tr.evenMap td { background-color: #F5F5F5; }  
+</style>
+
+<style type='text/css'>
+    td.label:hover { cursor: pointer; background-color: yellow !important; }
+    td.highlighted { background-color: yellow !important; }
+</style>
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+<script>$(document).ready(function () {
+    var selectedIndex = 0;
+
+    function highlight() {
+        $('td.reference.highlighted').removeClass('highlighted');
+
+        var selectedLabel = $(this).attr('data-label');
+        if (selectedLabel) {
+            $('td.reference[data-reference=' + selectedLabel + ']').addClass('highlighted');
+        }
+        selectedIndex = 0;
+    }
+
+    function selectNext() {
+        var $highlighted = $('td.reference.highlighted');
+        var selected = $highlighted[selectedIndex++ % $highlighted.length];
+
+        if (selected) {
+            var selectedReference = $(selected).attr('id');
+            if (selectedReference) {
+                window.location.hash = '#' + selectedReference;
+            }
+        }
+    }
+
+    $('td.label').on('click', highlight);
+
+    $(document).on('keydown', function (event) {
+        if (event.keyCode == 114) { // F3
+            event.preventDefault();
+            // Remap F3 to some other key that the browser doesn't care about
+            selectNext();
+        }
+    });
+});</script>
+</head><body><table><tbody>
+<tr><th colspan="2" style="text-align: left;">DotNetCross.Sorting.Benchmarks.SortDisassemblerBench`1[[DotNetCross.Sorting.Benchmarks.ComparableStructInt32, DotNetCross.Sorting.Benchmarks]].Span_StructComparableComparer()</th><th></th></tr>
+<tr class="">
+<td></td><td ><pre><code>            new Span<TKey>(_work).Sort(new StructComparableComparer<TKey>());
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`97f824dd 488b4910        mov     rcx,qword ptr [rcx+10h]"><pre><code>mov     rcx,qword ptr [rcx+10h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`97f824e1 4885c9          test    rcx,rcx"><pre><code>test    rcx,rcx</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`97f824e4 746b            je      00007ff8`97f82551"><pre><code>je      00007ff8`97f82551</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`97f824e6 488d5110        lea     rdx,[rcx+10h]"><pre><code>lea     rdx,[rcx+10h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`97f824ea 8b4908          mov     ecx,dword ptr [rcx+8]"><pre><code>mov     ecx,dword ptr [rcx+8]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`97f824ed c644243000      mov     byte ptr [rsp+30h],0"><pre><code>mov     byte ptr [rsp+30h],0</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`97f824f2 480fbe442430    movsx   rax,byte ptr [rsp+30h]"><pre><code>movsx   rax,byte ptr [rsp+30h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`97f824f8 88442428        mov     byte ptr [rsp+28h],al"><pre><code>mov     byte ptr [rsp+28h],al</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`97f824fc 488bf2          mov     rsi,rdx"><pre><code>mov     rsi,rdx</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`97f824ff 480fbe542428    movsx   rdx,byte ptr [rsp+28h]"><pre><code>movsx   rdx,byte ptr [rsp+28h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`97f82505 88542420        mov     byte ptr [rsp+20h],dl"><pre><code>mov     byte ptr [rsp+20h],dl</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`97f82509 8bf9            mov     edi,ecx"><pre><code>mov     edi,ecx</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`97f8250b 83ff02          cmp     edi,2"><pre><code>cmp     edi,2</pre></code></td>
+</tr><tr class="">
+<td></td><td id="0" class="reference" data-reference="M00_L00" title="00007ff8`97f8250e 7c39            jl      00007ff8`97f82549"><a href="#M00_L00"><pre><code>jl      M00_L00</pre></code></a></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`97f82510 48b948f00798f87f0000 mov rcx,7FF89807F048h"><pre><code>mov     rcx,7FF89807F048h</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`97f8251a 33d2            xor     edx,edx"><pre><code>xor     edx,edx</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`97f8251c e8af6ea65f      call    coreclr!MetaDataGetDispenser+0x278f0 (00007ff8`f79e93d0)"><pre><code>call    coreclr!MetaDataGetDispenser+0x278f0</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`97f82521 48b9482d6fda0e020000 mov rcx,20EDA6F2D48h"><pre><code>mov     rcx,20EDA6F2D48h</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`97f8252b 488b09          mov     rcx,qword ptr [rcx]"><pre><code>mov     rcx,qword ptr [rcx]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`97f8252e 488bd6          mov     rdx,rsi"><pre><code>mov     rdx,rsi</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`97f82531 448bc7          mov     r8d,edi"><pre><code>mov     r8d,edi</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`97f82534 4c0fbe4c2420    movsx   r9,byte ptr [rsp+20h]"><pre><code>movsx   r9,byte ptr [rsp+20h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`97f8253a 49bbe003e197f87f0000 mov r11,7FF897E103E0h"><pre><code>mov     r11,7FF897E103E0h</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`97f82544 3909            cmp     dword ptr [rcx],ecx"><pre><code>cmp     dword ptr [rcx],ecx</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`97f82546 41ff13          call    qword ptr [r11]"><pre><code>call    qword ptr [r11]</pre></code></td>
+</tr><tr class="">
+<td></td><td ><pre><code>        }
+        ^</pre></code></td>
+</tr><tr class="evenMap">
+<td id="M00_L00" class="label" data-label="M00_L00"><pre><code>M00_L00</pre></code></td>
+<td>&nbsp;</td></tr>
+<tr class="evenMap">
+<td></td><td title="00007ff8`97f82549 90              nop"><pre><code>nop</pre></code></td>
+</tr><tr><td colspan="{2}">&nbsp;</td></tr>
+</tbody></table></body></html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>Int32Int32SortDisassemblerBench</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet=v0.10.12.427-nightly, OS=Windows 10 Redstone 3 [1709, Fall Creators Update] (10.0.16299.192)
+Intel Core i5-3475S CPU 2.90GHz (Ivy Bridge), 1 CPU, 4 logical cores and 4 physical cores
+Frequency=2840375 Hz, Resolution=352.0662 ns, Timer=TSC
+.NET Core SDK=2.1.4
+  [Host]     : .NET Core 2.0.5 (Framework 4.6.26020.03), 64bit RyuJIT
+  Job-GJHFDV : .NET Core 2.0.5 (Framework 4.6.26020.03), 64bit RyuJIT
+</code></pre>
+<pre><code>LaunchCount=1  RunStrategy=Monitoring  TargetCount=3  
+WarmupCount=1  
+</code></pre>
+
+<table>
+<thead><tr><th>                 Method</th><th>Mean</th><th>Error</th><th>StdDev</th><th>Scaled</th><th>ScaledSD</th>
+</tr>
+</thead><tbody><tr><td>Array_</td><td>59.46 ms</td><td>14.61 ms</td><td>0.8257 ms</td><td>1.00</td><td>0.00</td>
+</tr><tr><td>Array_NullComparer</td><td>58.57 ms</td><td>10.49 ms</td><td>0.5929 ms</td><td>0.99</td><td>0.01</td>
+</tr><tr><td>Array_ClassComparableComparer</td><td>229.09 ms</td><td>23.60 ms</td><td>1.3333 ms</td><td>3.85</td><td>0.05</td>
+</tr><tr><td>Span_</td><td>56.71 ms</td><td>50.83 ms</td><td>2.8719 ms</td><td>0.95</td><td>0.04</td>
+</tr><tr><td>Span_NullComparer</td><td>54.24 ms</td><td>43.76 ms</td><td>2.4724 ms</td><td>0.91</td><td>0.04</td>
+</tr><tr><td>Span_ClassComparableComparer</td><td>377.57 ms</td><td>122.26 ms</td><td>6.9080 ms</td><td>6.35</td><td>0.12</td>
+</tr><tr><td>Span_StructComparableComparer</td><td>60.81 ms</td><td>12.06 ms</td><td>0.6815 ms</td><td>1.02</td><td>0.01</td>
+</tr><tr><td>Span_Comparison</td><td>232.40 ms</td><td>161.75 ms</td><td>9.1394 ms</td><td>3.91</td><td>0.13</td>
+</tr></tbody></table>
+</body>
+</html>
