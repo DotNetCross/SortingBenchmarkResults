@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>StringSortBench</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet=v0.10.13, OS=Windows 10 Redstone 3 [1709, Fall Creators Update] (10.0.16299.248)
+Intel Core i7-8700 CPU 3.20GHz (Coffee Lake), 1 CPU, 12 logical cores and 6 physical cores
+Frequency=3117186 Hz, Resolution=320.8022 ns, Timer=TSC
+.NET Core SDK=2.1.100
+  [Host] : .NET Core 2.0.5 (CoreCLR 4.6.26020.03, CoreFX 4.6.26018.01), 64bit RyuJIT
+</code></pre>
+<pre><code>Platform=X64  Runtime=Core  Toolchain=InProcessToolchain  
+LaunchCount=1  RunStrategy=Monitoring  TargetCount=11  
+UnrollFactor=1  WarmupCount=3  
+</code></pre>
+
+<table>
+<thead><tr><th>                 Method</th><th>        Filler</th><th>Length</th><th>  Mean</th><th> Error</th><th>StdDev</th><th>Scaled</th><th>ScaledSD</th>
+</tr>
+</thead><tbody><tr><td>Array_</td><td>Constant</td><td>2</td><td>1,926.0 us</td><td>142.492 us</td><td>103.031 us</td><td>1.00</td><td>0.00</td>
+</tr><tr><td>Array_NullComparer</td><td>Constant</td><td>2</td><td>1,879.5 us</td><td>13.082 us</td><td>9.459 us</td><td>0.98</td><td>0.04</td>
+</tr><tr><td>Array_ClassComparableComparer</td><td>Constant</td><td>2</td><td>15,813.1 us</td><td>72.038 us</td><td>52.089 us</td><td>8.23</td><td>0.37</td>
+</tr><tr><td>Span_</td><td>Constant</td><td>2</td><td>2,778.5 us</td><td>14.416 us</td><td>10.424 us</td><td>1.45</td><td>0.06</td>
+</tr><tr><td>Span_NullComparer</td><td>Constant</td><td>2</td><td>2,818.9 us</td><td>28.329 us</td><td>20.484 us</td><td>1.47</td><td>0.07</td>
+</tr><tr><td>Span_ClassComparableComparer</td><td>Constant</td><td>2</td><td>6,334.7 us</td><td>29.627 us</td><td>21.422 us</td><td>3.30</td><td>0.15</td>
+</tr><tr><td>Span_StructComparableComparer</td><td>Constant</td><td>2</td><td>3,997.1 us</td><td>6.478 us</td><td>4.684 us</td><td>2.08</td><td>0.09</td>
+</tr><tr><td>Span_Comparison</td><td>Constant</td><td>2</td><td>4,741.3 us</td><td>15.426 us</td><td>11.154 us</td><td>2.47</td><td>0.11</td>
+</tr><tr><td>Array_</td><td>Constant</td><td>3</td><td>1,515.3 us</td><td>3.623 us</td><td>2.619 us</td><td>1.00</td><td>0.00</td>
+</tr><tr><td>Array_NullComparer</td><td>Constant</td><td>3</td><td>1,562.8 us</td><td>161.870 us</td><td>117.042 us</td><td>1.03</td><td>0.07</td>
+</tr><tr><td>Array_ClassComparableComparer</td><td>Constant</td><td>3</td><td>11,085.6 us</td><td>36.533 us</td><td>26.415 us</td><td>7.32</td><td>0.02</td>
+</tr><tr><td>Span_</td><td>Constant</td><td>3</td><td>2,123.6 us</td><td>20.972 us</td><td>15.164 us</td><td>1.40</td><td>0.01</td>
+</tr><tr><td>Span_NullComparer</td><td>Constant</td><td>3</td><td>2,150.7 us</td><td>27.265 us</td><td>19.714 us</td><td>1.42</td><td>0.01</td>
+</tr><tr><td>Span_ClassComparableComparer</td><td>Constant</td><td>3</td><td>4,894.0 us</td><td>19.038 us</td><td>13.766 us</td><td>3.23</td><td>0.01</td>
+</tr><tr><td>Span_StructComparableComparer</td><td>Constant</td><td>3</td><td>3,309.5 us</td><td>42.037 us</td><td>30.395 us</td><td>2.18</td><td>0.02</td>
+</tr><tr><td>Span_Comparison</td><td>Constant</td><td>3</td><td>3,868.0 us</td><td>23.657 us</td><td>17.105 us</td><td>2.55</td><td>0.01</td>
+</tr><tr><td>Array_</td><td>Constant</td><td>10</td><td>895.8 us</td><td>47.629 us</td><td>34.439 us</td><td>1.00</td><td>0.00</td>
+</tr><tr><td>Array_NullComparer</td><td>Constant</td><td>10</td><td>862.4 us</td><td>18.816 us</td><td>13.605 us</td><td>0.96</td><td>0.04</td>
+</tr><tr><td>Array_ClassComparableComparer</td><td>Constant</td><td>10</td><td>3,852.0 us</td><td>11.945 us</td><td>8.637 us</td><td>4.31</td><td>0.15</td>
+</tr><tr><td>Span_</td><td>Constant</td><td>10</td><td>767.4 us</td><td>6.119 us</td><td>4.424 us</td><td>0.86</td><td>0.03</td>
+</tr><tr><td>Span_NullComparer</td><td>Constant</td><td>10</td><td>770.1 us</td><td>4.317 us</td><td>3.121 us</td><td>0.86</td><td>0.03</td>
+</tr><tr><td>Span_ClassComparableComparer</td><td>Constant</td><td>10</td><td>1,925.5 us</td><td>29.018 us</td><td>20.982 us</td><td>2.15</td><td>0.08</td>
+</tr><tr><td>Span_StructComparableComparer</td><td>Constant</td><td>10</td><td>1,575.1 us</td><td>11.859 us</td><td>8.575 us</td><td>1.76</td><td>0.06</td>
+</tr><tr><td>Span_Comparison</td><td>Constant</td><td>10</td><td>1,717.7 us</td><td>5.627 us</td><td>4.069 us</td><td>1.92</td><td>0.07</td>
+</tr><tr><td>Array_</td><td>Constant</td><td>100</td><td>2,370.3 us</td><td>3.293 us</td><td>2.381 us</td><td>1.00</td><td>0.00</td>
+</tr><tr><td>Array_NullComparer</td><td>Constant</td><td>100</td><td>2,375.0 us</td><td>9.737 us</td><td>7.041 us</td><td>1.00</td><td>0.00</td>
+</tr><tr><td>Array_ClassComparableComparer</td><td>Constant</td><td>100</td><td>3,028.5 us</td><td>9.660 us</td><td>6.985 us</td><td>1.28</td><td>0.00</td>
+</tr><tr><td>Span_</td><td>Constant</td><td>100</td><td>3,530.4 us</td><td>14.708 us</td><td>10.635 us</td><td>1.49</td><td>0.00</td>
+</tr><tr><td>Span_NullComparer</td><td>Constant</td><td>100</td><td>3,523.9 us</td><td>26.064 us</td><td>18.846 us</td><td>1.49</td><td>0.01</td>
+</tr><tr><td>Span_ClassComparableComparer</td><td>Constant</td><td>100</td><td>5,045.1 us</td><td>57.492 us</td><td>41.570 us</td><td>2.13</td><td>0.02</td>
+</tr><tr><td>Span_StructComparableComparer</td><td>Constant</td><td>100</td><td>5,218.0 us</td><td>15.613 us</td><td>11.290 us</td><td>2.20</td><td>0.01</td>
+</tr><tr><td>Span_Comparison</td><td>Constant</td><td>100</td><td>5,603.0 us</td><td>30.413 us</td><td>21.991 us</td><td>2.36</td><td>0.01</td>
+</tr><tr><td>Array_</td><td>Constant</td><td>1000</td><td>3,942.7 us</td><td>7.623 us</td><td>5.512 us</td><td>1.00</td><td>0.00</td>
+</tr><tr><td>Array_NullComparer</td><td>Constant</td><td>1000</td><td>3,938.8 us</td><td>10.989 us</td><td>7.946 us</td><td>1.00</td><td>0.00</td>
+</tr><tr><td>Array_ClassComparableComparer</td><td>Constant</td><td>1000</td><td>4,731.7 us</td><td>514.110 us</td><td>371.735 us</td><td>1.20</td><td>0.09</td>
+</tr><tr><td>Span_</td><td>Constant</td><td>1000</td><td>6,524.0 us</td><td>13.377 us</td><td>9.672 us</td><td>1.65</td><td>0.00</td>
+</tr><tr><td>Span_NullComparer</td><td>Constant</td><td>1000</td><td>6,683.1 us</td><td>71.333 us</td><td>51.578 us</td><td>1.70</td><td>0.01</td>
+</tr><tr><td>Span_ClassComparableComparer</td><td>Constant</td><td>1000</td><td>9,195.4 us</td><td>1,155.741 us</td><td>835.676 us</td><td>2.33</td><td>0.20</td>
+</tr><tr><td>Span_StructComparableComparer</td><td>Constant</td><td>1000</td><td>9,312.9 us</td><td>22.869 us</td><td>16.536 us</td><td>2.36</td><td>0.01</td>
+</tr><tr><td>Span_Comparison</td><td>Constant</td><td>1000</td><td>9,953.7 us</td><td>45.069 us</td><td>32.588 us</td><td>2.52</td><td>0.01</td>
+</tr><tr><td>Array_</td><td>Constant</td><td>10000</td><td>6,228.6 us</td><td>76.583 us</td><td>55.375 us</td><td>1.00</td><td>0.00</td>
+</tr><tr><td>Array_NullComparer</td><td>Constant</td><td>10000</td><td>6,200.3 us</td><td>40.782 us</td><td>29.488 us</td><td>1.00</td><td>0.01</td>
+</tr><tr><td>Array_ClassComparableComparer</td><td>Constant</td><td>10000</td><td>6,994.9 us</td><td>28.237 us</td><td>20.417 us</td><td>1.12</td><td>0.01</td>
+</tr><tr><td>Span_</td><td>Constant</td><td>10000</td><td>11,098.2 us</td><td>7.225 us</td><td>5.224 us</td><td>1.78</td><td>0.01</td>
+</tr><tr><td>Span_NullComparer</td><td>Constant</td><td>10000</td><td>10,620.4 us</td><td>34.381 us</td><td>24.860 us</td><td>1.71</td><td>0.01</td>
+</tr><tr><td>Span_ClassComparableComparer</td><td>Constant</td><td>10000</td><td>14,335.4 us</td><td>51.117 us</td><td>36.961 us</td><td>2.30</td><td>0.02</td>
+</tr><tr><td>Span_StructComparableComparer</td><td>Constant</td><td>10000</td><td>14,848.3 us</td><td>114.031 us</td><td>82.452 us</td><td>2.38</td><td>0.02</td>
+</tr><tr><td>Span_Comparison</td><td>Constant</td><td>10000</td><td>15,816.7 us</td><td>126.840 us</td><td>91.714 us</td><td>2.54</td><td>0.03</td>
+</tr><tr><td>Array_</td><td>Decrementing</td><td>2</td><td>5,560.7 us</td><td>12.240 us</td><td>8.850 us</td><td>1.00</td><td>0.00</td>
+</tr><tr><td>Array_NullComparer</td><td>Decrementing</td><td>2</td><td>5,640.2 us</td><td>58.301 us</td><td>42.155 us</td><td>1.01</td><td>0.01</td>
+</tr><tr><td>Array_ClassComparableComparer</td><td>Decrementing</td><td>2</td><td>21,352.7 us</td><td>700.856 us</td><td>506.765 us</td><td>3.84</td><td>0.09</td>
+</tr><tr><td>Span_</td><td>Decrementing</td><td>2</td><td>6,767.3 us</td><td>35.384 us</td><td>25.585 us</td><td>1.22</td><td>0.00</td>
+</tr><tr><td>Span_NullComparer</td><td>Decrementing</td><td>2</td><td>6,984.8 us</td><td>36.091 us</td><td>26.096 us</td><td>1.26</td><td>0.00</td>
+</tr><tr><td>Span_ClassComparableComparer</td><td>Decrementing</td><td>2</td><td>11,188.9 us</td><td>116.520 us</td><td>84.251 us</td><td>2.01</td><td>0.01</td>
+</tr><tr><td>Span_StructComparableComparer</td><td>Decrementing</td><td>2</td><td>8,504.2 us</td><td>753.945 us</td><td>545.151 us</td><td>1.53</td><td>0.09</td>
+</tr><tr><td>Span_Comparison</td><td>Decrementing</td><td>2</td><td>9,484.4 us</td><td>17.861 us</td><td>12.915 us</td><td>1.71</td><td>0.00</td>
+</tr><tr><td>Array_</td><td>Decrementing</td><td>3</td><td>8,730.8 us</td><td>53.228 us</td><td>38.487 us</td><td>1.00</td><td>0.00</td>
+</tr><tr><td>Array_NullComparer</td><td>Decrementing</td><td>3</td><td>8,664.5 us</td><td>16.065 us</td><td>11.616 us</td><td>0.99</td><td>0.00</td>
+</tr><tr><td>Array_ClassComparableComparer</td><td>Decrementing</td><td>3</td><td>19,426.6 us</td><td>256.893 us</td><td>185.751 us</td><td>2.23</td><td>0.02</td>
+</tr><tr><td>Span_</td><td>Decrementing</td><td>3</td><td>9,559.1 us</td><td>70.712 us</td><td>51.130 us</td><td>1.09</td><td>0.01</td>
+</tr><tr><td>Span_NullComparer</td><td>Decrementing</td><td>3</td><td>9,325.7 us</td><td>30.414 us</td><td>21.991 us</td><td>1.07</td><td>0.01</td>
+</tr><tr><td>Span_ClassComparableComparer</td><td>Decrementing</td><td>3</td><td>12,933.1 us</td><td>41.377 us</td><td>29.918 us</td><td>1.48</td><td>0.01</td>
+</tr><tr><td>Span_StructComparableComparer</td><td>Decrementing</td><td>3</td><td>11,257.6 us</td><td>56.705 us</td><td>41.002 us</td><td>1.29</td><td>0.01</td>
+</tr><tr><td>Span_Comparison</td><td>Decrementing</td><td>3</td><td>11,552.4 us</td><td>45.492 us</td><td>32.894 us</td><td>1.32</td><td>0.01</td>
+</tr><tr><td>Array_</td><td>Decrementing</td><td>10</td><td>33,188.7 us</td><td>1,865.318 us</td><td>1,348.747 us</td><td>1.00</td><td>0.00</td>
+</tr><tr><td>Array_NullComparer</td><td>Decrementing</td><td>10</td><td>32,062.0 us</td><td>303.867 us</td><td>219.715 us</td><td>0.97</td><td>0.03</td>
+</tr><tr><td>Array_ClassComparableComparer</td><td>Decrementing</td><td>10</td><td>36,651.9 us</td><td>142.182 us</td><td>102.807 us</td><td>1.11</td><td>0.04</td>
+</tr><tr><td>Span_</td><td>Decrementing</td><td>10</td><td>31,814.5 us</td><td>324.649 us</td><td>234.743 us</td><td>0.96</td><td>0.03</td>
+</tr><tr><td>Span_NullComparer</td><td>Decrementing</td><td>10</td><td>32,096.9 us</td><td>680.104 us</td><td>491.760 us</td><td>0.97</td><td>0.04</td>
+</tr><tr><td>Span_ClassComparableComparer</td><td>Decrementing</td><td>10</td><td>36,157.6 us</td><td>914.677 us</td><td>661.371 us</td><td>1.09</td><td>0.04</td>
+</tr><tr><td>Span_StructComparableComparer</td><td>Decrementing</td><td>10</td><td>43,660.1 us</td><td>911.721 us</td><td>659.234 us</td><td>1.32</td><td>0.05</td>
+</tr><tr><td>Span_Comparison</td><td>Decrementing</td><td>10</td><td>37,842.0 us</td><td>543.017 us</td><td>392.637 us</td><td>1.14</td><td>0.04</td>
+</tr><tr><td>Array_</td><td>Decrementing</td><td>100</td><td>40,456.0 us</td><td>673.357 us</td><td>486.882 us</td><td>1.00</td><td>0.00</td>
+</tr><tr><td>Array_NullComparer</td><td>Decrementing</td><td>100</td><td>39,362.0 us</td><td>674.028 us</td><td>487.366 us</td><td>0.97</td><td>0.02</td>
+</tr><tr><td>Array_ClassComparableComparer</td><td>Decrementing</td><td>100</td><td>41,186.0 us</td><td>610.365 us</td><td>441.334 us</td><td>1.02</td><td>0.02</td>
+</tr><tr><td>Span_</td><td>Decrementing</td><td>100</td><td>43,106.4 us</td><td>300.160 us</td><td>217.036 us</td><td>1.07</td><td>0.01</td>
+</tr><tr><td>Span_NullComparer</td><td>Decrementing</td><td>100</td><td>45,493.6 us</td><td>611.682 us</td><td>442.286 us</td><td>1.12</td><td>0.02</td>
+</tr><tr><td>Span_ClassComparableComparer</td><td>Decrementing</td><td>100</td><td>52,007.5 us</td><td>140.878 us</td><td>101.864 us</td><td>1.29</td><td>0.01</td>
+</tr><tr><td>Span_StructComparableComparer</td><td>Decrementing</td><td>100</td><td>57,983.8 us</td><td>1,726.855 us</td><td>1,248.629 us</td><td>1.43</td><td>0.03</td>
+</tr><tr><td>Span_Comparison</td><td>Decrementing</td><td>100</td><td>51,756.2 us</td><td>935.439 us</td><td>676.384 us</td><td>1.28</td><td>0.02</td>
+</tr><tr><td>Array_</td><td>Decrementing</td><td>1000</td><td>78,642.2 us</td><td>939.081 us</td><td>679.017 us</td><td>1.00</td><td>0.00</td>
+</tr><tr><td>Array_NullComparer</td><td>Decrementing</td><td>1000</td><td>82,054.9 us</td><td>725.205 us</td><td>524.371 us</td><td>1.04</td><td>0.01</td>
+</tr><tr><td>Array_ClassComparableComparer</td><td>Decrementing</td><td>1000</td><td>80,287.1 us</td><td>413.250 us</td><td>298.807 us</td><td>1.02</td><td>0.01</td>
+</tr><tr><td>Span_</td><td>Decrementing</td><td>1000</td><td>85,205.4 us</td><td>481.776 us</td><td>348.355 us</td><td>1.08</td><td>0.01</td>
+</tr><tr><td>Span_NullComparer</td><td>Decrementing</td><td>1000</td><td>82,075.9 us</td><td>274.359 us</td><td>198.379 us</td><td>1.04</td><td>0.01</td>
+</tr><tr><td>Span_ClassComparableComparer</td><td>Decrementing</td><td>1000</td><td>97,673.4 us</td><td>2,704.333 us</td><td>1,955.410 us</td><td>1.24</td><td>0.03</td>
+</tr><tr><td>Span_StructComparableComparer</td><td>Decrementing</td><td>1000</td><td>109,857.7 us</td><td>249.984 us</td><td>180.754 us</td><td>1.40</td><td>0.01</td>
+</tr><tr><td>Span_Comparison</td><td>Decrementing</td><td>1000</td><td>98,385.2 us</td><td>1,169.032 us</td><td>845.287 us</td><td>1.25</td><td>0.01</td>
+</tr><tr><td>Array_</td><td>Decrementing</td><td>10000</td><td>118,247.6 us</td><td>1,716.767 us</td><td>1,241.335 us</td><td>1.00</td><td>0.00</td>
+</tr><tr><td>Array_NullComparer</td><td>Decrementing</td><td>10000</td><td>120,159.5 us</td><td>769.712 us</td><td>556.552 us</td><td>1.02</td><td>0.01</td>
+</tr><tr><td>Array_ClassComparableComparer</td><td>Decrementing</td><td>10000</td><td>126,681.9 us</td><td>4,171.646 us</td><td>3,016.373 us</td><td>1.07</td><td>0.03</td>
+</tr><tr><td>Span_</td><td>Decrementing</td><td>10000</td><td>132,159.6 us</td><td>697.573 us</td><td>504.391 us</td><td>1.12</td><td>0.01</td>
+</tr><tr><td>Span_NullComparer</td><td>Decrementing</td><td>10000</td><td>127,777.7 us</td><td>2,720.444 us</td><td>1,967.059 us</td><td>1.08</td><td>0.02</td>
+</tr><tr><td>Span_ClassComparableComparer</td><td>Decrementing</td><td>10000</td><td>147,902.2 us</td><td>2,618.965 us</td><td>1,893.683 us</td><td>1.25</td><td>0.02</td>
+</tr><tr><td>Span_StructComparableComparer</td><td>Decrementing</td><td>10000</td><td>175,060.4 us</td><td>1,788.925 us</td><td>1,293.510 us</td><td>1.48</td><td>0.02</td>
+</tr><tr><td>Span_Comparison</td><td>Decrementing</td><td>10000</td><td>150,292.0 us</td><td>2,653.827 us</td><td>1,918.891 us</td><td>1.27</td><td>0.02</td>
+</tr><tr><td>Array_</td><td>Incrementing</td><td>2</td><td>5,367.7 us</td><td>10.084 us</td><td>7.291 us</td><td>1.00</td><td>0.00</td>
+</tr><tr><td>Array_NullComparer</td><td>Incrementing</td><td>2</td><td>5,408.2 us</td><td>16.380 us</td><td>11.844 us</td><td>1.01</td><td>0.00</td>
+</tr><tr><td>Array_ClassComparableComparer</td><td>Incrementing</td><td>2</td><td>20,798.2 us</td><td>416.822 us</td><td>301.389 us</td><td>3.87</td><td>0.05</td>
+</tr><tr><td>Span_</td><td>Incrementing</td><td>2</td><td>6,631.2 us</td><td>276.117 us</td><td>199.651 us</td><td>1.24</td><td>0.04</td>
+</tr><tr><td>Span_NullComparer</td><td>Incrementing</td><td>2</td><td>6,779.0 us</td><td>40.042 us</td><td>28.953 us</td><td>1.26</td><td>0.01</td>
+</tr><tr><td>Span_ClassComparableComparer</td><td>Incrementing</td><td>2</td><td>11,199.1 us</td><td>105.873 us</td><td>76.553 us</td><td>2.09</td><td>0.01</td>
+</tr><tr><td>Span_StructComparableComparer</td><td>Incrementing</td><td>2</td><td>7,698.6 us</td><td>25.271 us</td><td>18.272 us</td><td>1.43</td><td>0.00</td>
+</tr><tr><td>Span_Comparison</td><td>Incrementing</td><td>2</td><td>8,937.4 us</td><td>19.333 us</td><td>13.979 us</td><td>1.67</td><td>0.00</td>
+</tr><tr><td>Array_</td><td>Incrementing</td><td>3</td><td>8,401.5 us</td><td>21.357 us</td><td>15.442 us</td><td>1.00</td><td>0.00</td>
+</tr><tr><td>Array_NullComparer</td><td>Incrementing</td><td>3</td><td>8,512.8 us</td><td>22.629 us</td><td>16.362 us</td><td>1.01</td><td>0.00</td>
+</tr><tr><td>Array_ClassComparableComparer</td><td>Incrementing</td><td>3</td><td>19,576.8 us</td><td>213.256 us</td><td>154.198 us</td><td>2.33</td><td>0.02</td>
+</tr><tr><td>Span_</td><td>Incrementing</td><td>3</td><td>9,366.6 us</td><td>44.282 us</td><td>32.019 us</td><td>1.11</td><td>0.00</td>
+</tr><tr><td>Span_NullComparer</td><td>Incrementing</td><td>3</td><td>9,386.5 us</td><td>106.474 us</td><td>76.988 us</td><td>1.12</td><td>0.01</td>
+</tr><tr><td>Span_ClassComparableComparer</td><td>Incrementing</td><td>3</td><td>12,822.1 us</td><td>318.915 us</td><td>230.597 us</td><td>1.53</td><td>0.03</td>
+</tr><tr><td>Span_StructComparableComparer</td><td>Incrementing</td><td>3</td><td>10,629.3 us</td><td>29.805 us</td><td>21.551 us</td><td>1.27</td><td>0.00</td>
+</tr><tr><td>Span_Comparison</td><td>Incrementing</td><td>3</td><td>11,929.0 us</td><td>9.821 us</td><td>7.101 us</td><td>1.42</td><td>0.00</td>
+</tr><tr><td>Array_</td><td>Incrementing</td><td>10</td><td>6,772.1 us</td><td>36.652 us</td><td>26.502 us</td><td>1.00</td><td>0.00</td>
+</tr><tr><td>Array_NullComparer</td><td>Incrementing</td><td>10</td><td>7,006.2 us</td><td>42.166 us</td><td>30.489 us</td><td>1.03</td><td>0.01</td>
+</tr><tr><td>Array_ClassComparableComparer</td><td>Incrementing</td><td>10</td><td>10,392.9 us</td><td>209.544 us</td><td>151.514 us</td><td>1.53</td><td>0.02</td>
+</tr><tr><td>Span_</td><td>Incrementing</td><td>10</td><td>6,908.8 us</td><td>20.447 us</td><td>14.784 us</td><td>1.02</td><td>0.00</td>
+</tr><tr><td>Span_NullComparer</td><td>Incrementing</td><td>10</td><td>6,695.6 us</td><td>27.426 us</td><td>19.831 us</td><td>0.99</td><td>0.00</td>
+</tr><tr><td>Span_ClassComparableComparer</td><td>Incrementing</td><td>10</td><td>8,624.0 us</td><td>37.908 us</td><td>27.410 us</td><td>1.27</td><td>0.01</td>
+</tr><tr><td>Span_StructComparableComparer</td><td>Incrementing</td><td>10</td><td>9,181.6 us</td><td>104.851 us</td><td>75.814 us</td><td>1.36</td><td>0.01</td>
+</tr><tr><td>Span_Comparison</td><td>Incrementing</td><td>10</td><td>7,896.0 us</td><td>42.150 us</td><td>30.477 us</td><td>1.17</td><td>0.01</td>
+</tr><tr><td>Array_</td><td>Incrementing</td><td>100</td><td>26,961.2 us</td><td>76.819 us</td><td>55.545 us</td><td>1.00</td><td>0.00</td>
+</tr><tr><td>Array_NullComparer</td><td>Incrementing</td><td>100</td><td>27,086.8 us</td><td>230.447 us</td><td>166.628 us</td><td>1.00</td><td>0.01</td>
+</tr><tr><td>Array_ClassComparableComparer</td><td>Incrementing</td><td>100</td><td>27,840.3 us</td><td>158.242 us</td><td>114.420 us</td><td>1.03</td><td>0.00</td>
+</tr><tr><td>Span_</td><td>Incrementing</td><td>100</td><td>30,064.0 us</td><td>771.421 us</td><td>557.788 us</td><td>1.12</td><td>0.02</td>
+</tr><tr><td>Span_NullComparer</td><td>Incrementing</td><td>100</td><td>28,916.1 us</td><td>470.733 us</td><td>340.370 us</td><td>1.07</td><td>0.01</td>
+</tr><tr><td>Span_ClassComparableComparer</td><td>Incrementing</td><td>100</td><td>31,890.6 us</td><td>516.538 us</td><td>373.491 us</td><td>1.18</td><td>0.01</td>
+</tr><tr><td>Span_StructComparableComparer</td><td>Incrementing</td><td>100</td><td>37,669.9 us</td><td>637.408 us</td><td>460.888 us</td><td>1.40</td><td>0.02</td>
+</tr><tr><td>Span_Comparison</td><td>Incrementing</td><td>100</td><td>32,716.6 us</td><td>400.935 us</td><td>289.902 us</td><td>1.21</td><td>0.01</td>
+</tr><tr><td>Array_</td><td>Incrementing</td><td>1000</td><td>47,422.0 us</td><td>1,094.729 us</td><td>791.561 us</td><td>1.00</td><td>0.00</td>
+</tr><tr><td>Array_NullComparer</td><td>Incrementing</td><td>1000</td><td>45,558.2 us</td><td>2,041.067 us</td><td>1,475.825 us</td><td>0.96</td><td>0.03</td>
+</tr><tr><td>Array_ClassComparableComparer</td><td>Incrementing</td><td>1000</td><td>46,216.1 us</td><td>909.598 us</td><td>657.699 us</td><td>0.97</td><td>0.02</td>
+</tr><tr><td>Span_</td><td>Incrementing</td><td>1000</td><td>50,484.0 us</td><td>829.605 us</td><td>599.859 us</td><td>1.06</td><td>0.02</td>
+</tr><tr><td>Span_NullComparer</td><td>Incrementing</td><td>1000</td><td>49,490.1 us</td><td>695.189 us</td><td>502.667 us</td><td>1.04</td><td>0.02</td>
+</tr><tr><td>Span_ClassComparableComparer</td><td>Incrementing</td><td>1000</td><td>56,134.1 us</td><td>1,134.114 us</td><td>820.038 us</td><td>1.18</td><td>0.02</td>
+</tr><tr><td>Span_StructComparableComparer</td><td>Incrementing</td><td>1000</td><td>65,451.8 us</td><td>1,058.183 us</td><td>765.135 us</td><td>1.38</td><td>0.03</td>
+</tr><tr><td>Span_Comparison</td><td>Incrementing</td><td>1000</td><td>57,464.0 us</td><td>761.404 us</td><td>550.545 us</td><td>1.21</td><td>0.02</td>
+</tr><tr><td>Array_</td><td>Incrementing</td><td>10000</td><td>72,456.6 us</td><td>1,925.407 us</td><td>1,392.195 us</td><td>1.00</td><td>0.00</td>
+</tr><tr><td>Array_NullComparer</td><td>Incrementing</td><td>10000</td><td>73,088.3 us</td><td>748.566 us</td><td>541.262 us</td><td>1.01</td><td>0.02</td>
+</tr><tr><td>Array_ClassComparableComparer</td><td>Incrementing</td><td>10000</td><td>75,042.7 us</td><td>968.269 us</td><td>700.122 us</td><td>1.04</td><td>0.02</td>
+</tr><tr><td>Span_</td><td>Incrementing</td><td>10000</td><td>77,892.2 us</td><td>874.315 us</td><td>632.187 us</td><td>1.08</td><td>0.02</td>
+</tr><tr><td>Span_NullComparer</td><td>Incrementing</td><td>10000</td><td>78,238.1 us</td><td>4,266.089 us</td><td>3,084.662 us</td><td>1.08</td><td>0.05</td>
+</tr><tr><td>Span_ClassComparableComparer</td><td>Incrementing</td><td>10000</td><td>91,558.4 us</td><td>721.447 us</td><td>521.653 us</td><td>1.26</td><td>0.02</td>
+</tr><tr><td>Span_StructComparableComparer</td><td>Incrementing</td><td>10000</td><td>102,067.5 us</td><td>2,454.656 us</td><td>1,774.877 us</td><td>1.41</td><td>0.04</td>
+</tr><tr><td>Span_Comparison</td><td>Incrementing</td><td>10000</td><td>89,114.0 us</td><td>1,032.578 us</td><td>746.621 us</td><td>1.23</td><td>0.03</td>
+</tr><tr><td>Array_</td><td>MedianOfThreeKiller</td><td>2</td><td>5,446.9 us</td><td>10.852 us</td><td>7.847 us</td><td>1.00</td><td>0.00</td>
+</tr><tr><td>Array_NullComparer</td><td>MedianOfThreeKiller</td><td>2</td><td>5,501.8 us</td><td>17.191 us</td><td>12.430 us</td><td>1.01</td><td>0.00</td>
+</tr><tr><td>Array_ClassComparableComparer</td><td>MedianOfThreeKiller</td><td>2</td><td>21,277.1 us</td><td>907.018 us</td><td>655.833 us</td><td>3.91</td><td>0.11</td>
+</tr><tr><td>Span_</td><td>MedianOfThreeKiller</td><td>2</td><td>6,648.0 us</td><td>27.006 us</td><td>19.527 us</td><td>1.22</td><td>0.00</td>
+</tr><tr><td>Span_NullComparer</td><td>MedianOfThreeKiller</td><td>2</td><td>6,654.3 us</td><td>46.311 us</td><td>33.486 us</td><td>1.22</td><td>0.01</td>
+</tr><tr><td>Span_ClassComparableComparer</td><td>MedianOfThreeKiller</td><td>2</td><td>11,204.1 us</td><td>66.787 us</td><td>48.292 us</td><td>2.06</td><td>0.01</td>
+</tr><tr><td>Span_StructComparableComparer</td><td>MedianOfThreeKiller</td><td>2</td><td>7,766.6 us</td><td>22.176 us</td><td>16.035 us</td><td>1.43</td><td>0.00</td>
+</tr><tr><td>Span_Comparison</td><td>MedianOfThreeKiller</td><td>2</td><td>8,801.8 us</td><td>15.318 us</td><td>11.076 us</td><td>1.62</td><td>0.00</td>
+</tr><tr><td>Array_</td><td>MedianOfThreeKiller</td><td>3</td><td>8,263.0 us</td><td>22.861 us</td><td>16.530 us</td><td>1.00</td><td>0.00</td>
+</tr><tr><td>Array_NullComparer</td><td>MedianOfThreeKiller</td><td>3</td><td>8,215.1 us</td><td>107.521 us</td><td>77.745 us</td><td>0.99</td><td>0.01</td>
+</tr><tr><td>Array_ClassComparableComparer</td><td>MedianOfThreeKiller</td><td>3</td><td>19,362.7 us</td><td>472.473 us</td><td>341.629 us</td><td>2.34</td><td>0.04</td>
+</tr><tr><td>Span_</td><td>MedianOfThreeKiller</td><td>3</td><td>9,046.7 us</td><td>32.635 us</td><td>23.597 us</td><td>1.09</td><td>0.00</td>
+</tr><tr><td>Span_NullComparer</td><td>MedianOfThreeKiller</td><td>3</td><td>8,954.7 us</td><td>115.421 us</td><td>83.457 us</td><td>1.08</td><td>0.01</td>
+</tr><tr><td>Span_ClassComparableComparer</td><td>MedianOfThreeKiller</td><td>3</td><td>12,439.8 us</td><td>28.962 us</td><td>20.941 us</td><td>1.51</td><td>0.00</td>
+</tr><tr><td>Span_StructComparableComparer</td><td>MedianOfThreeKiller</td><td>3</td><td>10,836.6 us</td><td>22.457 us</td><td>16.238 us</td><td>1.31</td><td>0.00</td>
+</tr><tr><td>Span_Comparison</td><td>MedianOfThreeKiller</td><td>3</td><td>11,447.1 us</td><td>29.743 us</td><td>21.506 us</td><td>1.39</td><td>0.00</td>
+</tr><tr><td>Array_</td><td>MedianOfThreeKiller</td><td>10</td><td>17,422.7 us</td><td>44.445 us</td><td>32.137 us</td><td>1.00</td><td>0.00</td>
+</tr><tr><td>Array_NullComparer</td><td>MedianOfThreeKiller</td><td>10</td><td>16,809.5 us</td><td>112.898 us</td><td>81.633 us</td><td>0.96</td><td>0.00</td>
+</tr><tr><td>Array_ClassComparableComparer</td><td>MedianOfThreeKiller</td><td>10</td><td>20,384.1 us</td><td>210.519 us</td><td>152.219 us</td><td>1.17</td><td>0.01</td>
+</tr><tr><td>Span_</td><td>MedianOfThreeKiller</td><td>10</td><td>17,261.0 us</td><td>29.759 us</td><td>21.518 us</td><td>0.99</td><td>0.00</td>
+</tr><tr><td>Span_NullComparer</td><td>MedianOfThreeKiller</td><td>10</td><td>16,056.7 us</td><td>118.317 us</td><td>85.551 us</td><td>0.92</td><td>0.00</td>
+</tr><tr><td>Span_ClassComparableComparer</td><td>MedianOfThreeKiller</td><td>10</td><td>19,482.0 us</td><td>86.023 us</td><td>62.200 us</td><td>1.12</td><td>0.00</td>
+</tr><tr><td>Span_StructComparableComparer</td><td>MedianOfThreeKiller</td><td>10</td><td>21,986.6 us</td><td>68.635 us</td><td>49.627 us</td><td>1.26</td><td>0.00</td>
+</tr><tr><td>Span_Comparison</td><td>MedianOfThreeKiller</td><td>10</td><td>18,629.5 us</td><td>132.348 us</td><td>95.696 us</td><td>1.07</td><td>0.01</td>
+</tr><tr><td>Array_</td><td>MedianOfThreeKiller</td><td>100</td><td>53,510.1 us</td><td>142.608 us</td><td>103.115 us</td><td>1.00</td><td>0.00</td>
+</tr><tr><td>Array_NullComparer</td><td>MedianOfThreeKiller</td><td>100</td><td>52,609.4 us</td><td>2,837.050 us</td><td>2,051.373 us</td><td>0.98</td><td>0.04</td>
+</tr><tr><td>Array_ClassComparableComparer</td><td>MedianOfThreeKiller</td><td>100</td><td>54,099.1 us</td><td>155.293 us</td><td>112.287 us</td><td>1.01</td><td>0.00</td>
+</tr><tr><td>Span_</td><td>MedianOfThreeKiller</td><td>100</td><td>56,518.3 us</td><td>705.698 us</td><td>510.266 us</td><td>1.06</td><td>0.01</td>
+</tr><tr><td>Span_NullComparer</td><td>MedianOfThreeKiller</td><td>100</td><td>55,634.1 us</td><td>678.030 us</td><td>490.260 us</td><td>1.04</td><td>0.01</td>
+</tr><tr><td>Span_ClassComparableComparer</td><td>MedianOfThreeKiller</td><td>100</td><td>62,586.3 us</td><td>234.950 us</td><td>169.884 us</td><td>1.17</td><td>0.00</td>
+</tr><tr><td>Span_StructComparableComparer</td><td>MedianOfThreeKiller</td><td>100</td><td>73,679.4 us</td><td>1,222.369 us</td><td>883.853 us</td><td>1.38</td><td>0.02</td>
+</tr><tr><td>Span_Comparison</td><td>MedianOfThreeKiller</td><td>100</td><td>62,763.7 us</td><td>532.484 us</td><td>385.021 us</td><td>1.17</td><td>0.01</td>
+</tr><tr><td>Array_</td><td>MedianOfThreeKiller</td><td>1000</td><td>91,425.6 us</td><td>973.441 us</td><td>703.861 us</td><td>1.00</td><td>0.00</td>
+</tr><tr><td>Array_NullComparer</td><td>MedianOfThreeKiller</td><td>1000</td><td>93,026.8 us</td><td>1,604.589 us</td><td>1,160.223 us</td><td>1.02</td><td>0.01</td>
+</tr><tr><td>Array_ClassComparableComparer</td><td>MedianOfThreeKiller</td><td>1000</td><td>101,184.9 us</td><td>2,167.457 us</td><td>1,567.213 us</td><td>1.11</td><td>0.02</td>
+</tr><tr><td>Span_</td><td>MedianOfThreeKiller</td><td>1000</td><td>103,281.3 us</td><td>3,401.852 us</td><td>2,459.762 us</td><td>1.13</td><td>0.03</td>
+</tr><tr><td>Span_NullComparer</td><td>MedianOfThreeKiller</td><td>1000</td><td>101,207.3 us</td><td>2,276.574 us</td><td>1,646.112 us</td><td>1.11</td><td>0.02</td>
+</tr><tr><td>Span_ClassComparableComparer</td><td>MedianOfThreeKiller</td><td>1000</td><td>118,212.4 us</td><td>993.059 us</td><td>718.046 us</td><td>1.29</td><td>0.01</td>
+</tr><tr><td>Span_StructComparableComparer</td><td>MedianOfThreeKiller</td><td>1000</td><td>138,134.8 us</td><td>5,146.393 us</td><td>3,721.179 us</td><td>1.51</td><td>0.04</td>
+</tr><tr><td>Span_Comparison</td><td>MedianOfThreeKiller</td><td>1000</td><td>115,237.6 us</td><td>2,590.796 us</td><td>1,873.315 us</td><td>1.26</td><td>0.02</td>
+</tr><tr><td>Array_</td><td>MedianOfThreeKiller</td><td>10000</td><td>152,981.2 us</td><td>1,513.873 us</td><td>1,094.630 us</td><td>1.00</td><td>0.00</td>
+</tr><tr><td>Array_NullComparer</td><td>MedianOfThreeKiller</td><td>10000</td><td>154,254.7 us</td><td>3,183.003 us</td><td>2,301.520 us</td><td>1.01</td><td>0.02</td>
+</tr><tr><td>Array_ClassComparableComparer</td><td>MedianOfThreeKiller</td><td>10000</td><td>157,338.5 us</td><td>776.381 us</td><td>561.374 us</td><td>1.03</td><td>0.01</td>
+</tr><tr><td>Span_</td><td>MedianOfThreeKiller</td><td>10000</td><td>175,781.3 us</td><td>307.205 us</td><td>222.129 us</td><td>1.15</td><td>0.01</td>
+</tr><tr><td>Span_NullComparer</td><td>MedianOfThreeKiller</td><td>10000</td><td>176,165.3 us</td><td>511.857 us</td><td>370.106 us</td><td>1.15</td><td>0.01</td>
+</tr><tr><td>Span_ClassComparableComparer</td><td>MedianOfThreeKiller</td><td>10000</td><td>206,958.3 us</td><td>3,321.742 us</td><td>2,401.837 us</td><td>1.35</td><td>0.02</td>
+</tr><tr><td>Span_StructComparableComparer</td><td>MedianOfThreeKiller</td><td>10000</td><td>226,454.1 us</td><td>1,032.238 us</td><td>746.376 us</td><td>1.48</td><td>0.01</td>
+</tr><tr><td>Span_Comparison</td><td>MedianOfThreeKiller</td><td>10000</td><td>213,528.0 us</td><td>3,773.947 us</td><td>2,728.811 us</td><td>1.40</td><td>0.02</td>
+</tr><tr><td>Array_</td><td>PartialRandomShuffle</td><td>2</td><td>5,856.4 us</td><td>65.922 us</td><td>47.666 us</td><td>1.00</td><td>0.00</td>
+</tr><tr><td>Array_NullComparer</td><td>PartialRandomShuffle</td><td>2</td><td>5,704.9 us</td><td>34.459 us</td><td>24.916 us</td><td>0.97</td><td>0.01</td>
+</tr><tr><td>Array_ClassComparableComparer</td><td>PartialRandomShuffle</td><td>2</td><td>21,895.9 us</td><td>522.025 us</td><td>377.458 us</td><td>3.74</td><td>0.07</td>
+</tr><tr><td>Span_</td><td>PartialRandomShuffle</td><td>2</td><td>6,837.2 us</td><td>244.034 us</td><td>176.453 us</td><td>1.17</td><td>0.03</td>
+</tr><tr><td>Span_NullComparer</td><td>PartialRandomShuffle</td><td>2</td><td>6,927.0 us</td><td>88.814 us</td><td>64.218 us</td><td>1.18</td><td>0.01</td>
+</tr><tr><td>Span_ClassComparableComparer</td><td>PartialRandomShuffle</td><td>2</td><td>11,187.7 us</td><td>38.831 us</td><td>28.077 us</td><td>1.91</td><td>0.02</td>
+</tr><tr><td>Span_StructComparableComparer</td><td>PartialRandomShuffle</td><td>2</td><td>7,967.8 us</td><td>104.222 us</td><td>75.359 us</td><td>1.36</td><td>0.02</td>
+</tr><tr><td>Span_Comparison</td><td>PartialRandomShuffle</td><td>2</td><td>9,386.5 us</td><td>57.134 us</td><td>41.311 us</td><td>1.60</td><td>0.01</td>
+</tr><tr><td>Array_</td><td>PartialRandomShuffle</td><td>3</td><td>8,859.2 us</td><td>221.764 us</td><td>160.350 us</td><td>1.00</td><td>0.00</td>
+</tr><tr><td>Array_NullComparer</td><td>PartialRandomShuffle</td><td>3</td><td>8,792.8 us</td><td>190.546 us</td><td>137.777 us</td><td>0.99</td><td>0.02</td>
+</tr><tr><td>Array_ClassComparableComparer</td><td>PartialRandomShuffle</td><td>3</td><td>19,778.1 us</td><td>368.411 us</td><td>266.385 us</td><td>2.23</td><td>0.05</td>
+</tr><tr><td>Span_</td><td>PartialRandomShuffle</td><td>3</td><td>9,365.6 us</td><td>36.965 us</td><td>26.728 us</td><td>1.06</td><td>0.02</td>
+</tr><tr><td>Span_NullComparer</td><td>PartialRandomShuffle</td><td>3</td><td>9,444.9 us</td><td>65.992 us</td><td>47.717 us</td><td>1.07</td><td>0.02</td>
+</tr><tr><td>Span_ClassComparableComparer</td><td>PartialRandomShuffle</td><td>3</td><td>12,881.1 us</td><td>192.761 us</td><td>139.379 us</td><td>1.45</td><td>0.03</td>
+</tr><tr><td>Span_StructComparableComparer</td><td>PartialRandomShuffle</td><td>3</td><td>11,177.5 us</td><td>83.299 us</td><td>60.231 us</td><td>1.26</td><td>0.02</td>
+</tr><tr><td>Span_Comparison</td><td>PartialRandomShuffle</td><td>3</td><td>11,694.4 us</td><td>54.396 us</td><td>39.332 us</td><td>1.32</td><td>0.02</td>
+</tr><tr><td>Array_</td><td>PartialRandomShuffle</td><td>10</td><td>12,654.5 us</td><td>457.700 us</td><td>330.947 us</td><td>1.00</td><td>0.00</td>
+</tr><tr><td>Array_NullComparer</td><td>PartialRandomShuffle</td><td>10</td><td>11,819.1 us</td><td>127.379 us</td><td>92.103 us</td><td>0.93</td><td>0.02</td>
+</tr><tr><td>Array_ClassComparableComparer</td><td>PartialRandomShuffle</td><td>10</td><td>15,324.5 us</td><td>312.654 us</td><td>226.069 us</td><td>1.21</td><td>0.03</td>
+</tr><tr><td>Span_</td><td>PartialRandomShuffle</td><td>10</td><td>12,053.5 us</td><td>266.634 us</td><td>192.794 us</td><td>0.95</td><td>0.03</td>
+</tr><tr><td>Span_NullComparer</td><td>PartialRandomShuffle</td><td>10</td><td>11,654.1 us</td><td>253.975 us</td><td>183.640 us</td><td>0.92</td><td>0.03</td>
+</tr><tr><td>Span_ClassComparableComparer</td><td>PartialRandomShuffle</td><td>10</td><td>14,056.2 us</td><td>130.608 us</td><td>94.438 us</td><td>1.11</td><td>0.03</td>
+</tr><tr><td>Span_StructComparableComparer</td><td>PartialRandomShuffle</td><td>10</td><td>15,741.7 us</td><td>214.667 us</td><td>155.218 us</td><td>1.24</td><td>0.03</td>
+</tr><tr><td>Span_Comparison</td><td>PartialRandomShuffle</td><td>10</td><td>13,911.7 us</td><td>109.099 us</td><td>78.886 us</td><td>1.10</td><td>0.03</td>
+</tr><tr><td>Array_</td><td>PartialRandomShuffle</td><td>100</td><td>50,303.7 us</td><td>744.851 us</td><td>538.576 us</td><td>1.00</td><td>0.00</td>
+</tr><tr><td>Array_NullComparer</td><td>PartialRandomShuffle</td><td>100</td><td>47,171.5 us</td><td>1,621.320 us</td><td>1,172.320 us</td><td>0.94</td><td>0.02</td>
+</tr><tr><td>Array_ClassComparableComparer</td><td>PartialRandomShuffle</td><td>100</td><td>50,561.6 us</td><td>533.186 us</td><td>385.528 us</td><td>1.01</td><td>0.01</td>
+</tr><tr><td>Span_</td><td>PartialRandomShuffle</td><td>100</td><td>49,920.1 us</td><td>1,380.941 us</td><td>998.511 us</td><td>0.99</td><td>0.02</td>
+</tr><tr><td>Span_NullComparer</td><td>PartialRandomShuffle</td><td>100</td><td>49,325.3 us</td><td>1,306.381 us</td><td>944.599 us</td><td>0.98</td><td>0.02</td>
+</tr><tr><td>Span_ClassComparableComparer</td><td>PartialRandomShuffle</td><td>100</td><td>55,800.4 us</td><td>1,039.907 us</td><td>751.921 us</td><td>1.11</td><td>0.02</td>
+</tr><tr><td>Span_StructComparableComparer</td><td>PartialRandomShuffle</td><td>100</td><td>64,098.0 us</td><td>1,582.321 us</td><td>1,144.122 us</td><td>1.27</td><td>0.03</td>
+</tr><tr><td>Span_Comparison</td><td>PartialRandomShuffle</td><td>100</td><td>56,790.6 us</td><td>1,445.599 us</td><td>1,045.263 us</td><td>1.13</td><td>0.02</td>
+</tr><tr><td>Array_</td><td>PartialRandomShuffle</td><td>1000</td><td>69,409.2 us</td><td>1,026.904 us</td><td>742.519 us</td><td>1.00</td><td>0.00</td>
+</tr><tr><td>Array_NullComparer</td><td>PartialRandomShuffle</td><td>1000</td><td>73,454.3 us</td><td>1,060.488 us</td><td>766.802 us</td><td>1.06</td><td>0.02</td>
+</tr><tr><td>Array_ClassComparableComparer</td><td>PartialRandomShuffle</td><td>1000</td><td>72,671.9 us</td><td>2,436.283 us</td><td>1,761.592 us</td><td>1.05</td><td>0.03</td>
+</tr><tr><td>Span_</td><td>PartialRandomShuffle</td><td>1000</td><td>78,316.6 us</td><td>1,220.061 us</td><td>882.184 us</td><td>1.13</td><td>0.02</td>
+</tr><tr><td>Span_NullComparer</td><td>PartialRandomShuffle</td><td>1000</td><td>78,856.3 us</td><td>576.351 us</td><td>416.739 us</td><td>1.14</td><td>0.01</td>
+</tr><tr><td>Span_ClassComparableComparer</td><td>PartialRandomShuffle</td><td>1000</td><td>86,795.3 us</td><td>963.751 us</td><td>696.855 us</td><td>1.25</td><td>0.02</td>
+</tr><tr><td>Span_StructComparableComparer</td><td>PartialRandomShuffle</td><td>1000</td><td>100,071.2 us</td><td>619.093 us</td><td>447.645 us</td><td>1.44</td><td>0.02</td>
+</tr><tr><td>Span_Comparison</td><td>PartialRandomShuffle</td><td>1000</td><td>87,103.5 us</td><td>874.980 us</td><td>632.668 us</td><td>1.26</td><td>0.02</td>
+</tr><tr><td>Array_</td><td>PartialRandomShuffle</td><td>10000</td><td>95,657.3 us</td><td>758.401 us</td><td>548.373 us</td><td>1.00</td><td>0.00</td>
+</tr><tr><td>Array_NullComparer</td><td>PartialRandomShuffle</td><td>10000</td><td>96,440.1 us</td><td>876.780 us</td><td>633.969 us</td><td>1.01</td><td>0.01</td>
+</tr><tr><td>Array_ClassComparableComparer</td><td>PartialRandomShuffle</td><td>10000</td><td>102,001.0 us</td><td>7,079.281 us</td><td>5,118.784 us</td><td>1.07</td><td>0.05</td>
+</tr><tr><td>Span_</td><td>PartialRandomShuffle</td><td>10000</td><td>104,867.6 us</td><td>2,836.893 us</td><td>2,051.259 us</td><td>1.10</td><td>0.02</td>
+</tr><tr><td>Span_NullComparer</td><td>PartialRandomShuffle</td><td>10000</td><td>105,058.2 us</td><td>1,729.929 us</td><td>1,250.852 us</td><td>1.10</td><td>0.01</td>
+</tr><tr><td>Span_ClassComparableComparer</td><td>PartialRandomShuffle</td><td>10000</td><td>117,236.2 us</td><td>1,392.486 us</td><td>1,006.859 us</td><td>1.23</td><td>0.01</td>
+</tr><tr><td>Span_StructComparableComparer</td><td>PartialRandomShuffle</td><td>10000</td><td>135,463.1 us</td><td>3,024.054 us</td><td>2,186.589 us</td><td>1.42</td><td>0.02</td>
+</tr><tr><td>Span_Comparison</td><td>PartialRandomShuffle</td><td>10000</td><td>117,308.3 us</td><td>1,854.870 us</td><td>1,341.192 us</td><td>1.23</td><td>0.01</td>
+</tr><tr><td>Array_</td><td>Random</td><td>2</td><td>5,318.4 us</td><td>14.733 us</td><td>10.653 us</td><td>1.00</td><td>0.00</td>
+</tr><tr><td>Array_NullComparer</td><td>Random</td><td>2</td><td>5,225.1 us</td><td>22.023 us</td><td>15.924 us</td><td>0.98</td><td>0.00</td>
+</tr><tr><td>Array_ClassComparableComparer</td><td>Random</td><td>2</td><td>20,813.0 us</td><td>966.470 us</td><td>698.821 us</td><td>3.91</td><td>0.13</td>
+</tr><tr><td>Span_</td><td>Random</td><td>2</td><td>6,685.5 us</td><td>52.955 us</td><td>38.290 us</td><td>1.26</td><td>0.01</td>
+</tr><tr><td>Span_NullComparer</td><td>Random</td><td>2</td><td>6,912.5 us</td><td>69.405 us</td><td>50.185 us</td><td>1.30</td><td>0.01</td>
+</tr><tr><td>Span_ClassComparableComparer</td><td>Random</td><td>2</td><td>11,352.3 us</td><td>77.010 us</td><td>55.683 us</td><td>2.13</td><td>0.01</td>
+</tr><tr><td>Span_StructComparableComparer</td><td>Random</td><td>2</td><td>7,826.8 us</td><td>154.494 us</td><td>111.709 us</td><td>1.47</td><td>0.02</td>
+</tr><tr><td>Span_Comparison</td><td>Random</td><td>2</td><td>9,177.5 us</td><td>34.785 us</td><td>25.152 us</td><td>1.73</td><td>0.01</td>
+</tr><tr><td>Array_</td><td>Random</td><td>3</td><td>8,441.6 us</td><td>20.571 us</td><td>14.874 us</td><td>1.00</td><td>0.00</td>
+</tr><tr><td>Array_NullComparer</td><td>Random</td><td>3</td><td>8,414.9 us</td><td>15.203 us</td><td>10.993 us</td><td>1.00</td><td>0.00</td>
+</tr><tr><td>Array_ClassComparableComparer</td><td>Random</td><td>3</td><td>19,032.1 us</td><td>303.058 us</td><td>219.131 us</td><td>2.25</td><td>0.03</td>
+</tr><tr><td>Span_</td><td>Random</td><td>3</td><td>8,964.5 us</td><td>176.542 us</td><td>127.652 us</td><td>1.06</td><td>0.01</td>
+</tr><tr><td>Span_NullComparer</td><td>Random</td><td>3</td><td>9,165.9 us</td><td>123.374 us</td><td>89.207 us</td><td>1.09</td><td>0.01</td>
+</tr><tr><td>Span_ClassComparableComparer</td><td>Random</td><td>3</td><td>12,565.4 us</td><td>413.056 us</td><td>298.667 us</td><td>1.49</td><td>0.03</td>
+</tr><tr><td>Span_StructComparableComparer</td><td>Random</td><td>3</td><td>10,491.7 us</td><td>93.087 us</td><td>67.308 us</td><td>1.24</td><td>0.01</td>
+</tr><tr><td>Span_Comparison</td><td>Random</td><td>3</td><td>11,801.2 us</td><td>25.818 us</td><td>18.668 us</td><td>1.40</td><td>0.00</td>
+</tr><tr><td>Array_</td><td>Random</td><td>10</td><td>20,112.8 us</td><td>104.679 us</td><td>75.690 us</td><td>1.00</td><td>0.00</td>
+</tr><tr><td>Array_NullComparer</td><td>Random</td><td>10</td><td>20,373.8 us</td><td>100.718 us</td><td>72.826 us</td><td>1.01</td><td>0.00</td>
+</tr><tr><td>Array_ClassComparableComparer</td><td>Random</td><td>10</td><td>23,822.8 us</td><td>204.389 us</td><td>147.786 us</td><td>1.18</td><td>0.01</td>
+</tr><tr><td>Span_</td><td>Random</td><td>10</td><td>22,102.4 us</td><td>89.545 us</td><td>64.747 us</td><td>1.10</td><td>0.00</td>
+</tr><tr><td>Span_NullComparer</td><td>Random</td><td>10</td><td>20,424.5 us</td><td>129.626 us</td><td>93.728 us</td><td>1.02</td><td>0.01</td>
+</tr><tr><td>Span_ClassComparableComparer</td><td>Random</td><td>10</td><td>25,708.4 us</td><td>46.128 us</td><td>33.354 us</td><td>1.28</td><td>0.00</td>
+</tr><tr><td>Span_StructComparableComparer</td><td>Random</td><td>10</td><td>27,744.7 us</td><td>97.766 us</td><td>70.691 us</td><td>1.38</td><td>0.01</td>
+</tr><tr><td>Span_Comparison</td><td>Random</td><td>10</td><td>23,112.7 us</td><td>24.022 us</td><td>17.369 us</td><td>1.15</td><td>0.00</td>
+</tr><tr><td>Array_</td><td>Random</td><td>100</td><td>46,025.6 us</td><td>260.155 us</td><td>188.109 us</td><td>1.00</td><td>0.00</td>
+</tr><tr><td>Array_NullComparer</td><td>Random</td><td>100</td><td>46,119.9 us</td><td>334.080 us</td><td>241.561 us</td><td>1.00</td><td>0.01</td>
+</tr><tr><td>Array_ClassComparableComparer</td><td>Random</td><td>100</td><td>47,208.8 us</td><td>177.056 us</td><td>128.023 us</td><td>1.03</td><td>0.00</td>
+</tr><tr><td>Span_</td><td>Random</td><td>100</td><td>48,790.7 us</td><td>199.417 us</td><td>144.191 us</td><td>1.06</td><td>0.01</td>
+</tr><tr><td>Span_NullComparer</td><td>Random</td><td>100</td><td>48,332.5 us</td><td>221.562 us</td><td>160.204 us</td><td>1.05</td><td>0.01</td>
+</tr><tr><td>Span_ClassComparableComparer</td><td>Random</td><td>100</td><td>53,748.6 us</td><td>187.828 us</td><td>135.812 us</td><td>1.17</td><td>0.01</td>
+</tr><tr><td>Span_StructComparableComparer</td><td>Random</td><td>100</td><td>65,184.9 us</td><td>1,286.365 us</td><td>930.126 us</td><td>1.42</td><td>0.02</td>
+</tr><tr><td>Span_Comparison</td><td>Random</td><td>100</td><td>55,952.1 us</td><td>1,106.496 us</td><td>800.069 us</td><td>1.22</td><td>0.02</td>
+</tr><tr><td>Array_</td><td>Random</td><td>1000</td><td>75,359.2 us</td><td>587.887 us</td><td>425.081 us</td><td>1.00</td><td>0.00</td>
+</tr><tr><td>Array_NullComparer</td><td>Random</td><td>1000</td><td>72,039.9 us</td><td>167.151 us</td><td>120.861 us</td><td>0.96</td><td>0.01</td>
+</tr><tr><td>Array_ClassComparableComparer</td><td>Random</td><td>1000</td><td>75,853.7 us</td><td>579.188 us</td><td>418.791 us</td><td>1.01</td><td>0.01</td>
+</tr><tr><td>Span_</td><td>Random</td><td>1000</td><td>78,010.7 us</td><td>1,505.347 us</td><td>1,088.465 us</td><td>1.04</td><td>0.01</td>
+</tr><tr><td>Span_NullComparer</td><td>Random</td><td>1000</td><td>81,885.7 us</td><td>3,533.722 us</td><td>2,555.113 us</td><td>1.09</td><td>0.03</td>
+</tr><tr><td>Span_ClassComparableComparer</td><td>Random</td><td>1000</td><td>87,183.0 us</td><td>665.241 us</td><td>481.013 us</td><td>1.16</td><td>0.01</td>
+</tr><tr><td>Span_StructComparableComparer</td><td>Random</td><td>1000</td><td>100,741.6 us</td><td>1,223.634 us</td><td>884.768 us</td><td>1.34</td><td>0.01</td>
+</tr><tr><td>Span_Comparison</td><td>Random</td><td>1000</td><td>85,828.1 us</td><td>1,271.687 us</td><td>919.513 us</td><td>1.14</td><td>0.01</td>
+</tr><tr><td>Array_</td><td>Random</td><td>10000</td><td>97,509.5 us</td><td>1,504.091 us</td><td>1,087.557 us</td><td>1.00</td><td>0.00</td>
+</tr><tr><td>Array_NullComparer</td><td>Random</td><td>10000</td><td>103,433.6 us</td><td>2,097.437 us</td><td>1,516.584 us</td><td>1.06</td><td>0.02</td>
+</tr><tr><td>Array_ClassComparableComparer</td><td>Random</td><td>10000</td><td>102,270.2 us</td><td>1,514.733 us</td><td>1,095.251 us</td><td>1.05</td><td>0.02</td>
+</tr><tr><td>Span_</td><td>Random</td><td>10000</td><td>105,549.0 us</td><td>1,092.767 us</td><td>790.142 us</td><td>1.08</td><td>0.01</td>
+</tr><tr><td>Span_NullComparer</td><td>Random</td><td>10000</td><td>104,237.1 us</td><td>1,552.735 us</td><td>1,122.729 us</td><td>1.07</td><td>0.02</td>
+</tr><tr><td>Span_ClassComparableComparer</td><td>Random</td><td>10000</td><td>117,687.2 us</td><td>2,019.519 us</td><td>1,460.245 us</td><td>1.21</td><td>0.02</td>
+</tr><tr><td>Span_StructComparableComparer</td><td>Random</td><td>10000</td><td>137,938.7 us</td><td>2,313.883 us</td><td>1,673.089 us</td><td>1.41</td><td>0.02</td>
+</tr><tr><td>Span_Comparison</td><td>Random</td><td>10000</td><td>116,366.7 us</td><td>1,281.653 us</td><td>926.719 us</td><td>1.19</td><td>0.02</td>
+</tr></tbody></table>
+</body>
+</html>

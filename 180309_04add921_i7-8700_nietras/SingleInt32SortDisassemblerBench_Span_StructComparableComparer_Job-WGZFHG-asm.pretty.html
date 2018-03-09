@@ -1,0 +1,135 @@
+<!DOCTYPE html><html lang='en'><head><meta charset='utf-8' /><head>
+<title>Pretty Output of DisassemblyDiagnoser for SingleInt32SortDisassemblerBench.Span_StructComparableComparer: Job-WGZFHG(LaunchCount=1, RunStrategy=Monitoring, TargetCount=3, WarmupCount=1)</title>
+
+<style type="text/css">
+    pre { margin: 0px; }
+    table { border-collapse:collapse; }
+    td.perMethod { border-top: 1px black solid; }
+    tr.evenMap td { background-color: #F5F5F5; }  
+</style>
+
+<style type='text/css'>
+    td.label:hover { cursor: pointer; background-color: yellow !important; }
+    td.highlighted { background-color: yellow !important; }
+</style>
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+<script>$(document).ready(function () {
+    var selectedIndex = 0;
+
+    function highlight() {
+        $('td.reference.highlighted').removeClass('highlighted');
+
+        var selectedLabel = $(this).attr('data-label');
+        if (selectedLabel) {
+            $('td.reference[data-reference=' + selectedLabel + ']').addClass('highlighted');
+        }
+        selectedIndex = 0;
+    }
+
+    function selectNext() {
+        var $highlighted = $('td.reference.highlighted');
+        var selected = $highlighted[selectedIndex++ % $highlighted.length];
+
+        if (selected) {
+            var selectedReference = $(selected).attr('id');
+            if (selectedReference) {
+                window.location.hash = '#' + selectedReference;
+            }
+        }
+    }
+
+    $('td.label').on('click', highlight);
+
+    $(document).on('keydown', function (event) {
+        if (event.keyCode == 114) { // F3
+            event.preventDefault();
+            // Remap F3 to some other key that the browser doesn't care about
+            selectNext();
+        }
+    });
+});</script>
+</head><body><table><tbody>
+<tr><th colspan="2" style="text-align: left;">DotNetCross.Sorting.Benchmarks.SortDisassemblerBench`2[[System.Single, System.Private.CoreLib],[System.Int32, System.Private.CoreLib]].Span_StructComparableComparer()</th><th></th></tr>
+<tr class="">
+<td></td><td ><pre><code>            new Span<TKey>(_work).Sort(new Span<TValue>(_workValues), new StructComparableComparer<TKey>());
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`afb4446e 488b5110        mov     rdx,qword ptr [rcx+10h]"><pre><code>mov     rdx,qword ptr [rcx+10h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`afb44472 4885d2          test    rdx,rdx"><pre><code>test    rdx,rdx</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`afb44475 0f848f000000    je      00007ff8`afb4450a"><pre><code>je      00007ff8`afb4450a</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`afb4447b 488d4210        lea     rax,[rdx+10h]"><pre><code>lea     rax,[rdx+10h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`afb4447f 8b5208          mov     edx,dword ptr [rdx+8]"><pre><code>mov     edx,dword ptr [rdx+8]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`afb44482 488b4920        mov     rcx,qword ptr [rcx+20h]"><pre><code>mov     rcx,qword ptr [rcx+20h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`afb44486 4885c9          test    rcx,rcx"><pre><code>test    rcx,rcx</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`afb44489 0f8485000000    je      00007ff8`afb44514"><pre><code>je      00007ff8`afb44514</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`afb4448f 4c8d4110        lea     r8,[rcx+10h]"><pre><code>lea     r8,[rcx+10h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`afb44493 8b4908          mov     ecx,dword ptr [rcx+8]"><pre><code>mov     ecx,dword ptr [rcx+8]</pre></code></td>
+</tr><tr class="">
+<td></td><td ><pre><code>        }
+        ^</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`afb44496 c644243800      mov     byte ptr [rsp+38h],0"><pre><code>mov     byte ptr [rsp+38h],0</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`afb4449b 4c0fbe4c2438    movsx   r9,byte ptr [rsp+38h]"><pre><code>movsx   r9,byte ptr [rsp+38h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`afb444a1 44884c2430      mov     byte ptr [rsp+30h],r9b"><pre><code>mov     byte ptr [rsp+30h],r9b</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`afb444a6 488bf0          mov     rsi,rax"><pre><code>mov     rsi,rax</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`afb444a9 498bf8          mov     rdi,r8"><pre><code>mov     rdi,r8</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`afb444ac 480fbe442430    movsx   rax,byte ptr [rsp+30h]"><pre><code>movsx   rax,byte ptr [rsp+30h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`afb444b2 88442428        mov     byte ptr [rsp+28h],al"><pre><code>mov     byte ptr [rsp+28h],al</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`afb444b6 8bda            mov     ebx,edx"><pre><code>mov     ebx,edx</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`afb444b8 3bd9            cmp     ebx,ecx"><pre><code>cmp     ebx,ecx</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`afb444ba 7562            jne     00007ff8`afb4451e"><pre><code>jne     00007ff8`afb4451e</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`afb444bc 83fb02          cmp     ebx,2"><pre><code>cmp     ebx,2</pre></code></td>
+</tr><tr class="">
+<td></td><td id="0" class="reference" data-reference="M00_L00" title="00007ff8`afb444bf 7c40            jl      00007ff8`afb44501"><a href="#M00_L00"><pre><code>jl      M00_L00</pre></code></a></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`afb444c1 48b9f048c6aff87f0000 mov rcx,7FF8AFC648F0h"><pre><code>mov     rcx,7FF8AFC648F0h</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`afb444cb 33d2            xor     edx,edx"><pre><code>xor     edx,edx</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`afb444cd e8fe4ea85f      call    coreclr!MetaDataGetDispenser+0x278f0 (00007ff9`0f5c93d0)"><pre><code>call    coreclr!MetaDataGetDispenser+0x278f0</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`afb444d2 48b9682dd6a368020000 mov rcx,268A3D62D68h"><pre><code>mov     rcx,268A3D62D68h</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`afb444dc 488b09          mov     rcx,qword ptr [rcx]"><pre><code>mov     rcx,qword ptr [rcx]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`afb444df 480fbe542428    movsx   rdx,byte ptr [rsp+28h]"><pre><code>movsx   rdx,byte ptr [rsp+28h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`afb444e5 89542420        mov     dword ptr [rsp+20h],edx"><pre><code>mov     dword ptr [rsp+20h],edx</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`afb444e9 488bd6          mov     rdx,rsi"><pre><code>mov     rdx,rsi</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`afb444ec 4c8bc7          mov     r8,rdi"><pre><code>mov     r8,rdi</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`afb444ef 448bcb          mov     r9d,ebx"><pre><code>mov     r9d,ebx</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`afb444f2 49bbe0039daff87f0000 mov r11,7FF8AF9D03E0h"><pre><code>mov     r11,7FF8AF9D03E0h</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`afb444fc 3909            cmp     dword ptr [rcx],ecx"><pre><code>cmp     dword ptr [rcx],ecx</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`afb444fe 41ff13          call    qword ptr [r11]"><pre><code>call    qword ptr [r11]</pre></code></td>
+</tr><tr class="evenMap">
+<td id="M00_L00" class="label" data-label="M00_L00"><pre><code>M00_L00</pre></code></td>
+<td>&nbsp;</td></tr>
+<tr class="evenMap">
+<td></td><td title="00007ff8`afb44501 90              nop"><pre><code>nop</pre></code></td>
+</tr><tr><td colspan="{2}">&nbsp;</td></tr>
+</tbody></table></body></html>

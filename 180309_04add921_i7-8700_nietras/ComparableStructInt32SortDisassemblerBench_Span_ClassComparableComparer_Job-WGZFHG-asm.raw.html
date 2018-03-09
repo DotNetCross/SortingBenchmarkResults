@@ -1,0 +1,126 @@
+<!DOCTYPE html><html lang='en'><head><meta charset='utf-8' />
+<title>Output of DisassemblyDiagnoser for ComparableStructInt32SortDisassemblerBench.Span_ClassComparableComparer: Job-WGZFHG(LaunchCount=1, RunStrategy=Monitoring, TargetCount=3, WarmupCount=1)</title>
+
+<style type="text/css">
+    pre { margin: 0px; }
+    table { border-collapse:collapse; }
+    td.perMethod { border-top: 1px black solid; }
+    tr.evenMap td { background-color: #F5F5F5; }  
+</style>
+</head>
+<body>
+<table>
+<tbody>
+<tr><th colspan="2" id="140706076507792" style="text-align: left;">00007ff8`afb53e90 DotNetCross.Sorting.Benchmarks.SortDisassemblerBench`1[[DotNetCross.Sorting.Benchmarks.ComparableStructInt32, DotNetCross.Sorting.Benchmarks]].Span_ClassComparableComparer()</th><th></th></tr>
+<tr class="evenMap">
+<td><pre><code>            new Span<TKey>(_work).Sort(ClassComparableComparer<TKey>.Instance);
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ff8`afb53e97 488b4910        mov     rcx,qword ptr [rcx+10h]</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ff8`afb53e9b 4885c9          test    rcx,rcx</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ff8`afb53e9e 746c            je      00007ff8`afb53f0c</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ff8`afb53ea0 488d5110        lea     rdx,[rcx+10h]</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ff8`afb53ea4 8b7108          mov     esi,dword ptr [rcx+8]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>        }
+        ^</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ff8`afb53ea7 488bfa          mov     rdi,rdx</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ff8`afb53eaa 48b92017bcaff87f0000 mov rcx,7FF8AFBC1720h</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ff8`afb53eb4 33d2            xor     edx,edx</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ff8`afb53eb6 e81555a75f      call    coreclr!MetaDataGetDispenser+0x278f0 (00007ff9`0f5c93d0)</pre></code></td>
+<td>not managed method</td>
+</tr>
+<tr class="">
+<td><pre><code>00007ff8`afb53ebb 48b9602dc540f4010000 mov rcx,1F440C52D60h</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ff8`afb53ec5 488b19          mov     rbx,qword ptr [rcx]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ff8`afb53ec8 83fe02          cmp     esi,2</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ff8`afb53ecb 7c36            jl      00007ff8`afb53f03</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ff8`afb53ecd 48b9704dc7aff87f0000 mov rcx,7FF8AFC74D70h</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ff8`afb53ed7 33d2            xor     edx,edx</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ff8`afb53ed9 e8f254a75f      call    coreclr!MetaDataGetDispenser+0x278f0 (00007ff9`0f5c93d0)</pre></code></td>
+<td>not managed method</td>
+</tr>
+<tr class="">
+<td><pre><code>00007ff8`afb53ede 48b9702dc540f4010000 mov rcx,1F440C52D70h</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ff8`afb53ee8 488b09          mov     rcx,qword ptr [rcx]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ff8`afb53eeb 488bd7          mov     rdx,rdi</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ff8`afb53eee 448bc6          mov     r8d,esi</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ff8`afb53ef1 4c8bcb          mov     r9,rbx</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ff8`afb53ef4 49bbe0039eaff87f0000 mov r11,7FF8AF9E03E0h</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ff8`afb53efe 3909            cmp     dword ptr [rcx],ecx</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ff8`afb53f00 41ff13          call    qword ptr [r11]</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ff8`afb53f03 90              nop</pre></code></td>
+<td></td>
+</tr>
+<tr><td colspan="{2}">&nbsp;</td></tr>
+</tbody></table></body></html>

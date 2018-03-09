@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>StringSortDisassemblerBench</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet=v0.10.13, OS=Windows 10 Redstone 3 [1709, Fall Creators Update] (10.0.16299.248)
+Intel Core i7-8700 CPU 3.20GHz (Coffee Lake), 1 CPU, 12 logical cores and 6 physical cores
+Frequency=3117186 Hz, Resolution=320.8022 ns, Timer=TSC
+.NET Core SDK=2.1.100
+  [Host]     : .NET Core 2.0.5 (CoreCLR 4.6.26020.03, CoreFX 4.6.26018.01), 64bit RyuJIT
+  Job-WGZFHG : .NET Core 2.0.5 (CoreCLR 4.6.26020.03, CoreFX 4.6.26018.01), 64bit RyuJIT
+</code></pre>
+<pre><code>LaunchCount=1  RunStrategy=Monitoring  TargetCount=3  
+WarmupCount=1  
+</code></pre>
+
+<table>
+<thead><tr><th>                 Method</th><th>Mean</th><th>Error</th><th>StdDev</th><th>Scaled</th>
+</tr>
+</thead><tbody><tr><td>Array_</td><td>3.277 s</td><td>0.6060 s</td><td>0.0342 s</td><td>1.00</td>
+</tr><tr><td>Array_NullComparer</td><td>3.184 s</td><td>0.4559 s</td><td>0.0258 s</td><td>0.97</td>
+</tr><tr><td>Array_ClassComparableComparer</td><td>3.068 s</td><td>0.0429 s</td><td>0.0024 s</td><td>0.94</td>
+</tr><tr><td>Array_Comparison</td><td>3.186 s</td><td>0.3960 s</td><td>0.0224 s</td><td>0.97</td>
+</tr><tr><td>Span_</td><td>3.305 s</td><td>0.1782 s</td><td>0.0101 s</td><td>1.01</td>
+</tr><tr><td>Span_NullComparer</td><td>3.381 s</td><td>0.1187 s</td><td>0.0067 s</td><td>1.03</td>
+</tr><tr><td>Span_ClassComparableComparer</td><td>3.642 s</td><td>0.5661 s</td><td>0.0320 s</td><td>1.11</td>
+</tr><tr><td>Span_StructComparableComparer</td><td>3.586 s</td><td>0.0737 s</td><td>0.0042 s</td><td>1.09</td>
+</tr><tr><td>Span_Comparison</td><td>3.722 s</td><td>0.4033 s</td><td>0.0228 s</td><td>1.14</td>
+</tr></tbody></table>
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html><html lang='en'><head><meta charset='utf-8' />
+<title>Output of DisassemblyDiagnoser for Int32Int32SortDisassemblerBench.Span_StructComparableComparer: Job-WGZFHG(LaunchCount=1, RunStrategy=Monitoring, TargetCount=3, WarmupCount=1)</title>
+
+<style type="text/css">
+    pre { margin: 0px; }
+    table { border-collapse:collapse; }
+    td.perMethod { border-top: 1px black solid; }
+    tr.evenMap td { background-color: #F5F5F5; }  
+</style>
+</head>
+<body>
+<table>
+<tbody>
+<tr><th colspan="2" id="140706076378208" style="text-align: left;">00007ff8`afb34460 DotNetCross.Sorting.Benchmarks.SortDisassemblerBench`2[[System.Int32, System.Private.CoreLib],[System.Int32, System.Private.CoreLib]].Span_StructComparableComparer()</th><th></th></tr>
+<tr class="evenMap">
+<td><pre><code>            new Span<TKey>(_work).Sort(new Span<TValue>(_workValues), new StructComparableComparer<TKey>());
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ff8`afb3446e 488b5110        mov     rdx,qword ptr [rcx+10h]</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ff8`afb34472 4885d2          test    rdx,rdx</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ff8`afb34475 0f848f000000    je      00007ff8`afb3450a</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ff8`afb3447b 488d4210        lea     rax,[rdx+10h]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ff8`afb3447f 8b5208          mov     edx,dword ptr [rdx+8]</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ff8`afb34482 488b4920        mov     rcx,qword ptr [rcx+20h]</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ff8`afb34486 4885c9          test    rcx,rcx</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ff8`afb34489 0f8485000000    je      00007ff8`afb34514</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ff8`afb3448f 4c8d4110        lea     r8,[rcx+10h]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ff8`afb34493 8b4908          mov     ecx,dword ptr [rcx+8]</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>        }
+        ^</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ff8`afb34496 c644243800      mov     byte ptr [rsp+38h],0</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ff8`afb3449b 4c0fbe4c2438    movsx   r9,byte ptr [rsp+38h]</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ff8`afb344a1 44884c2430      mov     byte ptr [rsp+30h],r9b</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ff8`afb344a6 488bf0          mov     rsi,rax</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ff8`afb344a9 498bf8          mov     rdi,r8</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ff8`afb344ac 480fbe442430    movsx   rax,byte ptr [rsp+30h]</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ff8`afb344b2 88442428        mov     byte ptr [rsp+28h],al</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ff8`afb344b6 8bda            mov     ebx,edx</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ff8`afb344b8 3bd9            cmp     ebx,ecx</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ff8`afb344ba 7562            jne     00007ff8`afb3451e</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ff8`afb344bc 83fb02          cmp     ebx,2</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ff8`afb344bf 7c40            jl      00007ff8`afb34501</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ff8`afb344c1 48b9f048c5aff87f0000 mov rcx,7FF8AFC548F0h</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ff8`afb344cb 33d2            xor     edx,edx</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ff8`afb344cd e8fe4ea95f      call    coreclr!MetaDataGetDispenser+0x278f0 (00007ff9`0f5c93d0)</pre></code></td>
+<td>not managed method</td>
+</tr>
+<tr class="">
+<td><pre><code>00007ff8`afb344d2 48b9682d239fd0020000 mov rcx,2D09F232D68h</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ff8`afb344dc 488b09          mov     rcx,qword ptr [rcx]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ff8`afb344df 480fbe542428    movsx   rdx,byte ptr [rsp+28h]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ff8`afb344e5 89542420        mov     dword ptr [rsp+20h],edx</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ff8`afb344e9 488bd6          mov     rdx,rsi</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ff8`afb344ec 4c8bc7          mov     r8,rdi</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ff8`afb344ef 448bcb          mov     r9d,ebx</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ff8`afb344f2 49bbe0039caff87f0000 mov r11,7FF8AF9C03E0h</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ff8`afb344fc 3909            cmp     dword ptr [rcx],ecx</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ff8`afb344fe 41ff13          call    qword ptr [r11]</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ff8`afb34501 90              nop</pre></code></td>
+<td></td>
+</tr>
+<tr><td colspan="{2}">&nbsp;</td></tr>
+</tbody></table></body></html>
