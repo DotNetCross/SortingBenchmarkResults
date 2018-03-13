@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>SingleSortDisassemblerBench</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet=v0.10.13, OS=Windows 10 Redstone 3 [1709, Fall Creators Update] (10.0.16299.248)
+Intel Core i7-8700 CPU 3.20GHz (Coffee Lake), 1 CPU, 12 logical cores and 6 physical cores
+Frequency=3117186 Hz, Resolution=320.8022 ns, Timer=TSC
+.NET Core SDK=2.1.300-preview1-008174
+  [Host]     : .NET Core 2.0.5 (CoreCLR 4.6.26020.03, CoreFX 4.6.26018.01), 64bit RyuJIT
+  Job-XXUHTB : .NET Core 2.0.5 (CoreCLR 4.6.26020.03, CoreFX 4.6.26018.01), 64bit RyuJIT
+</code></pre>
+<pre><code>LaunchCount=1  RunStrategy=Monitoring  TargetCount=3  
+WarmupCount=1  
+</code></pre>
+
+<table>
+<thead><tr><th>                 Method</th><th>Mean</th><th>Error</th><th>StdDev</th><th>Scaled</th>
+</tr>
+</thead><tbody><tr><td>Array_</td><td>45.05 ms</td><td>1.6530 ms</td><td>0.0934 ms</td><td>1.00</td>
+</tr><tr><td>Array_NullComparer</td><td>45.12 ms</td><td>1.7822 ms</td><td>0.1007 ms</td><td>1.00</td>
+</tr><tr><td>Array_ClassComparableComparer</td><td>169.11 ms</td><td>1.1556 ms</td><td>0.0653 ms</td><td>3.75</td>
+</tr><tr><td>Array_Comparison</td><td>158.15 ms</td><td>1.7469 ms</td><td>0.0987 ms</td><td>3.51</td>
+</tr><tr><td>Span_</td><td>37.62 ms</td><td>0.7802 ms</td><td>0.0441 ms</td><td>0.83</td>
+</tr><tr><td>Span_NullComparer</td><td>38.92 ms</td><td>0.3773 ms</td><td>0.0213 ms</td><td>0.86</td>
+</tr><tr><td>Span_ClassComparableComparer</td><td>169.48 ms</td><td>3.4894 ms</td><td>0.1972 ms</td><td>3.76</td>
+</tr><tr><td>Span_StructComparableComparer</td><td>93.14 ms</td><td>0.9815 ms</td><td>0.0555 ms</td><td>2.07</td>
+</tr><tr><td>Span_Comparison</td><td>163.05 ms</td><td>2.5471 ms</td><td>0.1439 ms</td><td>3.62</td>
+</tr></tbody></table>
+</body>
+</html>

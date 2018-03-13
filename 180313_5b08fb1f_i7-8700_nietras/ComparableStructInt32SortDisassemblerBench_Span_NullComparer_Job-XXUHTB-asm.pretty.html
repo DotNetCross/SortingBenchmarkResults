@@ -1,0 +1,112 @@
+<!DOCTYPE html><html lang='en'><head><meta charset='utf-8' /><head>
+<title>Pretty Output of DisassemblyDiagnoser for ComparableStructInt32SortDisassemblerBench.Span_NullComparer: Job-XXUHTB(LaunchCount=1, RunStrategy=Monitoring, TargetCount=3, WarmupCount=1)</title>
+
+<style type="text/css">
+    pre { margin: 0px; }
+    table { border-collapse:collapse; }
+    td.perMethod { border-top: 1px black solid; }
+    tr.evenMap td { background-color: #F5F5F5; }  
+</style>
+
+<style type='text/css'>
+    td.label:hover { cursor: pointer; background-color: yellow !important; }
+    td.highlighted { background-color: yellow !important; }
+</style>
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+<script>$(document).ready(function () {
+    var selectedIndex = 0;
+
+    function highlight() {
+        $('td.reference.highlighted').removeClass('highlighted');
+
+        var selectedLabel = $(this).attr('data-label');
+        if (selectedLabel) {
+            $('td.reference[data-reference=' + selectedLabel + ']').addClass('highlighted');
+        }
+        selectedIndex = 0;
+    }
+
+    function selectNext() {
+        var $highlighted = $('td.reference.highlighted');
+        var selected = $highlighted[selectedIndex++ % $highlighted.length];
+
+        if (selected) {
+            var selectedReference = $(selected).attr('id');
+            if (selectedReference) {
+                window.location.hash = '#' + selectedReference;
+            }
+        }
+    }
+
+    $('td.label').on('click', highlight);
+
+    $(document).on('keydown', function (event) {
+        if (event.keyCode == 114) { // F3
+            event.preventDefault();
+            // Remap F3 to some other key that the browser doesn't care about
+            selectNext();
+        }
+    });
+});</script>
+</head><body><table><tbody>
+<tr><th colspan="2" style="text-align: left;">System.Runtime.InteropServices.MemoryMarshal.GetReference[[DotNetCross.Sorting.Benchmarks.ComparableStructInt32, DotNetCross.Sorting.Benchmarks]](System.Span`1<DotNetCross.Sorting.Benchmarks.ComparableStructInt32>)</th><th></th></tr>
+<tr class="">
+<td></td><td title="00007ff8`c0444b50 48833900        cmp     qword ptr [rcx],0"><pre><code>cmp     qword ptr [rcx],0</pre></code></td>
+</tr><tr class="">
+<td></td><td id="0" class="reference" data-reference="M00_L00" title="00007ff8`c0444b54 7505            jne     00007ff8`c0444b5b"><a href="#M00_L00"><pre><code>jne     M00_L00</pre></code></a></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0444b56 488b4108        mov     rax,qword ptr [rcx+8]"><pre><code>mov     rax,qword ptr [rcx+8]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0444b5a c3              ret"><pre><code>ret</pre></code></td>
+</tr><tr class="evenMap">
+<td id="M00_L00" class="label" data-label="M00_L00"><pre><code>M00_L00</pre></code></td>
+<td>&nbsp;</td></tr>
+<tr class="evenMap">
+<td></td><td title="00007ff8`c0444b5b 488b01          mov     rax,qword ptr [rcx]"><pre><code>mov     rax,qword ptr [rcx]</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0444b5e 3900            cmp     dword ptr [rax],eax"><pre><code>cmp     dword ptr [rax],eax</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0444b60 4883c008        add     rax,8"><pre><code>add     rax,8</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0444b64 488b5108        mov     rdx,qword ptr [rcx+8]"><pre><code>mov     rdx,qword ptr [rcx+8]</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0444b68 4803c2          add     rax,rdx"><pre><code>add     rax,rdx</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0444b6b c3              ret"><pre><code>ret</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0444b6c 1900            sbb     dword ptr [rax],eax"><pre><code>sbb     dword ptr [rax],eax</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0444b6e 0000            add     byte ptr [rax],al"><pre><code>add     byte ptr [rax],al</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0444b70 3e0000          add     byte ptr ds:[rax],al"><pre><code>add     byte ptr ds:[rax],al</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0444b73 0000            add     byte ptr [rax],al"><pre><code>add     byte ptr [rax],al</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0444b75 0000            add     byte ptr [rax],al"><pre><code>add     byte ptr [rax],al</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0444b77 0002            add     byte ptr [rdx],al"><pre><code>add     byte ptr [rdx],al</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0444b79 0000            add     byte ptr [rax],al"><pre><code>add     byte ptr [rax],al</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0444b7b 0000            add     byte ptr [rax],al"><pre><code>add     byte ptr [rax],al</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0444b7d 0000            add     byte ptr [rax],al"><pre><code>add     byte ptr [rax],al</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0444b7f 00e9            add     cl,ch"><pre><code>add     cl,ch</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0444b81 cb              retf"><pre><code>retf</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0444b82 0d00005f00      or      eax,5F0000h"><pre><code>or      eax,5F0000h</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0444b87 02e8            add     ch,al"><pre><code>add     ch,al</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0444b89 63e0            movsxd  esp,eax"><pre><code>movsxd  esp,eax</pre></code></td>
+</tr><tr><td colspan="{2}">&nbsp;</td></tr>
+<tr><th colspan="2" style="text-align: left;">System.IntPtr.ToPointer()</th><th></th></tr>
+<tr class="">
+<td></td><td title="00007ff9`1df04de5 488b01          mov     rax,qword ptr [rcx]"><pre><code>mov     rax,qword ptr [rcx]</pre></code></td>
+</tr><tr><td colspan="{2}">&nbsp;</td></tr>
+<tr><td colspan="2"><b>Method got most probably inlined</b></td></tr>
+<tr><td colspan="2">System.ThrowHelper.ThrowArgumentNullException(System.ExceptionArgument)</td></tr>
+<tr><td colspan="{2}"></td></tr>
+</tbody></table></body></html>

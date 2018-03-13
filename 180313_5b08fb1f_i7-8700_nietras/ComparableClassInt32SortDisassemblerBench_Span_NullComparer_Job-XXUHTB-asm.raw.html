@@ -1,0 +1,75 @@
+<!DOCTYPE html><html lang='en'><head><meta charset='utf-8' />
+<title>Output of DisassemblyDiagnoser for ComparableClassInt32SortDisassemblerBench.Span_NullComparer: Job-XXUHTB(LaunchCount=1, RunStrategy=Monitoring, TargetCount=3, WarmupCount=1)</title>
+
+<style type="text/css">
+    pre { margin: 0px; }
+    table { border-collapse:collapse; }
+    td.perMethod { border-top: 1px black solid; }
+    tr.evenMap td { background-color: #F5F5F5; }  
+</style>
+</head>
+<body>
+<table>
+<tbody>
+<tr><th colspan="2" id="140706354385872" style="text-align: left;">00007ff8`c04553d0 System.Runtime.InteropServices.MemoryMarshal.GetReference[[System.__Canon, System.Private.CoreLib]](System.Span`1<System.__Canon>)</th><th></th></tr>
+<tr class="">
+<td><pre><code>00007ff8`c04553d9 488b4110        mov     rax,qword ptr [rcx+10h]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ff8`c04553dd 488b4008        mov     rax,qword ptr [rax+8]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ff8`c04553e1 48833a00        cmp     qword ptr [rdx],0</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ff8`c04553e5 7509            jne     00007ff8`c04553f0</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ff8`c04553e7 488b4208        mov     rax,qword ptr [rdx+8]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ff8`c04553eb 4883c448        add     rsp,48h</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ff8`c04553ef c3              ret</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ff8`c04553f0 488b02          mov     rax,qword ptr [rdx]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ff8`c04553f3 3900            cmp     dword ptr [rax],eax</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ff8`c04553f5 4883c008        add     rax,8</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ff8`c04553f9 488b5208        mov     rdx,qword ptr [rdx+8]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ff8`c04553fd 4803c2          add     rax,rdx</pre></code></td>
+<td></td>
+</tr>
+<tr><td colspan="{2}">&nbsp;</td></tr>
+<tr><th colspan="2" id="140707925872096" style="text-align: left;">00007ff9`1df04de0 System.IntPtr.ToPointer()</th><th></th></tr>
+<tr class="">
+<td><pre><code>00007ff9`1df04de5 488b01          mov     rax,qword ptr [rcx]</pre></code></td>
+<td></td>
+</tr>
+<tr><td colspan="{2}">&nbsp;</td></tr>
+<tr><td colspan="2"><b>Method got most probably inlined</b></td></tr>
+<tr><td colspan="2">System.Object.GetType()</td></tr>
+<tr><td colspan="2">System.ThrowHelper.ThrowArgumentNullException(System.ExceptionArgument)</td></tr>
+<tr><td colspan="2">System.ThrowHelper.ThrowArrayTypeMismatchException()</td></tr>
+<tr><td colspan="{2}"></td></tr>
+</tbody></table></body></html>

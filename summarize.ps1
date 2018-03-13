@@ -62,8 +62,10 @@
     }
 }
 
-#
-$files = Get-ChildItem -Path .\*SortBench-report.csv
+$directory = "180313_5b08fb1f_i7-8700_nietras\"
+$filePathSearch = $directory + "*SortBench-report.csv"
+$filePathSearch
+$files = Get-ChildItem -Path $filePathSearch
 $files
 $csvs = $files | ForEach-Object -Process { Import-Csv -Path $PSItem.FullName }
 $groups = $csvs | Group-Object -Property Method,Filler,Length
@@ -96,4 +98,6 @@ $r = $groups |
 #$r
 
 #$r | Export-Csv -NoTypeInformation -Path ..\SortBench-summary-report.csv
-$r | ConvertTo-Markdown | Out-File ..\SortBench-summary-report.md
+$outputFilePath = $directory + "SortBench-summary-report.md"
+$r | ConvertTo-Markdown | Out-File $outputFilePath
+$outputFilePath

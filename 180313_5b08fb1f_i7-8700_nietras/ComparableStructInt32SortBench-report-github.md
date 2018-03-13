@@ -1,0 +1,338 @@
+``` ini
+
+BenchmarkDotNet=v0.10.13, OS=Windows 10 Redstone 3 [1709, Fall Creators Update] (10.0.16299.248)
+Intel Core i7-8700 CPU 3.20GHz (Coffee Lake), 1 CPU, 12 logical cores and 6 physical cores
+Frequency=3117186 Hz, Resolution=320.8022 ns, Timer=TSC
+.NET Core SDK=2.1.300-preview1-008174
+  [Host] : .NET Core 2.0.5 (CoreCLR 4.6.26020.03, CoreFX 4.6.26018.01), 64bit RyuJIT
+
+Platform=X64  Runtime=Core  Toolchain=InProcessToolchain  
+LaunchCount=1  RunStrategy=Monitoring  TargetCount=11  
+UnrollFactor=1  WarmupCount=3  
+
+```
+|                        Method |               Filler |  Length |       Mean |     Error |    StdDev | Scaled | ScaledSD |
+|------------------------------ |--------------------- |-------- |-----------:|----------:|----------:|-------:|---------:|
+|                        **Array_** |             **Constant** |       **2** |  **44.246 ms** | **0.7625 ms** | **0.5513 ms** |   **1.00** |     **0.00** |
+|            Array_NullComparer |             Constant |       2 |  42.942 ms | 0.1457 ms | 0.1054 ms |   0.97 |     0.01 |
+| Array_ClassComparableComparer |             Constant |       2 | 132.463 ms | 0.8117 ms | 0.5869 ms |   2.99 |     0.04 |
+|                         Span_ |             Constant |       2 |  22.187 ms | 0.0355 ms | 0.0257 ms |   0.50 |     0.01 |
+|             Span_NullComparer |             Constant |       2 |  28.286 ms | 0.0371 ms | 0.0268 ms |   0.64 |     0.01 |
+|  Span_ClassComparableComparer |             Constant |       2 | 118.128 ms | 0.3075 ms | 0.2224 ms |   2.67 |     0.03 |
+| Span_StructComparableComparer |             Constant |       2 |  62.089 ms | 0.6231 ms | 0.4505 ms |   1.40 |     0.02 |
+|               Span_Comparison |             Constant |       2 |  17.879 ms | 0.1181 ms | 0.0854 ms |   0.40 |     0.01 |
+|                               |                      |         |            |           |           |        |          |
+|                        **Array_** |             **Constant** |       **3** |  **32.795 ms** | **0.1075 ms** | **0.0777 ms** |   **1.00** |     **0.00** |
+|            Array_NullComparer |             Constant |       3 |  32.900 ms | 0.5279 ms | 0.3817 ms |   1.00 |     0.01 |
+| Array_ClassComparableComparer |             Constant |       3 |  98.312 ms | 0.3046 ms | 0.2203 ms |   3.00 |     0.01 |
+|                         Span_ |             Constant |       3 |  19.044 ms | 0.1258 ms | 0.0909 ms |   0.58 |     0.00 |
+|             Span_NullComparer |             Constant |       3 |  22.397 ms | 0.1110 ms | 0.0803 ms |   0.68 |     0.00 |
+|  Span_ClassComparableComparer |             Constant |       3 |  76.900 ms | 0.1213 ms | 0.0877 ms |   2.34 |     0.01 |
+| Span_StructComparableComparer |             Constant |       3 |  42.043 ms | 0.2281 ms | 0.1649 ms |   1.28 |     0.01 |
+|               Span_Comparison |             Constant |       3 |  19.311 ms | 0.0695 ms | 0.0503 ms |   0.59 |     0.00 |
+|                               |                      |         |            |           |           |        |          |
+|                        **Array_** |             **Constant** |      **10** |  **11.909 ms** | **0.9597 ms** | **0.6939 ms** |   **1.00** |     **0.00** |
+|            Array_NullComparer |             Constant |      10 |  11.592 ms | 0.0903 ms | 0.0653 ms |   0.98 |     0.05 |
+| Array_ClassComparableComparer |             Constant |      10 |  34.408 ms | 0.0404 ms | 0.0292 ms |   2.90 |     0.14 |
+|                         Span_ |             Constant |      10 |   6.316 ms | 0.0699 ms | 0.0505 ms |   0.53 |     0.03 |
+|             Span_NullComparer |             Constant |      10 |   7.491 ms | 0.0841 ms | 0.0608 ms |   0.63 |     0.03 |
+|  Span_ClassComparableComparer |             Constant |      10 |  28.766 ms | 0.1391 ms | 0.1006 ms |   2.42 |     0.12 |
+| Span_StructComparableComparer |             Constant |      10 |  14.543 ms | 0.3355 ms | 0.2426 ms |   1.22 |     0.06 |
+|               Span_Comparison |             Constant |      10 |  10.606 ms | 0.0692 ms | 0.0501 ms |   0.89 |     0.04 |
+|                               |                      |         |            |           |           |        |          |
+|                        **Array_** |             **Constant** |     **100** |  **11.671 ms** | **0.3301 ms** | **0.2387 ms** |   **1.00** |     **0.00** |
+|            Array_NullComparer |             Constant |     100 |  11.462 ms | 0.1180 ms | 0.0853 ms |   0.98 |     0.02 |
+| Array_ClassComparableComparer |             Constant |     100 |  36.126 ms | 0.1132 ms | 0.0819 ms |   3.10 |     0.06 |
+|                         Span_ |             Constant |     100 |  14.338 ms | 0.0731 ms | 0.0529 ms |   1.23 |     0.02 |
+|             Span_NullComparer |             Constant |     100 |  14.501 ms | 0.1160 ms | 0.0839 ms |   1.24 |     0.02 |
+|  Span_ClassComparableComparer |             Constant |     100 |  41.215 ms | 0.0837 ms | 0.0605 ms |   3.53 |     0.07 |
+| Span_StructComparableComparer |             Constant |     100 |  15.436 ms | 0.3014 ms | 0.2179 ms |   1.32 |     0.03 |
+|               Span_Comparison |             Constant |     100 |  34.601 ms | 0.2905 ms | 0.2100 ms |   2.97 |     0.06 |
+|                               |                      |         |            |           |           |        |          |
+|                        **Array_** |             **Constant** |   **10000** |  **24.314 ms** | **0.0640 ms** | **0.0463 ms** |   **1.00** |     **0.00** |
+|            Array_NullComparer |             Constant |   10000 |  24.470 ms | 0.1548 ms | 0.1119 ms |   1.01 |     0.00 |
+| Array_ClassComparableComparer |             Constant |   10000 |  81.266 ms | 0.1303 ms | 0.0942 ms |   3.34 |     0.01 |
+|                         Span_ |             Constant |   10000 |  35.204 ms | 0.3847 ms | 0.2782 ms |   1.45 |     0.01 |
+|             Span_NullComparer |             Constant |   10000 |  35.613 ms | 0.5645 ms | 0.4081 ms |   1.46 |     0.02 |
+|  Span_ClassComparableComparer |             Constant |   10000 | 101.511 ms | 0.1407 ms | 0.1018 ms |   4.18 |     0.01 |
+| Span_StructComparableComparer |             Constant |   10000 |  38.707 ms | 0.1401 ms | 0.1013 ms |   1.59 |     0.00 |
+|               Span_Comparison |             Constant |   10000 |  90.093 ms | 0.1505 ms | 0.1089 ms |   3.71 |     0.01 |
+|                               |                      |         |            |           |           |        |          |
+|                        **Array_** |             **Constant** | **1000000** |  **33.958 ms** | **0.0798 ms** | **0.0577 ms** |   **1.00** |     **0.00** |
+|            Array_NullComparer |             Constant | 1000000 |  34.072 ms | 0.2332 ms | 0.1686 ms |   1.00 |     0.01 |
+| Array_ClassComparableComparer |             Constant | 1000000 | 120.312 ms | 0.1718 ms | 0.1242 ms |   3.54 |     0.01 |
+|                         Span_ |             Constant | 1000000 |  52.671 ms | 0.0726 ms | 0.0525 ms |   1.55 |     0.00 |
+|             Span_NullComparer |             Constant | 1000000 |  52.756 ms | 0.2479 ms | 0.1792 ms |   1.55 |     0.01 |
+|  Span_ClassComparableComparer |             Constant | 1000000 | 152.460 ms | 0.1419 ms | 0.1026 ms |   4.49 |     0.01 |
+| Span_StructComparableComparer |             Constant | 1000000 |  59.249 ms | 0.2774 ms | 0.2006 ms |   1.74 |     0.01 |
+|               Span_Comparison |             Constant | 1000000 | 135.431 ms | 0.1826 ms | 0.1321 ms |   3.99 |     0.01 |
+|                               |                      |         |            |           |           |        |          |
+|                        **Array_** |         **Decrementing** |       **2** |  **43.512 ms** | **0.0435 ms** | **0.0315 ms** |   **1.00** |     **0.00** |
+|            Array_NullComparer |         Decrementing |       2 |  42.678 ms | 0.1038 ms | 0.0750 ms |   0.98 |     0.00 |
+| Array_ClassComparableComparer |         Decrementing |       2 | 132.500 ms | 0.5205 ms | 0.3764 ms |   3.05 |     0.01 |
+|                         Span_ |         Decrementing |       2 |  21.891 ms | 0.0538 ms | 0.0389 ms |   0.50 |     0.00 |
+|             Span_NullComparer |         Decrementing |       2 |  28.606 ms | 0.0763 ms | 0.0551 ms |   0.66 |     0.00 |
+|  Span_ClassComparableComparer |         Decrementing |       2 | 115.442 ms | 0.2711 ms | 0.1960 ms |   2.65 |     0.00 |
+| Span_StructComparableComparer |         Decrementing |       2 |  65.470 ms | 0.1327 ms | 0.0959 ms |   1.50 |     0.00 |
+|               Span_Comparison |         Decrementing |       2 |  17.597 ms | 0.0825 ms | 0.0597 ms |   0.40 |     0.00 |
+|                               |                      |         |            |           |           |        |          |
+|                        **Array_** |         **Decrementing** |       **3** |  **32.665 ms** | **0.1088 ms** | **0.0787 ms** |   **1.00** |     **0.00** |
+|            Array_NullComparer |         Decrementing |       3 |  32.589 ms | 0.1796 ms | 0.1299 ms |   1.00 |     0.00 |
+| Array_ClassComparableComparer |         Decrementing |       3 |  97.559 ms | 0.1482 ms | 0.1072 ms |   2.99 |     0.01 |
+|                         Span_ |         Decrementing |       3 |  17.841 ms | 0.1142 ms | 0.0826 ms |   0.55 |     0.00 |
+|             Span_NullComparer |         Decrementing |       3 |  21.158 ms | 0.0501 ms | 0.0362 ms |   0.65 |     0.00 |
+|  Span_ClassComparableComparer |         Decrementing |       3 |  76.116 ms | 0.1389 ms | 0.1004 ms |   2.33 |     0.01 |
+| Span_StructComparableComparer |         Decrementing |       3 |  42.810 ms | 0.2412 ms | 0.1744 ms |   1.31 |     0.01 |
+|               Span_Comparison |         Decrementing |       3 |  17.836 ms | 0.0400 ms | 0.0289 ms |   0.55 |     0.00 |
+|                               |                      |         |            |           |           |        |          |
+|                        **Array_** |         **Decrementing** |      **10** |  **19.696 ms** | **0.0800 ms** | **0.0578 ms** |   **1.00** |     **0.00** |
+|            Array_NullComparer |         Decrementing |      10 |  19.553 ms | 0.1941 ms | 0.1404 ms |   0.99 |     0.01 |
+| Array_ClassComparableComparer |         Decrementing |      10 |  60.787 ms | 1.9683 ms | 1.4232 ms |   3.09 |     0.07 |
+|                         Span_ |         Decrementing |      10 |  14.192 ms | 1.4436 ms | 1.0438 ms |   0.72 |     0.05 |
+|             Span_NullComparer |         Decrementing |      10 |  15.620 ms | 0.1289 ms | 0.0932 ms |   0.79 |     0.01 |
+|  Span_ClassComparableComparer |         Decrementing |      10 |  54.956 ms | 0.3379 ms | 0.2443 ms |   2.79 |     0.01 |
+| Span_StructComparableComparer |         Decrementing |      10 |  23.281 ms | 0.0794 ms | 0.0574 ms |   1.18 |     0.00 |
+|               Span_Comparison |         Decrementing |      10 |  32.209 ms | 0.1757 ms | 0.1270 ms |   1.64 |     0.01 |
+|                               |                      |         |            |           |           |        |          |
+|                        **Array_** |         **Decrementing** |     **100** |  **15.999 ms** | **1.6309 ms** | **1.1792 ms** |   **1.00** |     **0.00** |
+|            Array_NullComparer |         Decrementing |     100 |  14.410 ms | 0.2772 ms | 0.2005 ms |   0.90 |     0.06 |
+| Array_ClassComparableComparer |         Decrementing |     100 |  51.159 ms | 0.1793 ms | 0.1297 ms |   3.21 |     0.22 |
+|                         Span_ |         Decrementing |     100 |  14.634 ms | 0.0340 ms | 0.0246 ms |   0.92 |     0.06 |
+|             Span_NullComparer |         Decrementing |     100 |  15.176 ms | 1.9482 ms | 1.4087 ms |   0.95 |     0.11 |
+|  Span_ClassComparableComparer |         Decrementing |     100 |  57.100 ms | 0.3056 ms | 0.2210 ms |   3.59 |     0.24 |
+| Span_StructComparableComparer |         Decrementing |     100 |  15.610 ms | 1.6447 ms | 1.1893 ms |   0.98 |     0.10 |
+|               Span_Comparison |         Decrementing |     100 |  48.561 ms | 0.0948 ms | 0.0685 ms |   3.05 |     0.21 |
+|                               |                      |         |            |           |           |        |          |
+|                        **Array_** |         **Decrementing** |   **10000** |  **33.392 ms** | **0.1481 ms** | **0.1071 ms** |   **1.00** |     **0.00** |
+|            Array_NullComparer |         Decrementing |   10000 |  33.483 ms | 0.0817 ms | 0.0591 ms |   1.00 |     0.00 |
+| Array_ClassComparableComparer |         Decrementing |   10000 | 116.836 ms | 0.2413 ms | 0.1745 ms |   3.50 |     0.01 |
+|                         Span_ |         Decrementing |   10000 |  34.730 ms | 0.5633 ms | 0.4073 ms |   1.04 |     0.01 |
+|             Span_NullComparer |         Decrementing |   10000 |  35.548 ms | 1.3203 ms | 0.9547 ms |   1.06 |     0.03 |
+|  Span_ClassComparableComparer |         Decrementing |   10000 | 134.828 ms | 0.5402 ms | 0.3906 ms |   4.04 |     0.02 |
+| Span_StructComparableComparer |         Decrementing |   10000 |  33.121 ms | 0.1438 ms | 0.1040 ms |   0.99 |     0.00 |
+|               Span_Comparison |         Decrementing |   10000 | 118.803 ms | 0.0795 ms | 0.0575 ms |   3.56 |     0.01 |
+|                               |                      |         |            |           |           |        |          |
+|                        **Array_** |         **Decrementing** | **1000000** |  **51.792 ms** | **0.1126 ms** | **0.0814 ms** |   **1.00** |     **0.00** |
+|            Array_NullComparer |         Decrementing | 1000000 |  51.863 ms | 0.2395 ms | 0.1732 ms |   1.00 |     0.00 |
+| Array_ClassComparableComparer |         Decrementing | 1000000 | 188.145 ms | 0.2706 ms | 0.1957 ms |   3.63 |     0.01 |
+|                         Span_ |         Decrementing | 1000000 |  52.693 ms | 0.0638 ms | 0.0461 ms |   1.02 |     0.00 |
+|             Span_NullComparer |         Decrementing | 1000000 |  52.810 ms | 0.1838 ms | 0.1329 ms |   1.02 |     0.00 |
+|  Span_ClassComparableComparer |         Decrementing | 1000000 | 217.873 ms | 0.6329 ms | 0.4576 ms |   4.21 |     0.01 |
+| Span_StructComparableComparer |         Decrementing | 1000000 |  51.018 ms | 0.1911 ms | 0.1382 ms |   0.99 |     0.00 |
+|               Span_Comparison |         Decrementing | 1000000 | 192.452 ms | 0.4558 ms | 0.3296 ms |   3.72 |     0.01 |
+|                               |                      |         |            |           |           |        |          |
+|                        **Array_** |         **Incrementing** |       **2** |  **44.173 ms** | **1.3766 ms** | **0.9954 ms** |   **1.00** |     **0.00** |
+|            Array_NullComparer |         Incrementing |       2 |  42.902 ms | 0.2094 ms | 0.1514 ms |   0.97 |     0.02 |
+| Array_ClassComparableComparer |         Incrementing |       2 | 132.038 ms | 0.2263 ms | 0.1636 ms |   2.99 |     0.06 |
+|                         Span_ |         Incrementing |       2 |  21.757 ms | 0.0561 ms | 0.0406 ms |   0.49 |     0.01 |
+|             Span_NullComparer |         Incrementing |       2 |  27.992 ms | 0.0683 ms | 0.0494 ms |   0.63 |     0.01 |
+|  Span_ClassComparableComparer |         Incrementing |       2 | 114.683 ms | 0.2638 ms | 0.1907 ms |   2.60 |     0.05 |
+| Span_StructComparableComparer |         Incrementing |       2 |  62.074 ms | 0.1133 ms | 0.0819 ms |   1.41 |     0.03 |
+|               Span_Comparison |         Incrementing |       2 |  17.099 ms | 0.1732 ms | 0.1252 ms |   0.39 |     0.01 |
+|                               |                      |         |            |           |           |        |          |
+|                        **Array_** |         **Incrementing** |       **3** |  **32.685 ms** | **0.0617 ms** | **0.0446 ms** |   **1.00** |     **0.00** |
+|            Array_NullComparer |         Incrementing |       3 |  32.381 ms | 0.0948 ms | 0.0685 ms |   0.99 |     0.00 |
+| Array_ClassComparableComparer |         Incrementing |       3 |  96.121 ms | 0.2514 ms | 0.1817 ms |   2.94 |     0.01 |
+|                         Span_ |         Incrementing |       3 |  17.898 ms | 0.1067 ms | 0.0771 ms |   0.55 |     0.00 |
+|             Span_NullComparer |         Incrementing |       3 |  21.360 ms | 0.0554 ms | 0.0401 ms |   0.65 |     0.00 |
+|  Span_ClassComparableComparer |         Incrementing |       3 |  75.649 ms | 0.1388 ms | 0.1004 ms |   2.31 |     0.00 |
+| Span_StructComparableComparer |         Incrementing |       3 |  41.849 ms | 0.2126 ms | 0.1537 ms |   1.28 |     0.00 |
+|               Span_Comparison |         Incrementing |       3 |  18.015 ms | 0.0731 ms | 0.0528 ms |   0.55 |     0.00 |
+|                               |                      |         |            |           |           |        |          |
+|                        **Array_** |         **Incrementing** |      **10** |  **11.777 ms** | **0.3529 ms** | **0.2552 ms** |   **1.00** |     **0.00** |
+|            Array_NullComparer |         Incrementing |      10 |  11.584 ms | 0.0559 ms | 0.0404 ms |   0.98 |     0.02 |
+| Array_ClassComparableComparer |         Incrementing |      10 |  34.478 ms | 0.0600 ms | 0.0434 ms |   2.93 |     0.06 |
+|                         Span_ |         Incrementing |      10 |   6.532 ms | 0.0739 ms | 0.0534 ms |   0.55 |     0.01 |
+|             Span_NullComparer |         Incrementing |      10 |   7.856 ms | 0.0870 ms | 0.0629 ms |   0.67 |     0.01 |
+|  Span_ClassComparableComparer |         Incrementing |      10 |  29.142 ms | 0.1712 ms | 0.1238 ms |   2.48 |     0.05 |
+| Span_StructComparableComparer |         Incrementing |      10 |  16.405 ms | 0.3023 ms | 0.2186 ms |   1.39 |     0.03 |
+|               Span_Comparison |         Incrementing |      10 |  10.589 ms | 0.0729 ms | 0.0527 ms |   0.90 |     0.02 |
+|                               |                      |         |            |           |           |        |          |
+|                        **Array_** |         **Incrementing** |     **100** |  **11.256 ms** | **1.4988 ms** | **1.0837 ms** |   **1.00** |     **0.00** |
+|            Array_NullComparer |         Incrementing |     100 |  10.452 ms | 0.4614 ms | 0.3336 ms |   0.94 |     0.09 |
+| Array_ClassComparableComparer |         Incrementing |     100 |  34.354 ms | 0.1191 ms | 0.0861 ms |   3.08 |     0.27 |
+|                         Span_ |         Incrementing |     100 |   8.751 ms | 0.1077 ms | 0.0779 ms |   0.78 |     0.07 |
+|             Span_NullComparer |         Incrementing |     100 |   8.935 ms | 0.1641 ms | 0.1187 ms |   0.80 |     0.07 |
+|  Span_ClassComparableComparer |         Incrementing |     100 |  39.593 ms | 0.1497 ms | 0.1082 ms |   3.55 |     0.31 |
+| Span_StructComparableComparer |         Incrementing |     100 |   9.480 ms | 0.1607 ms | 0.1162 ms |   0.85 |     0.07 |
+|               Span_Comparison |         Incrementing |     100 |  30.704 ms | 0.0355 ms | 0.0257 ms |   2.75 |     0.24 |
+|                               |                      |         |            |           |           |        |          |
+|                        **Array_** |         **Incrementing** |   **10000** |  **21.151 ms** | **0.1189 ms** | **0.0860 ms** |   **1.00** |     **0.00** |
+|            Array_NullComparer |         Incrementing |   10000 |  21.222 ms | 0.1434 ms | 0.1037 ms |   1.00 |     0.01 |
+| Array_ClassComparableComparer |         Incrementing |   10000 |  69.809 ms | 0.1079 ms | 0.0780 ms |   3.30 |     0.01 |
+|                         Span_ |         Incrementing |   10000 |  19.969 ms | 0.0852 ms | 0.0616 ms |   0.94 |     0.00 |
+|             Span_NullComparer |         Incrementing |   10000 |  20.257 ms | 0.5901 ms | 0.4267 ms |   0.96 |     0.02 |
+|  Span_ClassComparableComparer |         Incrementing |   10000 |  81.409 ms | 0.0881 ms | 0.0637 ms |   3.85 |     0.02 |
+| Span_StructComparableComparer |         Incrementing |   10000 |  19.021 ms | 0.1249 ms | 0.0903 ms |   0.90 |     0.01 |
+|               Span_Comparison |         Incrementing |   10000 |  71.561 ms | 0.1650 ms | 0.1193 ms |   3.38 |     0.01 |
+|                               |                      |         |            |           |           |        |          |
+|                        **Array_** |         **Incrementing** | **1000000** |  **28.375 ms** | **0.2192 ms** | **0.1585 ms** |   **1.00** |     **0.00** |
+|            Array_NullComparer |         Incrementing | 1000000 |  28.352 ms | 0.1764 ms | 0.1276 ms |   1.00 |     0.01 |
+| Array_ClassComparableComparer |         Incrementing | 1000000 | 100.254 ms | 0.2037 ms | 0.1473 ms |   3.53 |     0.02 |
+|                         Span_ |         Incrementing | 1000000 |  27.599 ms | 0.0967 ms | 0.0699 ms |   0.97 |     0.01 |
+|             Span_NullComparer |         Incrementing | 1000000 |  27.693 ms | 0.1441 ms | 0.1042 ms |   0.98 |     0.01 |
+|  Span_ClassComparableComparer |         Incrementing | 1000000 | 118.205 ms | 0.1562 ms | 0.1129 ms |   4.17 |     0.02 |
+| Span_StructComparableComparer |         Incrementing | 1000000 |  26.542 ms | 0.1308 ms | 0.0946 ms |   0.94 |     0.01 |
+|               Span_Comparison |         Incrementing | 1000000 | 103.656 ms | 0.1299 ms | 0.0939 ms |   3.65 |     0.02 |
+|                               |                      |         |            |           |           |        |          |
+|                        **Array_** |  **MedianOfThreeKiller** |       **2** |  **44.275 ms** | **1.3760 ms** | **0.9950 ms** |   **1.00** |     **0.00** |
+|            Array_NullComparer |  MedianOfThreeKiller |       2 |  42.889 ms | 0.1026 ms | 0.0742 ms |   0.97 |     0.02 |
+| Array_ClassComparableComparer |  MedianOfThreeKiller |       2 | 131.893 ms | 0.3398 ms | 0.2457 ms |   2.98 |     0.06 |
+|                         Span_ |  MedianOfThreeKiller |       2 |  21.763 ms | 0.0810 ms | 0.0586 ms |   0.49 |     0.01 |
+|             Span_NullComparer |  MedianOfThreeKiller |       2 |  28.034 ms | 0.0913 ms | 0.0660 ms |   0.63 |     0.01 |
+|  Span_ClassComparableComparer |  MedianOfThreeKiller |       2 | 114.834 ms | 0.2074 ms | 0.1500 ms |   2.59 |     0.05 |
+| Span_StructComparableComparer |  MedianOfThreeKiller |       2 |  61.892 ms | 0.2294 ms | 0.1658 ms |   1.40 |     0.03 |
+|               Span_Comparison |  MedianOfThreeKiller |       2 |  17.119 ms | 0.1084 ms | 0.0784 ms |   0.39 |     0.01 |
+|                               |                      |         |            |           |           |        |          |
+|                        **Array_** |  **MedianOfThreeKiller** |       **3** |  **32.697 ms** | **0.0698 ms** | **0.0505 ms** |   **1.00** |     **0.00** |
+|            Array_NullComparer |  MedianOfThreeKiller |       3 |  32.361 ms | 0.1009 ms | 0.0730 ms |   0.99 |     0.00 |
+| Array_ClassComparableComparer |  MedianOfThreeKiller |       3 |  96.571 ms | 0.0898 ms | 0.0650 ms |   2.95 |     0.00 |
+|                         Span_ |  MedianOfThreeKiller |       3 |  17.895 ms | 0.0618 ms | 0.0447 ms |   0.55 |     0.00 |
+|             Span_NullComparer |  MedianOfThreeKiller |       3 |  21.371 ms | 0.0567 ms | 0.0410 ms |   0.65 |     0.00 |
+|  Span_ClassComparableComparer |  MedianOfThreeKiller |       3 |  75.638 ms | 0.0870 ms | 0.0629 ms |   2.31 |     0.00 |
+| Span_StructComparableComparer |  MedianOfThreeKiller |       3 |  41.929 ms | 0.2235 ms | 0.1616 ms |   1.28 |     0.01 |
+|               Span_Comparison |  MedianOfThreeKiller |       3 |  18.012 ms | 0.0778 ms | 0.0563 ms |   0.55 |     0.00 |
+|                               |                      |         |            |           |           |        |          |
+|                        **Array_** |  **MedianOfThreeKiller** |      **10** |  **14.383 ms** | **0.2160 ms** | **0.1562 ms** |   **1.00** |     **0.00** |
+|            Array_NullComparer |  MedianOfThreeKiller |      10 |  14.118 ms | 0.2604 ms | 0.1883 ms |   0.98 |     0.02 |
+| Array_ClassComparableComparer |  MedianOfThreeKiller |      10 |  44.243 ms | 1.0712 ms | 0.7745 ms |   3.08 |     0.06 |
+|                         Span_ |  MedianOfThreeKiller |      10 |   8.117 ms | 0.1079 ms | 0.0780 ms |   0.56 |     0.01 |
+|             Span_NullComparer |  MedianOfThreeKiller |      10 |   9.980 ms | 0.0902 ms | 0.0653 ms |   0.69 |     0.01 |
+|  Span_ClassComparableComparer |  MedianOfThreeKiller |      10 |  39.314 ms | 0.4754 ms | 0.3437 ms |   2.73 |     0.04 |
+| Span_StructComparableComparer |  MedianOfThreeKiller |      10 |  17.766 ms | 0.1916 ms | 0.1385 ms |   1.24 |     0.02 |
+|               Span_Comparison |  MedianOfThreeKiller |      10 |  19.594 ms | 0.7314 ms | 0.5288 ms |   1.36 |     0.04 |
+|                               |                      |         |            |           |           |        |          |
+|                        **Array_** |  **MedianOfThreeKiller** |     **100** |  **18.436 ms** | **1.7419 ms** | **1.2595 ms** |   **1.00** |     **0.00** |
+|            Array_NullComparer |  MedianOfThreeKiller |     100 |  17.340 ms | 0.2382 ms | 0.1723 ms |   0.94 |     0.06 |
+| Array_ClassComparableComparer |  MedianOfThreeKiller |     100 |  60.167 ms | 0.3657 ms | 0.2644 ms |   3.28 |     0.21 |
+|                         Span_ |  MedianOfThreeKiller |     100 |  19.329 ms | 0.1067 ms | 0.0772 ms |   1.05 |     0.07 |
+|             Span_NullComparer |  MedianOfThreeKiller |     100 |  19.440 ms | 0.1611 ms | 0.1165 ms |   1.06 |     0.07 |
+|  Span_ClassComparableComparer |  MedianOfThreeKiller |     100 |  68.970 ms | 0.3487 ms | 0.2521 ms |   3.76 |     0.24 |
+| Span_StructComparableComparer |  MedianOfThreeKiller |     100 |  18.372 ms | 0.1405 ms | 0.1016 ms |   1.00 |     0.06 |
+|               Span_Comparison |  MedianOfThreeKiller |     100 |  57.406 ms | 0.1094 ms | 0.0791 ms |   3.13 |     0.20 |
+|                               |                      |         |            |           |           |        |          |
+|                        **Array_** |  **MedianOfThreeKiller** |   **10000** |  **55.558 ms** | **0.2062 ms** | **0.1491 ms** |   **1.00** |     **0.00** |
+|            Array_NullComparer |  MedianOfThreeKiller |   10000 |  55.840 ms | 0.3327 ms | 0.2405 ms |   1.01 |     0.00 |
+| Array_ClassComparableComparer |  MedianOfThreeKiller |   10000 | 156.842 ms | 0.3213 ms | 0.2323 ms |   2.82 |     0.01 |
+|                         Span_ |  MedianOfThreeKiller |   10000 |  72.978 ms | 0.0895 ms | 0.0647 ms |   1.31 |     0.00 |
+|             Span_NullComparer |  MedianOfThreeKiller |   10000 |  73.174 ms | 0.2470 ms | 0.1786 ms |   1.32 |     0.00 |
+|  Span_ClassComparableComparer |  MedianOfThreeKiller |   10000 | 199.792 ms | 0.7271 ms | 0.5258 ms |   3.60 |     0.01 |
+| Span_StructComparableComparer |  MedianOfThreeKiller |   10000 |  70.054 ms | 0.2149 ms | 0.1554 ms |   1.26 |     0.00 |
+|               Span_Comparison |  MedianOfThreeKiller |   10000 | 176.753 ms | 0.1713 ms | 0.1239 ms |   3.18 |     0.01 |
+|                               |                      |         |            |           |           |        |          |
+|                        **Array_** |  **MedianOfThreeKiller** | **1000000** | **134.582 ms** | **0.3486 ms** | **0.2521 ms** |   **1.00** |     **0.00** |
+|            Array_NullComparer |  MedianOfThreeKiller | 1000000 | 134.493 ms | 0.1605 ms | 0.1161 ms |   1.00 |     0.00 |
+| Array_ClassComparableComparer |  MedianOfThreeKiller | 1000000 | 311.884 ms | 0.4584 ms | 0.3315 ms |   2.32 |     0.00 |
+|                         Span_ |  MedianOfThreeKiller | 1000000 | 118.727 ms | 0.1844 ms | 0.1333 ms |   0.88 |     0.00 |
+|             Span_NullComparer |  MedianOfThreeKiller | 1000000 | 119.024 ms | 0.3413 ms | 0.2468 ms |   0.88 |     0.00 |
+|  Span_ClassComparableComparer |  MedianOfThreeKiller | 1000000 | 337.300 ms | 1.2764 ms | 0.9229 ms |   2.51 |     0.01 |
+| Span_StructComparableComparer |  MedianOfThreeKiller | 1000000 | 113.787 ms | 0.2009 ms | 0.1453 ms |   0.85 |     0.00 |
+|               Span_Comparison |  MedianOfThreeKiller | 1000000 | 295.669 ms | 0.2066 ms | 0.1494 ms |   2.20 |     0.00 |
+|                               |                      |         |            |           |           |        |          |
+|                        **Array_** | **PartialRandomShuffle** |       **2** |  **46.724 ms** | **1.5004 ms** | **1.0849 ms** |   **1.00** |     **0.00** |
+|            Array_NullComparer | PartialRandomShuffle |       2 |  45.370 ms | 0.8228 ms | 0.5949 ms |   0.97 |     0.02 |
+| Array_ClassComparableComparer | PartialRandomShuffle |       2 | 134.378 ms | 0.3420 ms | 0.2473 ms |   2.88 |     0.06 |
+|                         Span_ | PartialRandomShuffle |       2 |  23.185 ms | 0.0587 ms | 0.0425 ms |   0.50 |     0.01 |
+|             Span_NullComparer | PartialRandomShuffle |       2 |  29.945 ms | 0.0491 ms | 0.0355 ms |   0.64 |     0.01 |
+|  Span_ClassComparableComparer | PartialRandomShuffle |       2 | 116.722 ms | 0.2301 ms | 0.1664 ms |   2.50 |     0.06 |
+| Span_StructComparableComparer | PartialRandomShuffle |       2 |  63.548 ms | 0.2207 ms | 0.1596 ms |   1.36 |     0.03 |
+|               Span_Comparison | PartialRandomShuffle |       2 |  18.885 ms | 0.0445 ms | 0.0322 ms |   0.40 |     0.01 |
+|                               |                      |         |            |           |           |        |          |
+|                        **Array_** | **PartialRandomShuffle** |       **3** |  **36.059 ms** | **0.8025 ms** | **0.5802 ms** |   **1.00** |     **0.00** |
+|            Array_NullComparer | PartialRandomShuffle |       3 |  35.506 ms | 0.1294 ms | 0.0936 ms |   0.98 |     0.01 |
+| Array_ClassComparableComparer | PartialRandomShuffle |       3 | 100.495 ms | 0.2747 ms | 0.1986 ms |   2.79 |     0.04 |
+|                         Span_ | PartialRandomShuffle |       3 |  20.281 ms | 0.1088 ms | 0.0787 ms |   0.56 |     0.01 |
+|             Span_NullComparer | PartialRandomShuffle |       3 |  24.022 ms | 0.1068 ms | 0.0772 ms |   0.67 |     0.01 |
+|  Span_ClassComparableComparer | PartialRandomShuffle |       3 |  79.288 ms | 0.0680 ms | 0.0492 ms |   2.20 |     0.03 |
+| Span_StructComparableComparer | PartialRandomShuffle |       3 |  44.676 ms | 0.5189 ms | 0.3752 ms |   1.24 |     0.02 |
+|               Span_Comparison | PartialRandomShuffle |       3 |  20.605 ms | 0.0402 ms | 0.0291 ms |   0.57 |     0.01 |
+|                               |                      |         |            |           |           |        |          |
+|                        **Array_** | **PartialRandomShuffle** |      **10** |  **19.677 ms** | **0.2684 ms** | **0.1941 ms** |   **1.00** |     **0.00** |
+|            Array_NullComparer | PartialRandomShuffle |      10 |  19.484 ms | 0.3436 ms | 0.2485 ms |   0.99 |     0.02 |
+| Array_ClassComparableComparer | PartialRandomShuffle |      10 |  46.180 ms | 0.1024 ms | 0.0741 ms |   2.35 |     0.02 |
+|                         Span_ | PartialRandomShuffle |      10 |  13.167 ms | 0.0428 ms | 0.0309 ms |   0.67 |     0.01 |
+|             Span_NullComparer | PartialRandomShuffle |      10 |  14.703 ms | 0.0868 ms | 0.0628 ms |   0.75 |     0.01 |
+|  Span_ClassComparableComparer | PartialRandomShuffle |      10 |  38.880 ms | 0.1364 ms | 0.0986 ms |   1.98 |     0.02 |
+| Span_StructComparableComparer | PartialRandomShuffle |      10 |  21.962 ms | 0.1194 ms | 0.0863 ms |   1.12 |     0.01 |
+|               Span_Comparison | PartialRandomShuffle |      10 |  20.326 ms | 0.5885 ms | 0.4255 ms |   1.03 |     0.02 |
+|                               |                      |         |            |           |           |        |          |
+|                        **Array_** | **PartialRandomShuffle** |     **100** |  **50.313 ms** | **0.1395 ms** | **0.1008 ms** |   **1.00** |     **0.00** |
+|            Array_NullComparer | PartialRandomShuffle |     100 |  50.294 ms | 0.1368 ms | 0.0990 ms |   1.00 |     0.00 |
+| Array_ClassComparableComparer | PartialRandomShuffle |     100 |  83.318 ms | 0.4116 ms | 0.2976 ms |   1.66 |     0.01 |
+|                         Span_ | PartialRandomShuffle |     100 |  46.751 ms | 0.0882 ms | 0.0638 ms |   0.93 |     0.00 |
+|             Span_NullComparer | PartialRandomShuffle |     100 |  46.755 ms | 0.0519 ms | 0.0375 ms |   0.93 |     0.00 |
+|  Span_ClassComparableComparer | PartialRandomShuffle |     100 |  86.923 ms | 0.3956 ms | 0.2861 ms |   1.73 |     0.01 |
+| Span_StructComparableComparer | PartialRandomShuffle |     100 |  47.515 ms | 0.2406 ms | 0.1739 ms |   0.94 |     0.00 |
+|               Span_Comparison | PartialRandomShuffle |     100 |  73.624 ms | 0.1095 ms | 0.0792 ms |   1.46 |     0.00 |
+|                               |                      |         |            |           |           |        |          |
+|                        **Array_** | **PartialRandomShuffle** |   **10000** |  **88.069 ms** | **0.0980 ms** | **0.0708 ms** |   **1.00** |     **0.00** |
+|            Array_NullComparer | PartialRandomShuffle |   10000 |  88.342 ms | 0.0893 ms | 0.0645 ms |   1.00 |     0.00 |
+| Array_ClassComparableComparer | PartialRandomShuffle |   10000 | 153.154 ms | 0.2483 ms | 0.1795 ms |   1.74 |     0.00 |
+|                         Span_ | PartialRandomShuffle |   10000 |  87.598 ms | 0.1081 ms | 0.0782 ms |   0.99 |     0.00 |
+|             Span_NullComparer | PartialRandomShuffle |   10000 |  87.593 ms | 0.1096 ms | 0.0793 ms |   0.99 |     0.00 |
+|  Span_ClassComparableComparer | PartialRandomShuffle |   10000 | 163.660 ms | 0.4422 ms | 0.3198 ms |   1.86 |     0.00 |
+| Span_StructComparableComparer | PartialRandomShuffle |   10000 |  87.221 ms | 0.2491 ms | 0.1801 ms |   0.99 |     0.00 |
+|               Span_Comparison | PartialRandomShuffle |   10000 | 148.400 ms | 0.4108 ms | 0.2970 ms |   1.69 |     0.00 |
+|                               |                      |         |            |           |           |        |          |
+|                        **Array_** | **PartialRandomShuffle** | **1000000** | **128.803 ms** | **0.2787 ms** | **0.2015 ms** |   **1.00** |     **0.00** |
+|            Array_NullComparer | PartialRandomShuffle | 1000000 | 128.796 ms | 0.1858 ms | 0.1344 ms |   1.00 |     0.00 |
+| Array_ClassComparableComparer | PartialRandomShuffle | 1000000 | 227.031 ms | 0.4279 ms | 0.3094 ms |   1.76 |     0.00 |
+|                         Span_ | PartialRandomShuffle | 1000000 | 129.838 ms | 0.2051 ms | 0.1483 ms |   1.01 |     0.00 |
+|             Span_NullComparer | PartialRandomShuffle | 1000000 | 130.239 ms | 0.6665 ms | 0.4820 ms |   1.01 |     0.00 |
+|  Span_ClassComparableComparer | PartialRandomShuffle | 1000000 | 246.031 ms | 0.4950 ms | 0.3579 ms |   1.91 |     0.00 |
+| Span_StructComparableComparer | PartialRandomShuffle | 1000000 | 129.959 ms | 0.0701 ms | 0.0507 ms |   1.01 |     0.00 |
+|               Span_Comparison | PartialRandomShuffle | 1000000 | 223.524 ms | 0.1505 ms | 0.1089 ms |   1.74 |     0.00 |
+|                               |                      |         |            |           |           |        |          |
+|                        **Array_** |               **Random** |       **2** |  **55.544 ms** | **1.2338 ms** | **0.8922 ms** |   **1.00** |     **0.00** |
+|            Array_NullComparer |               Random |       2 |  49.127 ms | 0.1121 ms | 0.0811 ms |   0.88 |     0.01 |
+| Array_ClassComparableComparer |               Random |       2 | 139.854 ms | 1.6897 ms | 1.2218 ms |   2.52 |     0.04 |
+|                         Span_ |               Random |       2 |  26.157 ms | 0.0382 ms | 0.0276 ms |   0.47 |     0.01 |
+|             Span_NullComparer |               Random |       2 |  33.414 ms | 0.0747 ms | 0.0540 ms |   0.60 |     0.01 |
+|  Span_ClassComparableComparer |               Random |       2 | 119.930 ms | 0.1044 ms | 0.0755 ms |   2.16 |     0.03 |
+| Span_StructComparableComparer |               Random |       2 |  67.228 ms | 0.1653 ms | 0.1195 ms |   1.21 |     0.02 |
+|               Span_Comparison |               Random |       2 |  22.254 ms | 0.0363 ms | 0.0263 ms |   0.40 |     0.01 |
+|                               |                      |         |            |           |           |        |          |
+|                        **Array_** |               **Random** |       **3** |  **42.607 ms** | **0.1267 ms** | **0.0916 ms** |   **1.00** |     **0.00** |
+|            Array_NullComparer |               Random |       3 |  41.982 ms | 0.1272 ms | 0.0920 ms |   0.99 |     0.00 |
+| Array_ClassComparableComparer |               Random |       3 | 108.378 ms | 0.0839 ms | 0.0607 ms |   2.54 |     0.01 |
+|                         Span_ |               Random |       3 |  25.351 ms | 0.0792 ms | 0.0573 ms |   0.60 |     0.00 |
+|             Span_NullComparer |               Random |       3 |  29.435 ms | 0.0603 ms | 0.0436 ms |   0.69 |     0.00 |
+|  Span_ClassComparableComparer |               Random |       3 |  84.142 ms | 0.0734 ms | 0.0531 ms |   1.97 |     0.00 |
+| Span_StructComparableComparer |               Random |       3 |  50.193 ms | 0.2023 ms | 0.1463 ms |   1.18 |     0.00 |
+|               Span_Comparison |               Random |       3 |  26.150 ms | 0.0405 ms | 0.0293 ms |   0.61 |     0.00 |
+|                               |                      |         |            |           |           |        |          |
+|                        **Array_** |               **Random** |      **10** |  **32.865 ms** | **0.1686 ms** | **0.1219 ms** |   **1.00** |     **0.00** |
+|            Array_NullComparer |               Random |      10 |  32.481 ms | 0.1598 ms | 0.1155 ms |   0.99 |     0.00 |
+| Array_ClassComparableComparer |               Random |      10 |  68.089 ms | 0.0617 ms | 0.0446 ms |   2.07 |     0.01 |
+|                         Span_ |               Random |      10 |  27.002 ms | 0.0361 ms | 0.0261 ms |   0.82 |     0.00 |
+|             Span_NullComparer |               Random |      10 |  28.674 ms | 0.0939 ms | 0.0679 ms |   0.87 |     0.00 |
+|  Span_ClassComparableComparer |               Random |      10 |  60.647 ms | 0.0947 ms | 0.0685 ms |   1.85 |     0.01 |
+| Span_StructComparableComparer |               Random |      10 |  35.173 ms | 0.1285 ms | 0.0929 ms |   1.07 |     0.00 |
+|               Span_Comparison |               Random |      10 |  37.181 ms | 0.1592 ms | 0.1151 ms |   1.13 |     0.01 |
+|                               |                      |         |            |           |           |        |          |
+|                        **Array_** |               **Random** |     **100** |  **65.827 ms** | **0.1535 ms** | **0.1110 ms** |   **1.00** |     **0.00** |
+|            Array_NullComparer |               Random |     100 |  65.802 ms | 0.1067 ms | 0.0771 ms |   1.00 |     0.00 |
+| Array_ClassComparableComparer |               Random |     100 | 102.147 ms | 0.5093 ms | 0.3683 ms |   1.55 |     0.01 |
+|                         Span_ |               Random |     100 |  62.438 ms | 0.2256 ms | 0.1631 ms |   0.95 |     0.00 |
+|             Span_NullComparer |               Random |     100 |  62.338 ms | 0.0316 ms | 0.0228 ms |   0.95 |     0.00 |
+|  Span_ClassComparableComparer |               Random |     100 | 104.623 ms | 0.3304 ms | 0.2389 ms |   1.59 |     0.00 |
+| Span_StructComparableComparer |               Random |     100 |  63.457 ms | 0.0360 ms | 0.0261 ms |   0.96 |     0.00 |
+|               Span_Comparison |               Random |     100 |  89.359 ms | 0.0598 ms | 0.0432 ms |   1.36 |     0.00 |
+|                               |                      |         |            |           |           |        |          |
+|                        **Array_** |               **Random** |   **10000** | **133.455 ms** | **0.3075 ms** | **0.2224 ms** |   **1.00** |     **0.00** |
+|            Array_NullComparer |               Random |   10000 | 133.943 ms | 0.3121 ms | 0.2257 ms |   1.00 |     0.00 |
+| Array_ClassComparableComparer |               Random |   10000 | 202.168 ms | 0.2740 ms | 0.1981 ms |   1.51 |     0.00 |
+|                         Span_ |               Random |   10000 | 129.762 ms | 0.6222 ms | 0.4499 ms |   0.97 |     0.00 |
+|             Span_NullComparer |               Random |   10000 | 129.491 ms | 0.1992 ms | 0.1441 ms |   0.97 |     0.00 |
+|  Span_ClassComparableComparer |               Random |   10000 | 211.444 ms | 1.7510 ms | 1.2661 ms |   1.58 |     0.01 |
+| Span_StructComparableComparer |               Random |   10000 | 128.843 ms | 1.1003 ms | 0.7956 ms |   0.97 |     0.01 |
+|               Span_Comparison |               Random |   10000 | 191.403 ms | 0.4616 ms | 0.3338 ms |   1.43 |     0.00 |
+|                               |                      |         |            |           |           |        |          |
+|                        **Array_** |               **Random** | **1000000** | **198.352 ms** | **0.2954 ms** | **0.2136 ms** |   **1.00** |     **0.00** |
+|            Array_NullComparer |               Random | 1000000 | 198.220 ms | 0.0478 ms | 0.0346 ms |   1.00 |     0.00 |
+| Array_ClassComparableComparer |               Random | 1000000 | 304.584 ms | 0.2783 ms | 0.2012 ms |   1.54 |     0.00 |
+|                         Span_ |               Random | 1000000 | 193.843 ms | 0.1425 ms | 0.1030 ms |   0.98 |     0.00 |
+|             Span_NullComparer |               Random | 1000000 | 194.240 ms | 0.2794 ms | 0.2021 ms |   0.98 |     0.00 |
+|  Span_ClassComparableComparer |               Random | 1000000 | 322.570 ms | 0.3039 ms | 0.2197 ms |   1.63 |     0.00 |
+| Span_StructComparableComparer |               Random | 1000000 | 193.316 ms | 0.2350 ms | 0.1699 ms |   0.97 |     0.00 |
+|               Span_Comparison |               Random | 1000000 | 292.426 ms | 0.1653 ms | 0.1195 ms |   1.47 |     0.00 |

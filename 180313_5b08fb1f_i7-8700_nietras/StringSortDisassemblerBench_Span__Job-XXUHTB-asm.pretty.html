@@ -1,0 +1,1093 @@
+<!DOCTYPE html><html lang='en'><head><meta charset='utf-8' /><head>
+<title>Pretty Output of DisassemblyDiagnoser for StringSortDisassemblerBench.Span_: Job-XXUHTB(LaunchCount=1, RunStrategy=Monitoring, TargetCount=3, WarmupCount=1)</title>
+
+<style type="text/css">
+    pre { margin: 0px; }
+    table { border-collapse:collapse; }
+    td.perMethod { border-top: 1px black solid; }
+    tr.evenMap td { background-color: #F5F5F5; }  
+</style>
+
+<style type='text/css'>
+    td.label:hover { cursor: pointer; background-color: yellow !important; }
+    td.highlighted { background-color: yellow !important; }
+</style>
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+<script>$(document).ready(function () {
+    var selectedIndex = 0;
+
+    function highlight() {
+        $('td.reference.highlighted').removeClass('highlighted');
+
+        var selectedLabel = $(this).attr('data-label');
+        if (selectedLabel) {
+            $('td.reference[data-reference=' + selectedLabel + ']').addClass('highlighted');
+        }
+        selectedIndex = 0;
+    }
+
+    function selectNext() {
+        var $highlighted = $('td.reference.highlighted');
+        var selected = $highlighted[selectedIndex++ % $highlighted.length];
+
+        if (selected) {
+            var selectedReference = $(selected).attr('id');
+            if (selectedReference) {
+                window.location.hash = '#' + selectedReference;
+            }
+        }
+    }
+
+    $('td.label').on('click', highlight);
+
+    $(document).on('keydown', function (event) {
+        if (event.keyCode == 114) { // F3
+            event.preventDefault();
+            // Remap F3 to some other key that the browser doesn't care about
+            selectNext();
+        }
+    });
+});</script>
+</head><body><table><tbody>
+<tr><th colspan="2" style="text-align: left;">System.Runtime.InteropServices.MemoryMarshal.GetReference[[System.__Canon, System.Private.CoreLib]](System.Span`1<System.__Canon>)</th><th></th></tr>
+<tr class="">
+<td></td><td title="00007ff8`c04655b9 488b4110        mov     rax,qword ptr [rcx+10h]"><pre><code>mov     rax,qword ptr [rcx+10h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c04655bd 488b4008        mov     rax,qword ptr [rax+8]"><pre><code>mov     rax,qword ptr [rax+8]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c04655c1 48833a00        cmp     qword ptr [rdx],0"><pre><code>cmp     qword ptr [rdx],0</pre></code></td>
+</tr><tr class="">
+<td></td><td id="0" class="reference" data-reference="M00_L00" title="00007ff8`c04655c5 7509            jne     00007ff8`c04655d0"><a href="#M00_L00"><pre><code>jne     M00_L00</pre></code></a></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c04655c7 488b4208        mov     rax,qword ptr [rdx+8]"><pre><code>mov     rax,qword ptr [rdx+8]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c04655cb 4883c448        add     rsp,48h"><pre><code>add     rsp,48h</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c04655cf c3              ret"><pre><code>ret</pre></code></td>
+</tr><tr class="evenMap">
+<td id="M00_L00" class="label" data-label="M00_L00"><pre><code>M00_L00</pre></code></td>
+<td>&nbsp;</td></tr>
+<tr class="evenMap">
+<td></td><td title="00007ff8`c04655d0 488b02          mov     rax,qword ptr [rdx]"><pre><code>mov     rax,qword ptr [rdx]</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c04655d3 3900            cmp     dword ptr [rax],eax"><pre><code>cmp     dword ptr [rax],eax</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c04655d5 4883c008        add     rax,8"><pre><code>add     rax,8</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c04655d9 488b5208        mov     rdx,qword ptr [rdx+8]"><pre><code>mov     rdx,qword ptr [rdx+8]</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c04655dd 4803c2          add     rax,rdx"><pre><code>add     rax,rdx</pre></code></td>
+</tr><tr><td colspan="{2}">&nbsp;</td></tr>
+<tr><th colspan="2" style="text-align: left;">System.SpanSortHelpersKeys_DirectComparer.TrySortSpecialized[[System.__Canon, System.Private.CoreLib]](System.__Canon ByRef, Int32)</th><th></th></tr>
+<tr class="">
+<td></td><td ><pre><code>            if (typeof(TKey) == typeof(sbyte))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465a42 488b4910        mov     rcx,qword ptr [rcx+10h]"><pre><code>mov     rcx,qword ptr [rcx+10h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465a46 488b19          mov     rbx,qword ptr [rcx]"><pre><code>mov     rbx,qword ptr [rcx]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465a49 488bcb          mov     rcx,rbx"><pre><code>mov     rcx,rbx</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465a4c 8be9            mov     ebp,ecx"><pre><code>mov     ebp,ecx</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465a4e 83e501          and     ebp,1"><pre><code>and     ebp,1</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465a51 85ed            test    ebp,ebp"><pre><code>test    ebp,ebp</pre></code></td>
+</tr><tr class="">
+<td></td><td id="1" class="reference" data-reference="M01_L00" title="00007ff8`c0465a53 7502            jne     00007ff8`c0465a57"><a href="#M01_L00"><pre><code>jne     M01_L00</pre></code></a></td>
+</tr><tr class="">
+<td></td><td id="2" class="reference" data-reference="M01_L01" title="00007ff8`c0465a55 eb07            jmp     00007ff8`c0465a5e"><a href="#M01_L01"><pre><code>jmp     M01_L01</pre></code></a></td>
+</tr><tr class="evenMap">
+<td id="M01_L00" class="label" data-label="M01_L00"><pre><code>M01_L00</pre></code></td>
+<td>&nbsp;</td></tr>
+<tr class="evenMap">
+<td></td><td title="00007ff8`c0465a57 488b89ffffffff  mov     rcx,qword ptr [rcx-1]"><pre><code>mov     rcx,qword ptr [rcx-1]</pre></code></td>
+</tr><tr class="">
+<td id="M01_L01" class="label" data-label="M01_L01"><pre><code>M01_L01</pre></code></td>
+<td>&nbsp;</td></tr>
+<tr class="">
+<td></td><td title="00007ff8`c0465a5e 48b8d085171ef97f0000 mov rax,offset System_Private_CoreLib+0x9585d0 (00007ff9`1e1785d0)"><pre><code>mov     rax,offset System_Private_CoreLib+0x9585d0</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465a68 483bc8          cmp     rcx,rax"><pre><code>cmp     rcx,rax</pre></code></td>
+</tr><tr class="">
+<td></td><td id="3" class="reference" data-reference="M01_L02" title="00007ff8`c0465a6b 755c            jne     00007ff8`c0465ac9"><a href="#M01_L02"><pre><code>jne     M01_L02</pre></code></a></td>
+</tr><tr class="">
+<td></td><td ><pre><code>                Sort(ref specificKeys, length, new SByteDirectComparer());
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465a6d c684244001000000 mov     byte ptr [rsp+140h],0"><pre><code>mov     byte ptr [rsp+140h],0</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465a75 480fbe8c2440010000 movsx rcx,byte ptr [rsp+140h]"><pre><code>movsx   rcx,byte ptr [rsp+140h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465a7e 888c24c0000000  mov     byte ptr [rsp+0C0h],cl"><pre><code>mov     byte ptr [rsp+0C0h],cl</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465a85 480fbe8c24c0000000 movsx rcx,byte ptr [rsp+0C0h]"><pre><code>movsx   rcx,byte ptr [rsp+0C0h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465a8e 888c24b8000000  mov     byte ptr [rsp+0B8h],cl"><pre><code>mov     byte ptr [rsp+0B8h],cl</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465a95 8bce            mov     ecx,esi"><pre><code>mov     ecx,esi</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465a97 e874f1ffff      call    00007ff8`c0464c10"><pre><code>call    System.SpanSortHelpersCommon.FloorLog2PlusOne(Int32)</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465a9c 448bc8          mov     r9d,eax"><pre><code>mov     r9d,eax</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465a9f 41d1e1          shl     r9d,1"><pre><code>shl     r9d,1</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465aa2 4c0fbe8424b8000000 movsx r8,byte ptr [rsp+0B8h]"><pre><code>movsx   r8,byte ptr [rsp+0B8h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465aab 4489442420      mov     dword ptr [rsp+20h],r8d"><pre><code>mov     dword ptr [rsp+20h],r8d</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465ab0 448d46ff        lea     r8d,[rsi-1]"><pre><code>lea     r8d,[rsi-1]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465ab4 488bcf          mov     rcx,rdi"><pre><code>mov     rcx,rdi</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465ab7 33d2            xor     edx,edx"><pre><code>xor     edx,edx</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465ab9 e862fdffff      call    00007ff8`c0465820"><pre><code>call    System.SpanSortHelpersKeys_DirectComparer.IntroSort[[System.SByte, System.Private.CoreLib],[System.SpanSortHelpersCommon+SByteDirectComparer, DotNetCross.Sorting]](SByte ByRef, Int32, Int32, Int32, SByteDirectComparer)</pre></code></td>
+</tr><tr class="">
+<td></td><td ><pre><code>                return true;
+                ^^^^^^^^^^^^</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465abe 41be01000000    mov     r14d,1"><pre><code>mov     r14d,1</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465ac4 e9ab040000      jmp     00007ff8`c0465f74"><pre><code>jmp     00007ff8`c0465f74</pre></code></td>
+</tr><tr class="">
+<td></td><td ><pre><code>            else if (typeof(TKey) == typeof(byte) ||
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre></code></td>
+</tr><tr class="">
+<td></td><td ><pre><code>                     typeof(TKey) == typeof(bool)) // Use byte for bools to reduce code size
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre></code></td>
+</tr><tr class="evenMap">
+<td id="M01_L02" class="label" data-label="M01_L02"><pre><code>M01_L02</pre></code></td>
+<td>&nbsp;</td></tr>
+<tr class="evenMap">
+<td></td><td title="00007ff8`c0465ac9 488bcb          mov     rcx,rbx"><pre><code>mov     rcx,rbx</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0465acc 85ed            test    ebp,ebp"><pre><code>test    ebp,ebp</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td id="4" class="reference" data-reference="M01_L03" title="00007ff8`c0465ace 7502            jne     00007ff8`c0465ad2"><a href="#M01_L03"><pre><code>jne     M01_L03</pre></code></a></td>
+</tr><tr class="evenMap">
+<td></td><td id="5" class="reference" data-reference="M01_L04" title="00007ff8`c0465ad0 eb07            jmp     00007ff8`c0465ad9"><a href="#M01_L04"><pre><code>jmp     M01_L04</pre></code></a></td>
+</tr><tr class="">
+<td id="M01_L03" class="label" data-label="M01_L03"><pre><code>M01_L03</pre></code></td>
+<td>&nbsp;</td></tr>
+<tr class="">
+<td></td><td title="00007ff8`c0465ad2 488b89ffffffff  mov     rcx,qword ptr [rcx-1]"><pre><code>mov     rcx,qword ptr [rcx-1]</pre></code></td>
+</tr><tr class="evenMap">
+<td id="M01_L04" class="label" data-label="M01_L04"><pre><code>M01_L04</pre></code></td>
+<td>&nbsp;</td></tr>
+<tr class="evenMap">
+<td></td><td title="00007ff8`c0465ad9 48b82887171ef97f0000 mov rax,offset System_Private_CoreLib+0x958728 (00007ff9`1e178728)"><pre><code>mov     rax,offset System_Private_CoreLib+0x958728</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0465ae3 483bc8          cmp     rcx,rax"><pre><code>cmp     rcx,rax</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td id="6" class="reference" data-reference="M01_L07" title="00007ff8`c0465ae6 741f            je      00007ff8`c0465b07"><a href="#M01_L07"><pre><code>je      M01_L07</pre></code></a></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0465ae8 488bcb          mov     rcx,rbx"><pre><code>mov     rcx,rbx</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0465aeb 85ed            test    ebp,ebp"><pre><code>test    ebp,ebp</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td id="7" class="reference" data-reference="M01_L05" title="00007ff8`c0465aed 7502            jne     00007ff8`c0465af1"><a href="#M01_L05"><pre><code>jne     M01_L05</pre></code></a></td>
+</tr><tr class="evenMap">
+<td></td><td id="8" class="reference" data-reference="M01_L06" title="00007ff8`c0465aef eb07            jmp     00007ff8`c0465af8"><a href="#M01_L06"><pre><code>jmp     M01_L06</pre></code></a></td>
+</tr><tr class="">
+<td id="M01_L05" class="label" data-label="M01_L05"><pre><code>M01_L05</pre></code></td>
+<td>&nbsp;</td></tr>
+<tr class="">
+<td></td><td title="00007ff8`c0465af1 488b89ffffffff  mov     rcx,qword ptr [rcx-1]"><pre><code>mov     rcx,qword ptr [rcx-1]</pre></code></td>
+</tr><tr class="evenMap">
+<td id="M01_L06" class="label" data-label="M01_L06"><pre><code>M01_L06</pre></code></td>
+<td>&nbsp;</td></tr>
+<tr class="evenMap">
+<td></td><td title="00007ff8`c0465af8 48b88883171ef97f0000 mov rax,offset System_Private_CoreLib+0x958388 (00007ff9`1e178388)"><pre><code>mov     rax,offset System_Private_CoreLib+0x958388</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0465b02 483bc8          cmp     rcx,rax"><pre><code>cmp     rcx,rax</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td id="9" class="reference" data-reference="M01_L08" title="00007ff8`c0465b05 755c            jne     00007ff8`c0465b63"><a href="#M01_L08"><pre><code>jne     M01_L08</pre></code></a></td>
+</tr><tr class="evenMap">
+<td></td><td ><pre><code>                ref var specificKeys = ref Unsafe.As<TKey, byte>(ref keys);
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre></code></td>
+</tr><tr class="">
+<td id="M01_L07" class="label" data-label="M01_L07"><pre><code>M01_L07</pre></code></td>
+<td>&nbsp;</td></tr>
+<tr class="">
+<td></td><td title="00007ff8`c0465b07 c684243801000000 mov     byte ptr [rsp+138h],0"><pre><code>mov     byte ptr [rsp+138h],0</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465b0f 480fbe8c2438010000 movsx rcx,byte ptr [rsp+138h]"><pre><code>movsx   rcx,byte ptr [rsp+138h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465b18 888c24b0000000  mov     byte ptr [rsp+0B0h],cl"><pre><code>mov     byte ptr [rsp+0B0h],cl</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465b1f 480fbe8c24b0000000 movsx rcx,byte ptr [rsp+0B0h]"><pre><code>movsx   rcx,byte ptr [rsp+0B0h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465b28 888c24a8000000  mov     byte ptr [rsp+0A8h],cl"><pre><code>mov     byte ptr [rsp+0A8h],cl</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465b2f 8bce            mov     ecx,esi"><pre><code>mov     ecx,esi</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465b31 e8daf0ffff      call    00007ff8`c0464c10"><pre><code>call    System.SpanSortHelpersCommon.FloorLog2PlusOne(Int32)</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465b36 448bc8          mov     r9d,eax"><pre><code>mov     r9d,eax</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465b39 41d1e1          shl     r9d,1"><pre><code>shl     r9d,1</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465b3c 4c0fbe8424a8000000 movsx r8,byte ptr [rsp+0A8h]"><pre><code>movsx   r8,byte ptr [rsp+0A8h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465b45 4489442420      mov     dword ptr [rsp+20h],r8d"><pre><code>mov     dword ptr [rsp+20h],r8d</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465b4a 448d46ff        lea     r8d,[rsi-1]"><pre><code>lea     r8d,[rsi-1]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465b4e 488bcf          mov     rcx,rdi"><pre><code>mov     rcx,rdi</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465b51 33d2            xor     edx,edx"><pre><code>xor     edx,edx</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465b53 e8f8fcffff      call    00007ff8`c0465850"><pre><code>call    System.SpanSortHelpersKeys_DirectComparer.IntroSort[[System.Byte, System.Private.CoreLib],[System.SpanSortHelpersCommon+ByteDirectComparer, DotNetCross.Sorting]](Byte ByRef, Int32, Int32, Int32, ByteDirectComparer)</pre></code></td>
+</tr><tr class="">
+<td></td><td ><pre><code>                return true;
+                ^^^^^^^^^^^^</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465b58 41be01000000    mov     r14d,1"><pre><code>mov     r14d,1</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465b5e e911040000      jmp     00007ff8`c0465f74"><pre><code>jmp     00007ff8`c0465f74</pre></code></td>
+</tr><tr class="">
+<td></td><td ><pre><code>            else if (typeof(TKey) == typeof(short))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre></code></td>
+</tr><tr class="evenMap">
+<td id="M01_L08" class="label" data-label="M01_L08"><pre><code>M01_L08</pre></code></td>
+<td>&nbsp;</td></tr>
+<tr class="evenMap">
+<td></td><td title="00007ff8`c0465b63 488bcb          mov     rcx,rbx"><pre><code>mov     rcx,rbx</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0465b66 85ed            test    ebp,ebp"><pre><code>test    ebp,ebp</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td id="10" class="reference" data-reference="M01_L09" title="00007ff8`c0465b68 7502            jne     00007ff8`c0465b6c"><a href="#M01_L09"><pre><code>jne     M01_L09</pre></code></a></td>
+</tr><tr class="evenMap">
+<td></td><td id="11" class="reference" data-reference="M01_L10" title="00007ff8`c0465b6a eb07            jmp     00007ff8`c0465b73"><a href="#M01_L10"><pre><code>jmp     M01_L10</pre></code></a></td>
+</tr><tr class="">
+<td id="M01_L09" class="label" data-label="M01_L09"><pre><code>M01_L09</pre></code></td>
+<td>&nbsp;</td></tr>
+<tr class="">
+<td></td><td title="00007ff8`c0465b6c 488b89ffffffff  mov     rcx,qword ptr [rcx-1]"><pre><code>mov     rcx,qword ptr [rcx-1]</pre></code></td>
+</tr><tr class="evenMap">
+<td id="M01_L10" class="label" data-label="M01_L10"><pre><code>M01_L10</pre></code></td>
+<td>&nbsp;</td></tr>
+<tr class="evenMap">
+<td></td><td title="00007ff8`c0465b73 48b89888171ef97f0000 mov rax,offset System_Private_CoreLib+0x958898 (00007ff9`1e178898)"><pre><code>mov     rax,offset System_Private_CoreLib+0x958898</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0465b7d 483bc8          cmp     rcx,rax"><pre><code>cmp     rcx,rax</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td id="12" class="reference" data-reference="M01_L11" title="00007ff8`c0465b80 755c            jne     00007ff8`c0465bde"><a href="#M01_L11"><pre><code>jne     M01_L11</pre></code></a></td>
+</tr><tr class="evenMap">
+<td></td><td ><pre><code>                Sort(ref specificKeys, length, new Int16DirectComparer());
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0465b82 c684243001000000 mov     byte ptr [rsp+130h],0"><pre><code>mov     byte ptr [rsp+130h],0</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0465b8a 480fbe8c2430010000 movsx rcx,byte ptr [rsp+130h]"><pre><code>movsx   rcx,byte ptr [rsp+130h]</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0465b93 888c24a0000000  mov     byte ptr [rsp+0A0h],cl"><pre><code>mov     byte ptr [rsp+0A0h],cl</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0465b9a 480fbe8c24a0000000 movsx rcx,byte ptr [rsp+0A0h]"><pre><code>movsx   rcx,byte ptr [rsp+0A0h]</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0465ba3 888c2498000000  mov     byte ptr [rsp+98h],cl"><pre><code>mov     byte ptr [rsp+98h],cl</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0465baa 8bce            mov     ecx,esi"><pre><code>mov     ecx,esi</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0465bac e85ff0ffff      call    00007ff8`c0464c10"><pre><code>call    System.SpanSortHelpersCommon.FloorLog2PlusOne(Int32)</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0465bb1 448bc8          mov     r9d,eax"><pre><code>mov     r9d,eax</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0465bb4 41d1e1          shl     r9d,1"><pre><code>shl     r9d,1</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0465bb7 4c0fbe842498000000 movsx r8,byte ptr [rsp+98h]"><pre><code>movsx   r8,byte ptr [rsp+98h]</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0465bc0 4489442420      mov     dword ptr [rsp+20h],r8d"><pre><code>mov     dword ptr [rsp+20h],r8d</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0465bc5 448d46ff        lea     r8d,[rsi-1]"><pre><code>lea     r8d,[rsi-1]</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0465bc9 488bcf          mov     rcx,rdi"><pre><code>mov     rcx,rdi</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0465bcc 33d2            xor     edx,edx"><pre><code>xor     edx,edx</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0465bce e89dfcffff      call    00007ff8`c0465870"><pre><code>call    System.SpanSortHelpersKeys_DirectComparer.IntroSort[[System.Int16, System.Private.CoreLib],[System.SpanSortHelpersCommon+Int16DirectComparer, DotNetCross.Sorting]](Int16 ByRef, Int32, Int32, Int32, Int16DirectComparer)</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td ><pre><code>                return true;
+                ^^^^^^^^^^^^</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0465bd3 41be01000000    mov     r14d,1"><pre><code>mov     r14d,1</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0465bd9 e996030000      jmp     00007ff8`c0465f74"><pre><code>jmp     00007ff8`c0465f74</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td ><pre><code>            else if (typeof(TKey) == typeof(ushort) ||
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td ><pre><code>                     typeof(TKey) == typeof(char)) // Use ushort for chars to reduce code size)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre></code></td>
+</tr><tr class="">
+<td id="M01_L11" class="label" data-label="M01_L11"><pre><code>M01_L11</pre></code></td>
+<td>&nbsp;</td></tr>
+<tr class="">
+<td></td><td title="00007ff8`c0465bde 488bcb          mov     rcx,rbx"><pre><code>mov     rcx,rbx</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465be1 85ed            test    ebp,ebp"><pre><code>test    ebp,ebp</pre></code></td>
+</tr><tr class="">
+<td></td><td id="13" class="reference" data-reference="M01_L12" title="00007ff8`c0465be3 7502            jne     00007ff8`c0465be7"><a href="#M01_L12"><pre><code>jne     M01_L12</pre></code></a></td>
+</tr><tr class="">
+<td></td><td id="14" class="reference" data-reference="M01_L13" title="00007ff8`c0465be5 eb07            jmp     00007ff8`c0465bee"><a href="#M01_L13"><pre><code>jmp     M01_L13</pre></code></a></td>
+</tr><tr class="evenMap">
+<td id="M01_L12" class="label" data-label="M01_L12"><pre><code>M01_L12</pre></code></td>
+<td>&nbsp;</td></tr>
+<tr class="evenMap">
+<td></td><td title="00007ff8`c0465be7 488b89ffffffff  mov     rcx,qword ptr [rcx-1]"><pre><code>mov     rcx,qword ptr [rcx-1]</pre></code></td>
+</tr><tr class="">
+<td id="M01_L13" class="label" data-label="M01_L13"><pre><code>M01_L13</pre></code></td>
+<td>&nbsp;</td></tr>
+<tr class="">
+<td></td><td title="00007ff8`c0465bee 48b8f089171ef97f0000 mov rax,offset System_Private_CoreLib+0x9589f0 (00007ff9`1e1789f0)"><pre><code>mov     rax,offset System_Private_CoreLib+0x9589f0</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465bf8 483bc8          cmp     rcx,rax"><pre><code>cmp     rcx,rax</pre></code></td>
+</tr><tr class="">
+<td></td><td id="15" class="reference" data-reference="M01_L16" title="00007ff8`c0465bfb 741f            je      00007ff8`c0465c1c"><a href="#M01_L16"><pre><code>je      M01_L16</pre></code></a></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465bfd 488bcb          mov     rcx,rbx"><pre><code>mov     rcx,rbx</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465c00 85ed            test    ebp,ebp"><pre><code>test    ebp,ebp</pre></code></td>
+</tr><tr class="">
+<td></td><td id="16" class="reference" data-reference="M01_L14" title="00007ff8`c0465c02 7502            jne     00007ff8`c0465c06"><a href="#M01_L14"><pre><code>jne     M01_L14</pre></code></a></td>
+</tr><tr class="">
+<td></td><td id="17" class="reference" data-reference="M01_L15" title="00007ff8`c0465c04 eb07            jmp     00007ff8`c0465c0d"><a href="#M01_L15"><pre><code>jmp     M01_L15</pre></code></a></td>
+</tr><tr class="evenMap">
+<td id="M01_L14" class="label" data-label="M01_L14"><pre><code>M01_L14</pre></code></td>
+<td>&nbsp;</td></tr>
+<tr class="evenMap">
+<td></td><td title="00007ff8`c0465c06 488b89ffffffff  mov     rcx,qword ptr [rcx-1]"><pre><code>mov     rcx,qword ptr [rcx-1]</pre></code></td>
+</tr><tr class="">
+<td id="M01_L15" class="label" data-label="M01_L15"><pre><code>M01_L15</pre></code></td>
+<td>&nbsp;</td></tr>
+<tr class="">
+<td></td><td title="00007ff8`c0465c0d 48b8307e171ef97f0000 mov rax,offset System_Private_CoreLib+0x957e30 (00007ff9`1e177e30)"><pre><code>mov     rax,offset System_Private_CoreLib+0x957e30</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465c17 483bc8          cmp     rcx,rax"><pre><code>cmp     rcx,rax</pre></code></td>
+</tr><tr class="">
+<td></td><td id="18" class="reference" data-reference="M01_L17" title="00007ff8`c0465c1a 755c            jne     00007ff8`c0465c78"><a href="#M01_L17"><pre><code>jne     M01_L17</pre></code></a></td>
+</tr><tr class="">
+<td></td><td ><pre><code>                ref var specificKeys = ref Unsafe.As<TKey, ushort>(ref keys);
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre></code></td>
+</tr><tr class="evenMap">
+<td id="M01_L16" class="label" data-label="M01_L16"><pre><code>M01_L16</pre></code></td>
+<td>&nbsp;</td></tr>
+<tr class="evenMap">
+<td></td><td title="00007ff8`c0465c1c c684242801000000 mov     byte ptr [rsp+128h],0"><pre><code>mov     byte ptr [rsp+128h],0</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0465c24 480fbe8c2428010000 movsx rcx,byte ptr [rsp+128h]"><pre><code>movsx   rcx,byte ptr [rsp+128h]</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0465c2d 888c2490000000  mov     byte ptr [rsp+90h],cl"><pre><code>mov     byte ptr [rsp+90h],cl</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0465c34 480fbe8c2490000000 movsx rcx,byte ptr [rsp+90h]"><pre><code>movsx   rcx,byte ptr [rsp+90h]</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0465c3d 888c2488000000  mov     byte ptr [rsp+88h],cl"><pre><code>mov     byte ptr [rsp+88h],cl</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0465c44 8bce            mov     ecx,esi"><pre><code>mov     ecx,esi</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0465c46 e8c5efffff      call    00007ff8`c0464c10"><pre><code>call    System.SpanSortHelpersCommon.FloorLog2PlusOne(Int32)</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0465c4b 448bc8          mov     r9d,eax"><pre><code>mov     r9d,eax</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0465c4e 41d1e1          shl     r9d,1"><pre><code>shl     r9d,1</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0465c51 4c0fbe842488000000 movsx r8,byte ptr [rsp+88h]"><pre><code>movsx   r8,byte ptr [rsp+88h]</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0465c5a 4489442420      mov     dword ptr [rsp+20h],r8d"><pre><code>mov     dword ptr [rsp+20h],r8d</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0465c5f 448d46ff        lea     r8d,[rsi-1]"><pre><code>lea     r8d,[rsi-1]</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0465c63 488bcf          mov     rcx,rdi"><pre><code>mov     rcx,rdi</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0465c66 33d2            xor     edx,edx"><pre><code>xor     edx,edx</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0465c68 e823fcffff      call    00007ff8`c0465890"><pre><code>call    System.SpanSortHelpersKeys_DirectComparer.IntroSort[[System.UInt16, System.Private.CoreLib],[System.SpanSortHelpersCommon+UInt16DirectComparer, DotNetCross.Sorting]](UInt16 ByRef, Int32, Int32, Int32, UInt16DirectComparer)</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td ><pre><code>                return true;
+                ^^^^^^^^^^^^</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0465c6d 41be01000000    mov     r14d,1"><pre><code>mov     r14d,1</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0465c73 e9fc020000      jmp     00007ff8`c0465f74"><pre><code>jmp     00007ff8`c0465f74</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td ><pre><code>            else if (typeof(TKey) == typeof(int))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre></code></td>
+</tr><tr class="">
+<td id="M01_L17" class="label" data-label="M01_L17"><pre><code>M01_L17</pre></code></td>
+<td>&nbsp;</td></tr>
+<tr class="">
+<td></td><td title="00007ff8`c0465c78 488bcb          mov     rcx,rbx"><pre><code>mov     rcx,rbx</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465c7b 85ed            test    ebp,ebp"><pre><code>test    ebp,ebp</pre></code></td>
+</tr><tr class="">
+<td></td><td id="19" class="reference" data-reference="M01_L18" title="00007ff8`c0465c7d 7502            jne     00007ff8`c0465c81"><a href="#M01_L18"><pre><code>jne     M01_L18</pre></code></a></td>
+</tr><tr class="">
+<td></td><td id="20" class="reference" data-reference="M01_L19" title="00007ff8`c0465c7f eb07            jmp     00007ff8`c0465c88"><a href="#M01_L19"><pre><code>jmp     M01_L19</pre></code></a></td>
+</tr><tr class="evenMap">
+<td id="M01_L18" class="label" data-label="M01_L18"><pre><code>M01_L18</pre></code></td>
+<td>&nbsp;</td></tr>
+<tr class="evenMap">
+<td></td><td title="00007ff8`c0465c81 488b89ffffffff  mov     rcx,qword ptr [rcx-1]"><pre><code>mov     rcx,qword ptr [rcx-1]</pre></code></td>
+</tr><tr class="">
+<td id="M01_L19" class="label" data-label="M01_L19"><pre><code>M01_L19</pre></code></td>
+<td>&nbsp;</td></tr>
+<tr class="">
+<td></td><td title="00007ff8`c0465c88 48b89862191ef97f0000 mov rax,offset System_Private_CoreLib+0x976298 (00007ff9`1e196298)"><pre><code>mov     rax,offset System_Private_CoreLib+0x976298</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465c92 483bc8          cmp     rcx,rax"><pre><code>cmp     rcx,rax</pre></code></td>
+</tr><tr class="">
+<td></td><td id="21" class="reference" data-reference="M01_L20" title="00007ff8`c0465c95 7556            jne     00007ff8`c0465ced"><a href="#M01_L20"><pre><code>jne     M01_L20</pre></code></a></td>
+</tr><tr class="">
+<td></td><td ><pre><code>                Sort(ref specificKeys, length, new Int32DirectComparer());
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465c97 c684242001000000 mov     byte ptr [rsp+120h],0"><pre><code>mov     byte ptr [rsp+120h],0</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465c9f 480fbe8c2420010000 movsx rcx,byte ptr [rsp+120h]"><pre><code>movsx   rcx,byte ptr [rsp+120h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465ca8 888c2480000000  mov     byte ptr [rsp+80h],cl"><pre><code>mov     byte ptr [rsp+80h],cl</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465caf 480fbe8c2480000000 movsx rcx,byte ptr [rsp+80h]"><pre><code>movsx   rcx,byte ptr [rsp+80h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465cb8 884c2478        mov     byte ptr [rsp+78h],cl"><pre><code>mov     byte ptr [rsp+78h],cl</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465cbc 8bce            mov     ecx,esi"><pre><code>mov     ecx,esi</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465cbe e84defffff      call    00007ff8`c0464c10"><pre><code>call    System.SpanSortHelpersCommon.FloorLog2PlusOne(Int32)</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465cc3 448bc8          mov     r9d,eax"><pre><code>mov     r9d,eax</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465cc6 41d1e1          shl     r9d,1"><pre><code>shl     r9d,1</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465cc9 4c0fbe442478    movsx   r8,byte ptr [rsp+78h]"><pre><code>movsx   r8,byte ptr [rsp+78h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465ccf 4489442420      mov     dword ptr [rsp+20h],r8d"><pre><code>mov     dword ptr [rsp+20h],r8d</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465cd4 448d46ff        lea     r8d,[rsi-1]"><pre><code>lea     r8d,[rsi-1]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465cd8 488bcf          mov     rcx,rdi"><pre><code>mov     rcx,rdi</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465cdb 33d2            xor     edx,edx"><pre><code>xor     edx,edx</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465cdd e8cefbffff      call    00007ff8`c04658b0"><pre><code>call    System.SpanSortHelpersKeys_DirectComparer.IntroSort[[System.Int32, System.Private.CoreLib],[System.SpanSortHelpersCommon+Int32DirectComparer, DotNetCross.Sorting]](Int32 ByRef, Int32, Int32, Int32, Int32DirectComparer)</pre></code></td>
+</tr><tr class="">
+<td></td><td ><pre><code>                return true;
+                ^^^^^^^^^^^^</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465ce2 41be01000000    mov     r14d,1"><pre><code>mov     r14d,1</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465ce8 e987020000      jmp     00007ff8`c0465f74"><pre><code>jmp     00007ff8`c0465f74</pre></code></td>
+</tr><tr class="">
+<td></td><td ><pre><code>            else if (typeof(TKey) == typeof(uint))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre></code></td>
+</tr><tr class="evenMap">
+<td id="M01_L20" class="label" data-label="M01_L20"><pre><code>M01_L20</pre></code></td>
+<td>&nbsp;</td></tr>
+<tr class="evenMap">
+<td></td><td title="00007ff8`c0465ced 488bcb          mov     rcx,rbx"><pre><code>mov     rcx,rbx</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0465cf0 85ed            test    ebp,ebp"><pre><code>test    ebp,ebp</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td id="22" class="reference" data-reference="M01_L21" title="00007ff8`c0465cf2 7502            jne     00007ff8`c0465cf6"><a href="#M01_L21"><pre><code>jne     M01_L21</pre></code></a></td>
+</tr><tr class="evenMap">
+<td></td><td id="23" class="reference" data-reference="M01_L22" title="00007ff8`c0465cf4 eb07            jmp     00007ff8`c0465cfd"><a href="#M01_L22"><pre><code>jmp     M01_L22</pre></code></a></td>
+</tr><tr class="">
+<td id="M01_L21" class="label" data-label="M01_L21"><pre><code>M01_L21</pre></code></td>
+<td>&nbsp;</td></tr>
+<tr class="">
+<td></td><td title="00007ff8`c0465cf6 488b89ffffffff  mov     rcx,qword ptr [rcx-1]"><pre><code>mov     rcx,qword ptr [rcx-1]</pre></code></td>
+</tr><tr class="evenMap">
+<td id="M01_L22" class="label" data-label="M01_L22"><pre><code>M01_L22</pre></code></td>
+<td>&nbsp;</td></tr>
+<tr class="evenMap">
+<td></td><td title="00007ff8`c0465cfd 48b8f81f1a1ef97f0000 mov rax,offset System_Private_CoreLib+0x981ff8 (00007ff9`1e1a1ff8)"><pre><code>mov     rax,offset System_Private_CoreLib+0x981ff8</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0465d07 483bc8          cmp     rcx,rax"><pre><code>cmp     rcx,rax</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td id="24" class="reference" data-reference="M01_L23" title="00007ff8`c0465d0a 7550            jne     00007ff8`c0465d5c"><a href="#M01_L23"><pre><code>jne     M01_L23</pre></code></a></td>
+</tr><tr class="evenMap">
+<td></td><td ><pre><code>                Sort(ref specificKeys, length, new UInt32DirectComparer());
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0465d0c c684241801000000 mov     byte ptr [rsp+118h],0"><pre><code>mov     byte ptr [rsp+118h],0</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0465d14 480fbe8c2418010000 movsx rcx,byte ptr [rsp+118h]"><pre><code>movsx   rcx,byte ptr [rsp+118h]</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0465d1d 884c2470        mov     byte ptr [rsp+70h],cl"><pre><code>mov     byte ptr [rsp+70h],cl</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0465d21 480fbe4c2470    movsx   rcx,byte ptr [rsp+70h]"><pre><code>movsx   rcx,byte ptr [rsp+70h]</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0465d27 884c2468        mov     byte ptr [rsp+68h],cl"><pre><code>mov     byte ptr [rsp+68h],cl</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0465d2b 8bce            mov     ecx,esi"><pre><code>mov     ecx,esi</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0465d2d e8deeeffff      call    00007ff8`c0464c10"><pre><code>call    System.SpanSortHelpersCommon.FloorLog2PlusOne(Int32)</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0465d32 448bc8          mov     r9d,eax"><pre><code>mov     r9d,eax</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0465d35 41d1e1          shl     r9d,1"><pre><code>shl     r9d,1</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0465d38 4c0fbe442468    movsx   r8,byte ptr [rsp+68h]"><pre><code>movsx   r8,byte ptr [rsp+68h]</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0465d3e 4489442420      mov     dword ptr [rsp+20h],r8d"><pre><code>mov     dword ptr [rsp+20h],r8d</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0465d43 448d46ff        lea     r8d,[rsi-1]"><pre><code>lea     r8d,[rsi-1]</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0465d47 488bcf          mov     rcx,rdi"><pre><code>mov     rcx,rdi</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0465d4a 33d2            xor     edx,edx"><pre><code>xor     edx,edx</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0465d4c e87ffbffff      call    00007ff8`c04658d0"><pre><code>call    System.SpanSortHelpersKeys_DirectComparer.IntroSort[[System.UInt32, System.Private.CoreLib],[System.SpanSortHelpersCommon+UInt32DirectComparer, DotNetCross.Sorting]](UInt32 ByRef, Int32, Int32, Int32, UInt32DirectComparer)</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td ><pre><code>                return true;
+                ^^^^^^^^^^^^</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0465d51 41be01000000    mov     r14d,1"><pre><code>mov     r14d,1</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0465d57 e918020000      jmp     00007ff8`c0465f74"><pre><code>jmp     00007ff8`c0465f74</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td ><pre><code>            else if (typeof(TKey) == typeof(long))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre></code></td>
+</tr><tr class="">
+<td id="M01_L23" class="label" data-label="M01_L23"><pre><code>M01_L23</pre></code></td>
+<td>&nbsp;</td></tr>
+<tr class="">
+<td></td><td title="00007ff8`c0465d5c 488bcb          mov     rcx,rbx"><pre><code>mov     rcx,rbx</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465d5f 85ed            test    ebp,ebp"><pre><code>test    ebp,ebp</pre></code></td>
+</tr><tr class="">
+<td></td><td id="25" class="reference" data-reference="M01_L24" title="00007ff8`c0465d61 7502            jne     00007ff8`c0465d65"><a href="#M01_L24"><pre><code>jne     M01_L24</pre></code></a></td>
+</tr><tr class="">
+<td></td><td id="26" class="reference" data-reference="M01_L25" title="00007ff8`c0465d63 eb07            jmp     00007ff8`c0465d6c"><a href="#M01_L25"><pre><code>jmp     M01_L25</pre></code></a></td>
+</tr><tr class="evenMap">
+<td id="M01_L24" class="label" data-label="M01_L24"><pre><code>M01_L24</pre></code></td>
+<td>&nbsp;</td></tr>
+<tr class="evenMap">
+<td></td><td title="00007ff8`c0465d65 488b89ffffffff  mov     rcx,qword ptr [rcx-1]"><pre><code>mov     rcx,qword ptr [rcx-1]</pre></code></td>
+</tr><tr class="">
+<td id="M01_L25" class="label" data-label="M01_L25"><pre><code>M01_L25</pre></code></td>
+<td>&nbsp;</td></tr>
+<tr class="">
+<td></td><td title="00007ff8`c0465d6c 48b84063191ef97f0000 mov rax,offset System_Private_CoreLib+0x976340 (00007ff9`1e196340)"><pre><code>mov     rax,offset System_Private_CoreLib+0x976340</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465d76 483bc8          cmp     rcx,rax"><pre><code>cmp     rcx,rax</pre></code></td>
+</tr><tr class="">
+<td></td><td id="27" class="reference" data-reference="M01_L26" title="00007ff8`c0465d79 7550            jne     00007ff8`c0465dcb"><a href="#M01_L26"><pre><code>jne     M01_L26</pre></code></a></td>
+</tr><tr class="">
+<td></td><td ><pre><code>                Sort(ref specificKeys, length, new Int64DirectComparer());
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465d7b c684241001000000 mov     byte ptr [rsp+110h],0"><pre><code>mov     byte ptr [rsp+110h],0</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465d83 480fbe8c2410010000 movsx rcx,byte ptr [rsp+110h]"><pre><code>movsx   rcx,byte ptr [rsp+110h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465d8c 884c2460        mov     byte ptr [rsp+60h],cl"><pre><code>mov     byte ptr [rsp+60h],cl</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465d90 480fbe4c2460    movsx   rcx,byte ptr [rsp+60h]"><pre><code>movsx   rcx,byte ptr [rsp+60h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465d96 884c2458        mov     byte ptr [rsp+58h],cl"><pre><code>mov     byte ptr [rsp+58h],cl</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465d9a 8bce            mov     ecx,esi"><pre><code>mov     ecx,esi</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465d9c e86feeffff      call    00007ff8`c0464c10"><pre><code>call    System.SpanSortHelpersCommon.FloorLog2PlusOne(Int32)</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465da1 448bc8          mov     r9d,eax"><pre><code>mov     r9d,eax</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465da4 41d1e1          shl     r9d,1"><pre><code>shl     r9d,1</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465da7 4c0fbe442458    movsx   r8,byte ptr [rsp+58h]"><pre><code>movsx   r8,byte ptr [rsp+58h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465dad 4489442420      mov     dword ptr [rsp+20h],r8d"><pre><code>mov     dword ptr [rsp+20h],r8d</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465db2 448d46ff        lea     r8d,[rsi-1]"><pre><code>lea     r8d,[rsi-1]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465db6 488bcf          mov     rcx,rdi"><pre><code>mov     rcx,rdi</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465db9 33d2            xor     edx,edx"><pre><code>xor     edx,edx</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465dbb e830fbffff      call    00007ff8`c04658f0"><pre><code>call    System.SpanSortHelpersKeys_DirectComparer.IntroSort[[System.Int64, System.Private.CoreLib],[System.SpanSortHelpersCommon+Int64DirectComparer, DotNetCross.Sorting]](Int64 ByRef, Int32, Int32, Int32, Int64DirectComparer)</pre></code></td>
+</tr><tr class="">
+<td></td><td ><pre><code>                return true;
+                ^^^^^^^^^^^^</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465dc0 41be01000000    mov     r14d,1"><pre><code>mov     r14d,1</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465dc6 e9a9010000      jmp     00007ff8`c0465f74"><pre><code>jmp     00007ff8`c0465f74</pre></code></td>
+</tr><tr class="">
+<td></td><td ><pre><code>            else if (typeof(TKey) == typeof(ulong))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre></code></td>
+</tr><tr class="evenMap">
+<td id="M01_L26" class="label" data-label="M01_L26"><pre><code>M01_L26</pre></code></td>
+<td>&nbsp;</td></tr>
+<tr class="evenMap">
+<td></td><td title="00007ff8`c0465dcb 488bcb          mov     rcx,rbx"><pre><code>mov     rcx,rbx</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0465dce 85ed            test    ebp,ebp"><pre><code>test    ebp,ebp</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td id="28" class="reference" data-reference="M01_L27" title="00007ff8`c0465dd0 7502            jne     00007ff8`c0465dd4"><a href="#M01_L27"><pre><code>jne     M01_L27</pre></code></a></td>
+</tr><tr class="evenMap">
+<td></td><td id="29" class="reference" data-reference="M01_L28" title="00007ff8`c0465dd2 eb07            jmp     00007ff8`c0465ddb"><a href="#M01_L28"><pre><code>jmp     M01_L28</pre></code></a></td>
+</tr><tr class="">
+<td id="M01_L27" class="label" data-label="M01_L27"><pre><code>M01_L27</pre></code></td>
+<td>&nbsp;</td></tr>
+<tr class="">
+<td></td><td title="00007ff8`c0465dd4 488b89ffffffff  mov     rcx,qword ptr [rcx-1]"><pre><code>mov     rcx,qword ptr [rcx-1]</pre></code></td>
+</tr><tr class="evenMap">
+<td id="M01_L28" class="label" data-label="M01_L28"><pre><code>M01_L28</pre></code></td>
+<td>&nbsp;</td></tr>
+<tr class="evenMap">
+<td></td><td title="00007ff8`c0465ddb 48b828211a1ef97f0000 mov rax,offset System_Private_CoreLib+0x982128 (00007ff9`1e1a2128)"><pre><code>mov     rax,offset System_Private_CoreLib+0x982128</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0465de5 483bc8          cmp     rcx,rax"><pre><code>cmp     rcx,rax</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td id="30" class="reference" data-reference="M01_L29" title="00007ff8`c0465de8 7550            jne     00007ff8`c0465e3a"><a href="#M01_L29"><pre><code>jne     M01_L29</pre></code></a></td>
+</tr><tr class="evenMap">
+<td></td><td ><pre><code>                Sort(ref specificKeys, length, new UInt64DirectComparer());
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0465dea c684240801000000 mov     byte ptr [rsp+108h],0"><pre><code>mov     byte ptr [rsp+108h],0</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0465df2 480fbe8c2408010000 movsx rcx,byte ptr [rsp+108h]"><pre><code>movsx   rcx,byte ptr [rsp+108h]</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0465dfb 884c2450        mov     byte ptr [rsp+50h],cl"><pre><code>mov     byte ptr [rsp+50h],cl</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0465dff 480fbe4c2450    movsx   rcx,byte ptr [rsp+50h]"><pre><code>movsx   rcx,byte ptr [rsp+50h]</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0465e05 884c2448        mov     byte ptr [rsp+48h],cl"><pre><code>mov     byte ptr [rsp+48h],cl</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0465e09 8bce            mov     ecx,esi"><pre><code>mov     ecx,esi</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0465e0b e800eeffff      call    00007ff8`c0464c10"><pre><code>call    System.SpanSortHelpersCommon.FloorLog2PlusOne(Int32)</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0465e10 448bc8          mov     r9d,eax"><pre><code>mov     r9d,eax</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0465e13 41d1e1          shl     r9d,1"><pre><code>shl     r9d,1</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0465e16 4c0fbe442448    movsx   r8,byte ptr [rsp+48h]"><pre><code>movsx   r8,byte ptr [rsp+48h]</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0465e1c 4489442420      mov     dword ptr [rsp+20h],r8d"><pre><code>mov     dword ptr [rsp+20h],r8d</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0465e21 448d46ff        lea     r8d,[rsi-1]"><pre><code>lea     r8d,[rsi-1]</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0465e25 488bcf          mov     rcx,rdi"><pre><code>mov     rcx,rdi</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0465e28 33d2            xor     edx,edx"><pre><code>xor     edx,edx</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0465e2a e8e1faffff      call    00007ff8`c0465910"><pre><code>call    System.SpanSortHelpersKeys_DirectComparer.IntroSort[[System.UInt64, System.Private.CoreLib],[System.SpanSortHelpersCommon+UInt64DirectComparer, DotNetCross.Sorting]](UInt64 ByRef, Int32, Int32, Int32, UInt64DirectComparer)</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td ><pre><code>                return true;
+                ^^^^^^^^^^^^</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0465e2f 41be01000000    mov     r14d,1"><pre><code>mov     r14d,1</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0465e35 e93a010000      jmp     00007ff8`c0465f74"><pre><code>jmp     00007ff8`c0465f74</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td ><pre><code>            else if (typeof(TKey) == typeof(float))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre></code></td>
+</tr><tr class="">
+<td id="M01_L29" class="label" data-label="M01_L29"><pre><code>M01_L29</pre></code></td>
+<td>&nbsp;</td></tr>
+<tr class="">
+<td></td><td title="00007ff8`c0465e3a 488bcb          mov     rcx,rbx"><pre><code>mov     rcx,rbx</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465e3d 85ed            test    ebp,ebp"><pre><code>test    ebp,ebp</pre></code></td>
+</tr><tr class="">
+<td></td><td id="31" class="reference" data-reference="M01_L30" title="00007ff8`c0465e3f 7502            jne     00007ff8`c0465e43"><a href="#M01_L30"><pre><code>jne     M01_L30</pre></code></a></td>
+</tr><tr class="">
+<td></td><td id="32" class="reference" data-reference="M01_L31" title="00007ff8`c0465e41 eb07            jmp     00007ff8`c0465e4a"><a href="#M01_L31"><pre><code>jmp     M01_L31</pre></code></a></td>
+</tr><tr class="evenMap">
+<td id="M01_L30" class="label" data-label="M01_L30"><pre><code>M01_L30</pre></code></td>
+<td>&nbsp;</td></tr>
+<tr class="evenMap">
+<td></td><td title="00007ff8`c0465e43 488b89ffffffff  mov     rcx,qword ptr [rcx-1]"><pre><code>mov     rcx,qword ptr [rcx-1]</pre></code></td>
+</tr><tr class="">
+<td id="M01_L31" class="label" data-label="M01_L31"><pre><code>M01_L31</pre></code></td>
+<td>&nbsp;</td></tr>
+<tr class="">
+<td></td><td title="00007ff8`c0465e4a 48ba201c1a1ef97f0000 mov rdx,offset System_Private_CoreLib+0x981c20 (00007ff9`1e1a1c20)"><pre><code>mov     rdx,offset System_Private_CoreLib+0x981c20</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465e54 483bca          cmp     rcx,rdx"><pre><code>cmp     rcx,rdx</pre></code></td>
+</tr><tr class="">
+<td></td><td id="33" class="reference" data-reference="M01_L33" title="00007ff8`c0465e57 0f857f000000    jne     00007ff8`c0465edc"><a href="#M01_L33"><pre><code>jne     M01_L33</pre></code></a></td>
+</tr><tr class="">
+<td></td><td ><pre><code>                ref var specificKeys = ref Unsafe.As<TKey, float>(ref keys);
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465e5d c684240001000000 mov     byte ptr [rsp+100h],0"><pre><code>mov     byte ptr [rsp+100h],0</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465e65 488bcf          mov     rcx,rdi"><pre><code>mov     rcx,rdi</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465e68 8bd6            mov     edx,esi"><pre><code>mov     edx,esi</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465e6a 4c0fbe842400010000 movsx r8,byte ptr [rsp+100h]"><pre><code>movsx   r8,byte ptr [rsp+100h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465e73 e8d8f7ffff      call    00007ff8`c0465650"><pre><code>call    System.SpanSortHelpersKeys_DirectComparer.NaNPrepass[[System.Single, System.Private.CoreLib],[System.SpanSortHelpersCommon+SingleIsNaN, DotNetCross.Sorting]](Single ByRef, Int32, SingleIsNaN)</pre></code></td>
+</tr><tr class="">
+<td></td><td ><pre><code>                var remaining = length - left;
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465e78 448bf6          mov     r14d,esi"><pre><code>mov     r14d,esi</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465e7b 442bf0          sub     r14d,eax"><pre><code>sub     r14d,eax</pre></code></td>
+</tr><tr class="">
+<td></td><td ><pre><code>                if (remaining > 1)
+                ^^^^^^^^^^^^^^^^^^</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465e7e 4183fe01        cmp     r14d,1"><pre><code>cmp     r14d,1</pre></code></td>
+</tr><tr class="">
+<td></td><td id="34" class="reference" data-reference="M01_L32" title="00007ff8`c0465e82 7e4d            jle     00007ff8`c0465ed1"><a href="#M01_L32"><pre><code>jle     M01_L32</pre></code></a></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465e84 4863c8          movsxd  rcx,eax"><pre><code>movsxd  rcx,eax</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465e87 488d1c8f        lea     rbx,[rdi+rcx*4]"><pre><code>lea     rbx,[rdi+rcx*4]</pre></code></td>
+</tr><tr class="">
+<td></td><td ><pre><code>                    Sort(ref afterNaNsKeys, remaining, new SingleDirectComparer());
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465e8b c68424f800000000 mov     byte ptr [rsp+0F8h],0"><pre><code>mov     byte ptr [rsp+0F8h],0</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465e93 480fbe8c24f8000000 movsx rcx,byte ptr [rsp+0F8h]"><pre><code>movsx   rcx,byte ptr [rsp+0F8h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465e9c 884c2440        mov     byte ptr [rsp+40h],cl"><pre><code>mov     byte ptr [rsp+40h],cl</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465ea0 480fbe4c2440    movsx   rcx,byte ptr [rsp+40h]"><pre><code>movsx   rcx,byte ptr [rsp+40h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465ea6 884c2438        mov     byte ptr [rsp+38h],cl"><pre><code>mov     byte ptr [rsp+38h],cl</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465eaa 418bce          mov     ecx,r14d"><pre><code>mov     ecx,r14d</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465ead e85eedffff      call    00007ff8`c0464c10"><pre><code>call    System.SpanSortHelpersCommon.FloorLog2PlusOne(Int32)</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465eb2 448bc8          mov     r9d,eax"><pre><code>mov     r9d,eax</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465eb5 41d1e1          shl     r9d,1"><pre><code>shl     r9d,1</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465eb8 4c0fbe442438    movsx   r8,byte ptr [rsp+38h]"><pre><code>movsx   r8,byte ptr [rsp+38h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465ebe 4489442420      mov     dword ptr [rsp+20h],r8d"><pre><code>mov     dword ptr [rsp+20h],r8d</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465ec3 458d46ff        lea     r8d,[r14-1]"><pre><code>lea     r8d,[r14-1]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465ec7 488bcb          mov     rcx,rbx"><pre><code>mov     rcx,rbx</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465eca 33d2            xor     edx,edx"><pre><code>xor     edx,edx</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465ecc e85ffaffff      call    00007ff8`c0465930"><pre><code>call    System.SpanSortHelpersKeys_DirectComparer.IntroSort[[System.Single, System.Private.CoreLib],[System.SpanSortHelpersCommon+SingleDirectComparer, DotNetCross.Sorting]](Single ByRef, Int32, Int32, Int32, SingleDirectComparer)</pre></code></td>
+</tr><tr class="">
+<td></td><td ><pre><code>                return true;
+                ^^^^^^^^^^^^</pre></code></td>
+</tr><tr class="evenMap">
+<td id="M01_L32" class="label" data-label="M01_L32"><pre><code>M01_L32</pre></code></td>
+<td>&nbsp;</td></tr>
+<tr class="evenMap">
+<td></td><td title="00007ff8`c0465ed1 41be01000000    mov     r14d,1"><pre><code>mov     r14d,1</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0465ed7 e998000000      jmp     00007ff8`c0465f74"><pre><code>jmp     00007ff8`c0465f74</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td ><pre><code>            else if (typeof(TKey) == typeof(double))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre></code></td>
+</tr><tr class="">
+<td id="M01_L33" class="label" data-label="M01_L33"><pre><code>M01_L33</pre></code></td>
+<td>&nbsp;</td></tr>
+<tr class="">
+<td></td><td title="00007ff8`c0465edc 85ed            test    ebp,ebp"><pre><code>test    ebp,ebp</pre></code></td>
+</tr><tr class="">
+<td></td><td id="35" class="reference" data-reference="M01_L34" title="00007ff8`c0465ede 7502            jne     00007ff8`c0465ee2"><a href="#M01_L34"><pre><code>jne     M01_L34</pre></code></a></td>
+</tr><tr class="">
+<td></td><td id="36" class="reference" data-reference="M01_L35" title="00007ff8`c0465ee0 eb07            jmp     00007ff8`c0465ee9"><a href="#M01_L35"><pre><code>jmp     M01_L35</pre></code></a></td>
+</tr><tr class="evenMap">
+<td id="M01_L34" class="label" data-label="M01_L34"><pre><code>M01_L34</pre></code></td>
+<td>&nbsp;</td></tr>
+<tr class="evenMap">
+<td></td><td title="00007ff8`c0465ee2 488b9bffffffff  mov     rbx,qword ptr [rbx-1]"><pre><code>mov     rbx,qword ptr [rbx-1]</pre></code></td>
+</tr><tr class="">
+<td id="M01_L35" class="label" data-label="M01_L35"><pre><code>M01_L35</pre></code></td>
+<td>&nbsp;</td></tr>
+<tr class="">
+<td></td><td title="00007ff8`c0465ee9 48b91804181ef97f0000 mov rcx,offset System_Private_CoreLib+0x960418 (00007ff9`1e180418)"><pre><code>mov     rcx,offset System_Private_CoreLib+0x960418</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465ef3 483bd9          cmp     rbx,rcx"><pre><code>cmp     rbx,rcx</pre></code></td>
+</tr><tr class="">
+<td></td><td id="37" class="reference" data-reference="M01_L37" title="00007ff8`c0465ef6 7579            jne     00007ff8`c0465f71"><a href="#M01_L37"><pre><code>jne     M01_L37</pre></code></a></td>
+</tr><tr class="">
+<td></td><td ><pre><code>                ref var specificKeys = ref Unsafe.As<TKey, double>(ref keys);
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465ef8 4c8bf7          mov     r14,rdi"><pre><code>mov     r14,rdi</pre></code></td>
+</tr><tr class="">
+<td></td><td ><pre><code>                var left = NaNPrepass(ref specificKeys, length, new DoubleIsNaN());
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465efb c68424f000000000 mov     byte ptr [rsp+0F0h],0"><pre><code>mov     byte ptr [rsp+0F0h],0</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465f03 498bce          mov     rcx,r14"><pre><code>mov     rcx,r14</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465f06 8bd6            mov     edx,esi"><pre><code>mov     edx,esi</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465f08 4c0fbe8424f0000000 movsx r8,byte ptr [rsp+0F0h]"><pre><code>movsx   r8,byte ptr [rsp+0F0h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465f11 e8eaf4ffff      call    00007ff8`c0465400"><pre><code>call    System.SpanSortHelpersKeys_DirectComparer.NaNPrepass[[System.Double, System.Private.CoreLib],[System.SpanSortHelpersCommon+DoubleIsNaN, DotNetCross.Sorting]](Double ByRef, Int32, DoubleIsNaN)</pre></code></td>
+</tr><tr class="">
+<td></td><td ><pre><code>                var remaining = length - left;
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465f16 2bf0            sub     esi,eax"><pre><code>sub     esi,eax</pre></code></td>
+</tr><tr class="">
+<td></td><td ><pre><code>                if (remaining > 1)
+                ^^^^^^^^^^^^^^^^^^</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465f18 83fe01          cmp     esi,1"><pre><code>cmp     esi,1</pre></code></td>
+</tr><tr class="">
+<td></td><td id="38" class="reference" data-reference="M01_L36" title="00007ff8`c0465f1b 7e4c            jle     00007ff8`c0465f69"><a href="#M01_L36"><pre><code>jle     M01_L36</pre></code></a></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465f1d 4863c8          movsxd  rcx,eax"><pre><code>movsxd  rcx,eax</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465f20 498d3cce        lea     rdi,[r14+rcx*8]"><pre><code>lea     rdi,[r14+rcx*8]</pre></code></td>
+</tr><tr class="">
+<td></td><td ><pre><code>                    Sort(ref afterNaNsKeys, remaining, new DoubleDirectComparer());
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465f24 c68424e800000000 mov     byte ptr [rsp+0E8h],0"><pre><code>mov     byte ptr [rsp+0E8h],0</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465f2c 480fbe8c24e8000000 movsx rcx,byte ptr [rsp+0E8h]"><pre><code>movsx   rcx,byte ptr [rsp+0E8h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465f35 884c2430        mov     byte ptr [rsp+30h],cl"><pre><code>mov     byte ptr [rsp+30h],cl</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465f39 480fbe4c2430    movsx   rcx,byte ptr [rsp+30h]"><pre><code>movsx   rcx,byte ptr [rsp+30h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465f3f 884c2428        mov     byte ptr [rsp+28h],cl"><pre><code>mov     byte ptr [rsp+28h],cl</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465f43 8bce            mov     ecx,esi"><pre><code>mov     ecx,esi</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465f45 e8c6ecffff      call    00007ff8`c0464c10"><pre><code>call    System.SpanSortHelpersCommon.FloorLog2PlusOne(Int32)</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465f4a 448bc8          mov     r9d,eax"><pre><code>mov     r9d,eax</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465f4d 41d1e1          shl     r9d,1"><pre><code>shl     r9d,1</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465f50 4c0fbe442428    movsx   r8,byte ptr [rsp+28h]"><pre><code>movsx   r8,byte ptr [rsp+28h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465f56 4489442420      mov     dword ptr [rsp+20h],r8d"><pre><code>mov     dword ptr [rsp+20h],r8d</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465f5b 448d46ff        lea     r8d,[rsi-1]"><pre><code>lea     r8d,[rsi-1]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465f5f 488bcf          mov     rcx,rdi"><pre><code>mov     rcx,rdi</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465f62 33d2            xor     edx,edx"><pre><code>xor     edx,edx</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0465f64 e8e7f9ffff      call    00007ff8`c0465950"><pre><code>call    System.SpanSortHelpersKeys_DirectComparer.IntroSort[[System.Double, System.Private.CoreLib],[System.SpanSortHelpersCommon+DoubleDirectComparer, DotNetCross.Sorting]](Double ByRef, Int32, Int32, Int32, DoubleDirectComparer)</pre></code></td>
+</tr><tr class="">
+<td></td><td ><pre><code>                return true;
+                ^^^^^^^^^^^^</pre></code></td>
+</tr><tr class="evenMap">
+<td id="M01_L36" class="label" data-label="M01_L36"><pre><code>M01_L36</pre></code></td>
+<td>&nbsp;</td></tr>
+<tr class="evenMap">
+<td></td><td title="00007ff8`c0465f69 41be01000000    mov     r14d,1"><pre><code>mov     r14d,1</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0465f6f eb03            jmp     00007ff8`c0465f74"><pre><code>jmp     00007ff8`c0465f74</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td ><pre><code>                return false;
+                ^^^^^^^^^^^^^</pre></code></td>
+</tr><tr class="">
+<td id="M01_L37" class="label" data-label="M01_L37"><pre><code>M01_L37</pre></code></td>
+<td>&nbsp;</td></tr>
+<tr class="">
+<td></td><td title="00007ff8`c0465f71 4533f6          xor     r14d,r14d"><pre><code>xor     r14d,r14d</pre></code></td>
+</tr><tr><td colspan="{2}">&nbsp;</td></tr>
+<tr><th colspan="2" style="text-align: left;">System.IntPtr.ToPointer()</th><th></th></tr>
+<tr class="">
+<td></td><td title="00007ff9`1df04de5 488b01          mov     rax,qword ptr [rcx]"><pre><code>mov     rax,qword ptr [rcx]</pre></code></td>
+</tr><tr><td colspan="{2}">&nbsp;</td></tr>
+<tr><th colspan="2" style="text-align: left;">System.SpanSortHelpersCommon.FloorLog2PlusOne(Int32)</th><th></th></tr>
+<tr class="">
+<td></td><td ><pre><code>            int result = 2;
+            ^^^^^^^^^^^^^^^</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0466750 b802000000      mov     eax,2"><pre><code>mov     eax,2</pre></code></td>
+</tr><tr class="">
+<td></td><td ><pre><code>            n >>= 2;
+            ^^^^^^^^</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0466755 c1f902          sar     ecx,2"><pre><code>sar     ecx,2</pre></code></td>
+</tr><tr class="">
+<td></td><td ><pre><code>            while (n > 0)
+            ^^^^^^^^^^^^^</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`c0466758 85c9            test    ecx,ecx"><pre><code>test    ecx,ecx</pre></code></td>
+</tr><tr class="">
+<td></td><td id="39" class="reference" data-reference="M03_L01" title="00007ff8`c046675a 7e08            jle     00007ff8`c0466764"><a href="#M03_L01"><pre><code>jle     M03_L01</pre></code></a></td>
+</tr><tr class="">
+<td></td><td ><pre><code>                ++result;
+                ^^^^^^^^^</pre></code></td>
+</tr><tr class="evenMap">
+<td id="M03_L00" class="label" data-label="M03_L00"><pre><code>M03_L00</pre></code></td>
+<td>&nbsp;</td></tr>
+<tr class="evenMap">
+<td></td><td title="00007ff8`c046675c ffc0            inc     eax"><pre><code>inc     eax</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td ><pre><code>                n >>= 1;
+                ^^^^^^^^</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c046675e d1f9            sar     ecx,1"><pre><code>sar     ecx,1</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff8`c0466760 85c9            test    ecx,ecx"><pre><code>test    ecx,ecx</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td id="40" class="reference" data-reference="M03_L00" title="00007ff8`c0466762 7ff8            jg      00007ff8`c046675c"><a href="#M03_L00"><pre><code>jg      M03_L00</pre></code></a></td>
+</tr><tr class="evenMap">
+<td></td><td ><pre><code>            return result;
+            ^^^^^^^^^^^^^^</pre></code></td>
+</tr><tr class="">
+<td id="M03_L01" class="label" data-label="M03_L01"><pre><code>M03_L01</pre></code></td>
+<td>&nbsp;</td></tr>
+<tr class="">
+<td></td><td title="00007ff8`c0466764 c3              ret"><pre><code>ret</pre></code></td>
+</tr><tr><td colspan="{2}">&nbsp;</td></tr>
+<tr><th colspan="2" style="text-align: left;">System.InvalidOperationException..ctor()</th><th></th></tr>
+<tr class="">
+<td></td><td title="00007ff9`1ddad45b c7868400000009151380 mov dword ptr [rsi+84h],80131509h"><pre><code>mov     dword ptr [rsi+84h],80131509h</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff9`1ddad465 4883c428        add     rsp,28h"><pre><code>add     rsp,28h</pre></code></td>
+</tr><tr><td colspan="{2}">&nbsp;</td></tr>
+<tr><th colspan="2" style="text-align: left;">System.Object.ToString()</th><th></th></tr>
+<tr class="">
+<td></td><td title="00007ff9`1ddafee5 e86e1bd1ff      call    System_Private_CoreLib+0x2a1a58 (00007ff9`1dac1a58)"><pre><code>call    System.Object.GetType()</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff9`1ddafeea 488bc8          mov     rcx,rax"><pre><code>mov     rcx,rax</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff9`1ddafeed 488b00          mov     rax,qword ptr [rax]"><pre><code>mov     rax,qword ptr [rax]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff9`1ddafef0 488b4040        mov     rax,qword ptr [rax+40h]"><pre><code>mov     rax,qword ptr [rax+40h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff9`1ddafef4 488b00          mov     rax,qword ptr [rax]"><pre><code>mov     rax,qword ptr [rax]</pre></code></td>
+</tr><tr><td colspan="{2}">&nbsp;</td></tr>
+<tr><th colspan="2" style="text-align: left;">System.SR.get_Arg_InvalidOperationException()</th><th></th></tr>
+<tr class="">
+<td></td><td title="00007ff9`1dd7af65 488b0d4460b0ff  mov     rcx,qword ptr [System_Private_CoreLib+0x60fb0 (00007ff9`1d880fb0)]"><pre><code>mov     rcx,qword ptr [System_Private_CoreLib+0x60fb0</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff9`1dd7af6c 488b09          mov     rcx,qword ptr [rcx]"><pre><code>mov     rcx,qword ptr [rcx]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff9`1dd7af6f 33d2            xor     edx,edx"><pre><code>xor     edx,edx</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff9`1dd7af71 488d0538ecffff  lea     rax,[System_Private_CoreLib+0x559bb0 (00007ff9`1dd79bb0)]"><pre><code>lea     rax,[System_Private_CoreLib+0x559bb0</pre></code></td>
+</tr><tr><td colspan="{2}">&nbsp;</td></tr>
+<tr><th colspan="2" style="text-align: left;">System.SystemException..ctor(System.String)</th><th></th></tr>
+<tr class="">
+<td></td><td title="00007ff9`1de4e96c 488bce          mov     rcx,rsi"><pre><code>mov     rcx,rsi</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff9`1de4e96f e84c51f5ff      call    System_Private_CoreLib+0x583ac0 (00007ff9`1dda3ac0)"><pre><code>call    System.Exception.Init()</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff9`1de4e974 488d4e20        lea     rcx,[rsi+20h]"><pre><code>lea     rcx,[rsi+20h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff9`1de4e978 488bd7          mov     rdx,rdi"><pre><code>mov     rdx,rdi</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff9`1de4e97b e88876c4ff      call    System_Private_CoreLib+0x276008 (00007ff9`1da96008)"><pre><code>call    System_Private_CoreLib+0x276008</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff9`1de4e980 c7868400000001151380 mov dword ptr [rsi+84h],80131501h"><pre><code>mov     dword ptr [rsi+84h],80131501h</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff9`1de4e98a 4883c428        add     rsp,28h"><pre><code>add     rsp,28h</pre></code></td>
+</tr><tr><td colspan="{2}">&nbsp;</td></tr>
+<tr><th colspan="2" style="text-align: left;">System.Exception.set_HResult(Int32)</th><th></th></tr>
+<tr class="">
+<td></td><td title="00007ff9`1dda4a05 899184000000    mov     dword ptr [rcx+84h],edx"><pre><code>mov     dword ptr [rcx+84h],edx</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff9`1dda4a0b c3              ret"><pre><code>ret</pre></code></td>
+</tr><tr><td colspan="{2}">&nbsp;</td></tr>
+<tr><th colspan="2" style="text-align: left;">System.SR.GetResourceString(System.String, System.String)</th><th></th></tr>
+<tr class="">
+<td></td><td title="00007ff9`1dd79bc6 33c9            xor     ecx,ecx"><pre><code>xor     ecx,ecx</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff9`1dd79bc8 48894df8        mov     qword ptr [rbp-8],rcx"><pre><code>mov     qword ptr [rbp-8],rcx</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff9`1dd79bcc 488b4d10        mov     rcx,qword ptr [rbp+10h]"><pre><code>mov     rcx,qword ptr [rbp+10h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff9`1dd79bd0 e87b64d4ff      call    System_Private_CoreLib+0x2a0050 (00007ff9`1dac0050)"><pre><code>call    System.SR.InternalGetResourceString(System.String)</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff9`1dd79bd5 488945f8        mov     qword ptr [rbp-8],rax"><pre><code>mov     qword ptr [rbp-8],rax</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff9`1dd79bd9 488b4d18        mov     rcx,qword ptr [rbp+18h]"><pre><code>mov     rcx,qword ptr [rbp+18h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff9`1dd79bdd 4885c9          test    rcx,rcx"><pre><code>test    rcx,rcx</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff9`1dd79be0 7423            je      System_Private_CoreLib+0x559c05 (00007ff9`1dd79c05)"><pre><code>je      System_Private_CoreLib+0x559c05</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff9`1dd79be2 488b4d10        mov     rcx,qword ptr [rbp+10h]"><pre><code>mov     rcx,qword ptr [rbp+10h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff9`1dd79be6 488b55f8        mov     rdx,qword ptr [rbp-8]"><pre><code>mov     rdx,qword ptr [rbp-8]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff9`1dd79bea 41b804000000    mov     r8d,4"><pre><code>mov     r8d,4</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff9`1dd79bf0 3909            cmp     dword ptr [rcx],ecx"><pre><code>cmp     dword ptr [rcx],ecx</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff9`1dd79bf2 e8d989ffff      call    System_Private_CoreLib+0x5525d0 (00007ff9`1dd725d0)"><pre><code>call    System.String.Equals(System.String, System.StringComparison)</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff9`1dd79bf7 85c0            test    eax,eax"><pre><code>test    eax,eax</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff9`1dd79bf9 740a            je      System_Private_CoreLib+0x559c05 (00007ff9`1dd79c05)"><pre><code>je      System_Private_CoreLib+0x559c05</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff9`1dd79bfb 488b4518        mov     rax,qword ptr [rbp+18h]"><pre><code>mov     rax,qword ptr [rbp+18h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff9`1dd79bff 488d6500        lea     rsp,[rbp]"><pre><code>lea     rsp,[rbp]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff9`1dd79c03 5d              pop     rbp"><pre><code>pop     rbp</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff9`1dd79c04 c3              ret"><pre><code>ret</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff9`1dd79c05 488b45f8        mov     rax,qword ptr [rbp-8]"><pre><code>mov     rax,qword ptr [rbp-8]</pre></code></td>
+</tr><tr><td colspan="{2}">&nbsp;</td></tr>
+<tr><th colspan="2" style="text-align: left;">System.Exception.Init()</th><th></th></tr>
+<tr class="">
+<td></td><td title="00007ff9`1dda3ac5 33c0            xor     eax,eax"><pre><code>xor     eax,eax</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff9`1dda3ac7 48894120        mov     qword ptr [rcx+20h],rax"><pre><code>mov     qword ptr [rcx+20h],rax</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff9`1dda3acb 48894140        mov     qword ptr [rcx+40h],rax"><pre><code>mov     qword ptr [rcx+40h],rax</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff9`1dda3acf 48894160        mov     qword ptr [rcx+60h],rax"><pre><code>mov     qword ptr [rcx+60h],rax</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff9`1dda3ad3 c7818400000000151380 mov dword ptr [rcx+84h],80131500h"><pre><code>mov     dword ptr [rcx+84h],80131500h</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff9`1dda3add c78188000000524343e0 mov dword ptr [rcx+88h],0E0434352h"><pre><code>mov     dword ptr [rcx+88h],0E0434352h</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff9`1dda3ae7 33c0            xor     eax,eax"><pre><code>xor     eax,eax</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff9`1dda3ae9 48894170        mov     qword ptr [rcx+70h],rax"><pre><code>mov     qword ptr [rcx+70h],rax</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff9`1dda3aed 33c0            xor     eax,eax"><pre><code>xor     eax,eax</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff9`1dda3aef 48894148        mov     qword ptr [rcx+48h],rax"><pre><code>mov     qword ptr [rcx+48h],rax</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff9`1dda3af3 33c0            xor     eax,eax"><pre><code>xor     eax,eax</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff9`1dda3af5 48894178        mov     qword ptr [rcx+78h],rax"><pre><code>mov     qword ptr [rcx+78h],rax</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff9`1dda3af9 c3              ret"><pre><code>ret</pre></code></td>
+</tr><tr><td colspan="{2}">&nbsp;</td></tr>
+<tr><th colspan="2" style="text-align: left;">System.Exception..ctor(System.String)</th><th></th></tr>
+<tr class="">
+<td></td><td title="00007ff9`1dda3b1c 488bce          mov     rcx,rsi"><pre><code>mov     rcx,rsi</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff9`1dda3b1f e89cffffff      call    System_Private_CoreLib+0x583ac0 (00007ff9`1dda3ac0)"><pre><code>call    System.Exception.Init()</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff9`1dda3b24 488d4e20        lea     rcx,[rsi+20h]"><pre><code>lea     rcx,[rsi+20h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff9`1dda3b28 488bd7          mov     rdx,rdi"><pre><code>mov     rdx,rdi</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff9`1dda3b2b e8d824cfff      call    System_Private_CoreLib+0x276008 (00007ff9`1da96008)"><pre><code>call    System_Private_CoreLib+0x276008</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff9`1dda3b30 90              nop"><pre><code>nop</pre></code></td>
+</tr><tr><td colspan="{2}">&nbsp;</td></tr>
+<tr><td colspan="2"><b>Method got most probably inlined</b></td></tr>
+<tr><td colspan="2">System.Object.GetType()</td></tr>
+<tr><td colspan="2">System.ThrowHelper.ThrowArgumentNullException(System.ExceptionArgument)</td></tr>
+<tr><td colspan="2">System.ThrowHelper.ThrowArrayTypeMismatchException()</td></tr>
+<tr><td colspan="2">System.SpanSortHelpersKeys_DirectComparer.IntroSort[[System.SByte, System.Private.CoreLib],[System.SpanSortHelpersCommon+SByteDirectComparer, DotNetCross.Sorting]](SByte ByRef, Int32, Int32, Int32, SByteDirectComparer)</td></tr>
+<tr><td colspan="2">System.SpanSortHelpersKeys_DirectComparer.NaNPrepass[[System.Single, System.Private.CoreLib],[System.SpanSortHelpersCommon+SingleIsNaN, DotNetCross.Sorting]](Single ByRef, Int32, SingleIsNaN)</td></tr>
+<tr><td colspan="2">System.Runtime.CompilerServices.Unsafe.As(!!0 ByRef)</td></tr>
+<tr><td colspan="2">System.Runtime.CompilerServices.Unsafe.Add(!!0 ByRef, Int32)</td></tr>
+<tr><td colspan="2">System.Type.GetTypeFromHandle(System.RuntimeTypeHandle)</td></tr>
+<tr><td colspan="{2}"></td></tr>
+</tbody></table></body></html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>SingleInt32SortDisassemblerBench</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet=v0.10.13, OS=Windows 10 Redstone 3 [1709, Fall Creators Update] (10.0.16299.248)
+Intel Core i7-8700 CPU 3.20GHz (Coffee Lake), 1 CPU, 12 logical cores and 6 physical cores
+Frequency=3117186 Hz, Resolution=320.8022 ns, Timer=TSC
+.NET Core SDK=2.1.300-preview1-008174
+  [Host]     : .NET Core 2.0.5 (CoreCLR 4.6.26020.03, CoreFX 4.6.26018.01), 64bit RyuJIT
+  Job-XXUHTB : .NET Core 2.0.5 (CoreCLR 4.6.26020.03, CoreFX 4.6.26018.01), 64bit RyuJIT
+</code></pre>
+<pre><code>LaunchCount=1  RunStrategy=Monitoring  TargetCount=3  
+WarmupCount=1  
+</code></pre>
+
+<table>
+<thead><tr><th>                 Method</th><th>Mean</th><th>Error</th><th>StdDev</th><th>Scaled</th>
+</tr>
+</thead><tbody><tr><td>Array_</td><td>112.49 ms</td><td>3.7517 ms</td><td>0.2120 ms</td><td>1.00</td>
+</tr><tr><td>Array_NullComparer</td><td>112.80 ms</td><td>0.8369 ms</td><td>0.0473 ms</td><td>1.00</td>
+</tr><tr><td>Array_ClassComparableComparer</td><td>204.83 ms</td><td>13.2742 ms</td><td>0.7500 ms</td><td>1.82</td>
+</tr><tr><td>Span_</td><td>100.94 ms</td><td>1.9751 ms</td><td>0.1116 ms</td><td>0.90</td>
+</tr><tr><td>Span_NullComparer</td><td>99.97 ms</td><td>1.7300 ms</td><td>0.0977 ms</td><td>0.89</td>
+</tr><tr><td>Span_ClassComparableComparer</td><td>168.91 ms</td><td>2.9194 ms</td><td>0.1650 ms</td><td>1.50</td>
+</tr><tr><td>Span_StructComparableComparer</td><td>98.63 ms</td><td>0.1374 ms</td><td>0.0078 ms</td><td>0.88</td>
+</tr><tr><td>Span_Comparison</td><td>152.20 ms</td><td>9.0766 ms</td><td>0.5128 ms</td><td>1.35</td>
+</tr></tbody></table>
+</body>
+</html>
